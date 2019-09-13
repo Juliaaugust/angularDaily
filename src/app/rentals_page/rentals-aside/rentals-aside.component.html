@@ -1,0 +1,41 @@
+<aside class="rentals-aside">
+  <div class="select-sorting-container">
+    <select class="select-sorting">
+      <option class="select-sorting__option">Сортировка по умолчанию</option>
+      <option class="select-sorting__option">По возрастанию цены</option>
+      <option class="select-sorting__option">По убыванию цены</option>
+      <option class="select-sorting__option">По рейтингу</option>
+    </select>
+  </div>
+
+  <input type="checkbox" id="check-options">
+  <label for="check-options">
+    <img  class="check-options-icon" src="img/icons/settings.png" alt="Settings">
+  </label>
+
+  <div class="options-container">
+    <div class="city-option option-block">
+      <p class="option-name">Город:</p>
+      <input class="option-input" type="text" name="city-input" value="Москва">
+    </div>
+    <div class="arrival-option option-block">
+      <p class="option-name">Дата заезда:</p>
+      <input class="option-input" type="date" name="arrival-input">
+    </div>
+    <div class="departure-option option-block">
+      <p class="option-name">Дата отъезда:</p>
+      <input class="option-input" type="date" name="departure-input">
+    </div>
+    <div class="price-option option-block">
+      <p class="option-name">Цена за сутки:</p>
+      От <input class="option-input" type="number" min="0" step="100" name="min-price-input">
+      До <input class="option-input" type="number" min="0" step="100" name="max-price-input">
+    </div>
+    <div class="rating-option option-block">
+      <p>Минимальный рейтинг:</p>
+      <input class="option-input" type="range" min="1" max="5" step="1" value="3" list="range-rating" onchange="document.getElementById('rating-value').innerHTML = this.value;">
+      <datalist id="range-rating"></datalist>
+      <span id="rating-value">3</span>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,171 @@
+$header-color: #dfe8ed
+$text-shadow: 1px 1px 2px #021118, 0 0 1.5em #053841
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #4D1335
+$btn-hover-color: #3d0d29
+$input-color: #015f70
+
+.search-section
+  background: url(../../../assets/images/main/main_bg.jpg) center/cover
+  height: 680px
+  position: relative
+
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 680px
+    background: #46433c27
+
+.search-section h1,
+.search-section h3,
+.search-form
+  position: relative
+  z-index: 1
+
+.search-section h1,
+.search-section h3
+  text-align: center
+  color: $header-color
+  text-shadow: $text-shadow
+
+.search-section h1
+  font-size: calc(1rem + 3.8vw)
+  padding-top: 60px
+  padding-bottom: 10px
+
+.search-section h3
+  font-size: calc(0.7rem + 1vw)
+  padding-bottom: 80px
+
+.search-form
+  width: 100%
+  height: auto
+  top: 54
+  left: 0
+  display: flex
+  align-content: center
+  justify-content: center
+  overflow: auto
+
+.search-form-content
+  display: flex
+  margin-top: 30px
+
+.search-form-content-inputs
+  display: flex
+
+.search-form-info
+  color: #d9e4e9
+  text-shadow: $text-shadow
+  font-size: 16px
+  position: relative
+  bottom: 20px
+  left: 6px
+
+.main__input
+  width: 220px
+  height: 60px
+  padding: 5px 10px
+  margin: 5px
+  border-radius: 8px
+  color: $input-color
+  font-size: 20px
+  background: #dde3e4
+  border: #dde3e4
+  position: relative
+  bottom: 27px
+
+.main__search-dates
+  display: flex
+
+.main__search-btn
+  width: 220px
+  height: 70px
+  color: $btn-color
+  font-size: 26px
+  background: $btn-bg
+  border: none
+  border-radius: 8px
+  margin-left: 5px
+
+.main__search-btn:hover
+  cursor: pointer
+  color: $btn-hover-color
+  background: $btn-hover-bg
+
+@media screen and (max-width: 1000px)
+  .search-form-content
+    display: block
+
+  .main__search-btn
+    width: 100%
+    margin: 0
+
+  .advantages-list
+    flex-wrap: wrap
+    padding-bottom: 0
+
+  .advantages-list__item
+    position: static
+    width: 100%
+
+  .advantages-list__item:nth-child(2n-1)
+    position: static
+
+
+@media screen and (max-width: 780px)
+  .search-form-content-inputs
+    display: block
+
+  .main__search-city
+    text-align: center
+
+  .search-section
+    height: 100%
+    padding-bottom: 30px
+
+  .search-section::after
+    height: 300px
+
+  .search-section h3
+    padding-bottom: 40px
+
+  .main__search-btn
+    height: 55px
+    font-size: 22px
+
+  .main__input
+    height: 40px
+
+
+@media screen and (max-width: 530px)
+  .main__search-dates
+    display: block
+
+  .search-section h3
+    font-size: 16px
+
+  .recommend-img
+    width: 100%
+
+  .sections-container
+    padding: 0
+
+  .main-section
+    padding: 30px 15px
+    margin: 0
+    border: none
+    box-shadow: none
+
+  .advantages-list__item
+    margin: 0
+
+  .socials-list
+    margin-left: -40px
+
+  .contacts-list__item > a
+    display: block

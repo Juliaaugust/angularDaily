@@ -1,0 +1,133 @@
+$header-bg: linear-gradient(0deg, #f8d0a3 0%, #faf1d5 100%)
+$navigation-bg: linear-gradient(0deg, #b86d9aa4 0%, #f3dbbd 100%)
+$text-color: #6a1b4a
+
+*
+  margin: 0
+  padding: 0
+
+ul
+  list-style: none
+
+a
+  text-decoration: none
+
+.main-header
+  background: $header-bg
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 30px
+  position: sticky
+  top: 0
+  z-index: 10
+
+
+.header__logo
+  position: relative
+  top: 3px
+
+.main-navigation
+  border-left: 1px solid #92256650
+  border-right: 1px solid #92256650
+  padding: 5px
+  height: 44px
+  background: $navigation-bg
+
+.main-navigation__item
+  display: inline-block
+  padding: 0 20px
+  opacity: 0.7
+
+  &:hover
+    font-size: 1.15em
+    opacity: 1
+    text-decoration: underline
+    transition: 0.5s
+
+  &:not(.last-nav-li)
+    border-right: 1px solid #92256650
+
+
+#menu-checkbox
+  display: none
+
+.main-navigation a
+  color: #2e0c20
+
+.nav-icon
+  width: 25px
+  position: relative
+  top: 5px
+
+.header__enter-btn
+  background: #fff2c8
+  border: 1px solid #83426985
+  color: $text-color
+  font-size: 18px
+  padding: 5px 15px
+  height: 36px
+  border-radius: 4px
+  cursor: pointer
+
+.header__enter-btn:hover
+  background: #d88fbb51
+  color: #6a1b4ab6
+  box-shadow: 0 0 10px #6a1b4a91
+  transition: 0.5s
+
+.header__user-photo
+  height: 40px
+  border-radius: 50%
+
+.header__user-name
+  display: inline-block
+  color: $text-color
+  position: relative
+  bottom: 10px
+
+.header__user-info
+  display: none
+
+
+@media screen and (max-width: 1000px)
+  .main-navigation
+    display: none
+    border: none
+    background: none
+
+  .main-navigation__item
+    width: 100%
+    font-size: 18px
+    display: block
+
+  .main-navigation__item:hover
+    font-size: 18px
+
+  .main-navigation a
+    display: block
+    padding: 10px
+
+  .nav-icon
+    display: none
+
+  .toggle-button
+    text-align: center
+    display: block
+    cursor: pointer
+    color: #6a1b4a
+
+  .toggle-button:after
+    content: attr(data-open)
+    font-size: 22px
+    display: block
+
+  #menu-checkbox:checked + nav[role="navigation"] .main-navigation
+    display: inline-block
+
+  #menu-checkbox:checked + nav[role="navigation"] .toggle-button:after
+    content: attr(data-close)
+
+  .main-navigation__item:not(.last-nav-li)
+      border-right: none
+
