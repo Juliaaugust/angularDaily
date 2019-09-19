@@ -1,0 +1,33 @@
+.page-wrapper
+  margin: 15px auto
+  display: flex
+  min-height: calc(100vh - 250px)
+
+.housing-aside
+  width: 30%
+  padding: 10px 25px
+  margin: 10px 5px 10px 20px
+  background: #e0e9eb
+  border-radius: 6px
+  box-shadow: -8px -3px 15px #97b4b8
+
+.housing-main
+  width: 70%
+  margin: 10px 20px 10px 5px
+  padding: 10px 25px
+  background: #e0e9eb
+  border-radius: 6px
+  box-shadow: 8px -3px 15px #97b4b8
+
+@media screen and (max-width: 780px)
+  .page-wrapper
+    flex-direction: column
+    margin: 0
+
+  .housing-aside,
+  .housing-main
+    width: 100%
+    margin: 0 auto
+    padding: 10px 0
+    border-radius: 0
+    box-shadow: none

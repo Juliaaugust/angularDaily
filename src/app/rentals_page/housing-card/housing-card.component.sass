@@ -1,0 +1,48 @@
+.variant-card
+  display: flex
+  padding: 20px
+  margin-bottom: 15px
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+
+app-star-rating
+  display: inline-block
+
+.housing-description a
+  color: #2e0c20
+
+.housing-description .housing-name
+  color: #6a1b4a
+
+.variant-image
+  width: 320px
+
+.carousel-wrapper
+  /* position: relative */
+  width: 320px
+  margin-right: 20px
+
+.housing-address > img,
+.housing-price > img
+  width: 25px
+  position: relative
+  top: 6px
+  margin-right: 3px
+
+@media screen and (max-width: 1000px)
+  .variant-card
+    flex-direction: column
+
+
+@media screen and (max-width: 530px)
+  .variant-card
+    flex-direction: column
+
+  .carousel-wrapper
+    /* padding: 0 */
+    width: 100%
+
+  .variant-image
+    width: 100%
+

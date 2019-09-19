@@ -1,0 +1,136 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+a
+  transition: 0.5s
+  color: #6a1b4a
+
+a:hover
+  color: #e08ab1
+
+.page-wrapper
+  margin: 15px auto
+  display: flex
+  font-family: 'Istok Web', sans-serif
+
+.success-payment
+  width: 30%
+  padding: 10px 25px
+  margin: 10px 5px 10px 20px
+  background: #e0e9eb
+  border-radius: 6px
+  box-shadow: -8px -3px 15px #97b4b8
+  text-align: center
+
+.info-payment
+  width: 70%
+  margin: 10px 20px 10px 5px
+  padding: 10px 25px
+  background: #e0e9eb
+  border-radius: 6px
+  box-shadow: 8px -3px 15px #97b4b8
+  font-size: 18px
+
+.success-payment p
+  font-size: 22px
+  color: #39ad3f
+  font-weight: bold
+
+.to-main
+  display: block
+  text-align: center
+  width: 200px
+  height: 60px
+  line-height: 60px
+  color: $btn-color
+  font-size: 26px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  margin: 15px auto 5px
+
+.to-main:hover
+  cursor: pointer
+  color: $btn-hover-color
+  background: $btn-hover-bg
+
+.info-payment h2
+  color: #6a1b4a
+
+.message
+  background: #fff2c8
+  padding: 10px
+  border-radius: 8px
+  color: #2e0c20
+  margin-bottom: 20px
+
+.message img
+  position: relative
+  top: 6px
+  margin-right: 8px
+
+.info > div
+  display: flex
+  justify-content: space-between
+
+.info > div > p:first-child
+  color: #6a1b4a
+  font-weight: bold
+
+.info > div > p:last-child
+  color: #2e0c20
+
+@media screen and (max-width: 780px)
+  .page-wrapper
+    flex-direction: column
+    margin: 0
+
+  .success-payment,
+  .info-payment
+    width: 100%
+    margin: 0 auto
+    padding: 10px 0
+    border-radius: 0
+    box-shadow: none
+
+  .success-payment
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .info-payment h2
+    text-align: center
+    margin-top: 20px
+
+  .message
+    border-radius: 0
+
+  .info
+    padding: 10px 30px
+
+
+@media screen and (max-width: 530px)
+  .success-payment img
+    width: 80px
+    margin: 20px
+
+  .success-payment p
+    font-size: 20px
+
+  .to-main
+    width: 150px
+    height: 40px
+    line-height: 40px
+    font-size: 22px
+    margin-top: 10px
+
+  .info > div
+    flex-direction: column
+
+  .message
+    margin-bottom: 0
+
+  .info > div > p:first-child
+    margin-top: 20px

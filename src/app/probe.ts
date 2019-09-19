@@ -1,1 +1,1 @@
-console.log("hey!")
+console.log('Daily app works!');

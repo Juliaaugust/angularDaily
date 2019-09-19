@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainPageWrapperComponent } from './main-page-wrapper.component';
+import { PersonalAreaComponent } from './personal-area.component';
 
-describe('MainPageWrapperComponent', () => {
-  let component: MainPageWrapperComponent;
-  let fixture: ComponentFixture<MainPageWrapperComponent>;
+describe('PersonalAreaComponent', () => {
+  let component: PersonalAreaComponent;
+  let fixture: ComponentFixture<PersonalAreaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainPageWrapperComponent ]
+      declarations: [ PersonalAreaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainPageWrapperComponent);
+    fixture = TestBed.createComponent(PersonalAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

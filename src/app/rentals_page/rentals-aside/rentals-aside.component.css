@@ -1,0 +1,41 @@
+.options-container {
+  margin: 25px 10px;
+}
+
+.option-block {
+  margin-bottom: 25px;
+  color: #2e0c20;
+  font-size: 18px;
+}
+
+.option-input {
+  width: 250px;
+  color: #2e0c20;
+  font-size: 16px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.price-option .option-input {
+  width: 88px;
+}
+
+#check-options {
+  display: none;
+}
+
+.check-options-icon {
+  display: none;
+}
+
+.select-sorting-container {
+  text-align: center;
+}
+
+.select-sorting {
+  height: 30px;
+  font-size: 16px;
+  color: #2e0c20;
+}
+/*# sourceMappingURL=rentals-aside.component.css.map */

@@ -1,0 +1,76 @@
+.page-wrapper
+  margin: 0 auto
+  padding: 10px
+  background: #e0e9eb
+  max-width: 1400px
+
+.top-info
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-end
+  position: relative
+
+.user-ava
+  width: 150px
+  border-radius: 50%
+  margin-right: 30px
+
+.username
+  font-size: 22px
+  position: absolute
+  top: 15px
+
+.lk-section
+  padding: 20px
+  margin: 20px
+  border: 1px solid #015f705d
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+  color: #2e0c20
+  h2
+    color: #6a1b4a
+    margin: 10px 0 5px
+  p
+    margin-bottom: 10px
+
+.user-input
+  width: 250px
+  color: #2e0c20
+  font-size: 16px
+  padding: 2px 5px
+  border-radius: 5px
+  border: none
+
+.save-btn
+  width: 220px
+  padding: 15px
+  color: #4D1335
+  font-size: 26px
+  line-height: 26px
+  background: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+  border: #ad807b
+  border-radius: 8px
+  margin-left: 20px
+  &:hover
+    cursor: pointer
+    color: #3d0d29
+    background: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+
+@media screen and (max-width: 530px)
+  .username
+    position: static
+    margin-bottom: 10px
+
+  .user-input
+    width: 80%
+
+  .lk-section p
+    display: flex
+    flex-direction: column
+
+  .save-btn
+    width: 150px
+    padding: 10px
+    font-size: 22px
+    line-height: 22px

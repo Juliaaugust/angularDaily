@@ -1,1 +1,20 @@
-<p>housing-card works!</p>
+<div class="variant-card">
+  <div class="carousel-wrapper">
+      <img src="../../../assets/images/housing_variants/var_0_1.jpg" alt="" class="variant-image">
+  </div>
+  <div class="housing-description">
+    <a [routerLink]="['/housing', '8']" target="_blank">
+      <h2 class="housing-name">Двухкомнатная квартира</h2>
+      <div class="housing-address">
+        <img src="../../../assets/images/icons/location.svg" alt="">
+        Москва, Старая Басманная, 5
+      </div>
+      <div class="housing-price">
+        <img src="../../../assets/images/icons/price.svg" alt="">
+        8 000 ₽ за сутки
+      </div>
+      <app-star-rating></app-star-rating>
+      <span class="review-count">4</span>
+    </a>
+  </div>
+</div>

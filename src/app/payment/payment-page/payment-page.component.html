@@ -1,0 +1,122 @@
+<main class="reservation-main">
+  <section class="reservation-section details">
+    <section class="reservation-subsection date-time">
+      <h2 role="heading" class="section-name">Дата и время</h2>
+      <section class="date-subsection arrival-subsection">
+        <span class="date-span">Заезд</span>
+        <input type="date" value="2019-08-27" class="reservation-input date-input arrival-input">
+        <select class="reservation-input date-select">
+          <option class="date-select__option">Ранний заезд</option>
+          <option class="date-select__option" selected>14:00</option>
+          <option class="date-select__option">15:00</option>
+          <option class="date-select__option">16:00</option>
+          <option class="date-select__option">17:00</option>
+          <option class="date-select__option">18:00</option>
+          <option class="date-select__option">19:00</option>
+          <option class="date-select__option">20:00</option>
+          <option class="date-select__option">21:00</option>
+          <option class="date-select__option">22:00</option>
+          <option class="date-select__option">23:00</option>
+        </select>
+      </section>
+      <section class="date-subsection departure-section">
+        <span class="date-span">Отъезд</span>
+        <input type="date" value="2019-08-29" class="reservation-input date-input departure-input">
+        <select class="reservation-input date-select">
+          <option class="date-select__option">00:00</option>
+          <option class="date-select__option">01:00</option>
+          <option class="date-select__option">02:00</option>
+          <option class="date-select__option">03:00</option>
+          <option class="date-select__option">04:00</option>
+          <option class="date-select__option">05:00</option>
+          <option class="date-select__option">06:00</option>
+          <option class="date-select__option">07:00</option>
+          <option class="date-select__option">08:00</option>
+          <option class="date-select__option">09:00</option>
+          <option class="date-select__option">10:00</option>
+          <option class="date-select__option">11:00</option>
+          <option class="date-select__option" selected="selected">12:00</option>
+          <option class="date-select__option">Поздний отъезд</option>
+        </select>
+      </section>
+    </section>
+    <section class="reservation-subsection guests">
+        <h2 role="heading" class="section-name">Состав гостей</h2>
+        <h5>Гость 1:</h5>
+        <ul class="guest-info">
+            <li class="guest-info__item">
+                <label for="guest-fio-input">ФИО:
+                  <input type="text" id="guest-fio-input" class="reservation-input guest-input" required>
+                </label>
+            </li>
+            <li class="guest-info__item">
+                <label for="guest-tel-input">Номер телефона:
+                  <input type="tel" id="guest-tel-input" class="reservation-input guest-input" required>
+                </label>
+            </li>
+            <li class="guest-info__item">
+                <label for="guest-email-input">E-mail:
+                  <input type="email" id="guest-email-input" class="reservation-input guest-input" required>
+                </label>
+            </li>
+        </ul>
+        <p class="add-guest"><span class="plus-guest">+</span> Добавить гостя</p>
+        <label for="pets"><input type="checkbox" id="pets"> С питомцами</label>
+    </section>
+    <section class="reservation-subsection target">
+      <h2 role="heading" class="section-name">Цель заезда</h2>
+      <select class="reservation-input target-select">
+        <option class="target-select__option" selected>Выбор цели</option>
+        <option class="target-select__option">Работа</option>
+        <option class="target-select__option">Отдых</option>
+        <option class="target-select__option">Вечеринка</option>
+        <option class="target-select__option">Другое</option>
+      </select>
+    </section>
+    <section class="reservation-subsection comment">
+      <h2 role="heading" class="section-name">Комментарий к бронированию</h2>
+      <textarea class="reservation-input comment-textarea" placeholder="Ваш комментарий" cols="40" rows="5"></textarea>
+    </section>
+  </section>
+  <section class="reservation-section payment">
+    <section class="reservation-subsection sum">
+      <h2 role="heading" class="section-name">Сумма заказа</h2>
+      <p>К оплате:</p>
+      <p class="sum-value">16 000 ₽</p>
+    </section>
+    <section class="reservation-subsection payment-method">
+      <h2 role="heading" class="section-name">Способ оплаты</h2>
+
+      <form class="payment-form">
+      <p>Выберете удобный Вам способ оплаты:</p>
+      <ul class="payment-list">
+        <li class="payment-list__item">
+          <label for="card">
+            <input name="payment-method" type="radio" id="card">
+          Банковская карта</label>
+          <img src="../../../assets/images/icons/payment/card.png" alt="">
+        </li>
+        <li class="payment-list__item">
+          <label for="sber">
+            <input name="payment-method" type="radio" id="sber">
+          Сбербанк oнлайн</label>
+          <img src="../../../assets/images/icons/payment/sber.png" alt="">
+        </li>
+        <li class="payment-list__item">
+          <label for="webmoney">
+            <input name="payment-method" type="radio" id="webmoney">
+          WebMoney</label>
+          <img src="../../../assets/images/icons/payment/webmoney.png" alt="">
+        </li>
+        <li class="payment-list__item">
+          <label for="ya-money">
+            <input name="payment-method" type="radio" id="ya-money">
+          Яндекс.Деньги</label>
+          <img src="../../../assets/images/icons/payment/ya-money.gif" alt="">
+        </li>
+      </ul>
+        <a class="pay-btn" [routerLink]="['/payment', 'success']">Оплатить</a>
+      </form>
+    </section>
+  </section>
+</main>

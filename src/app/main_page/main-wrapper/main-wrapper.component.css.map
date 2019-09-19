@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "main-wrapper.component.sass"
+    ],
+    "names": [],
+    "file": "main-wrapper.component.css"
+}

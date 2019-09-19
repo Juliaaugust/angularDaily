@@ -14,6 +14,15 @@
   border-radius: 5px
   border: none
 
+  &::-webkit-calendar-picker-indicator
+    color: transparent
+    opacity: 1
+    background: url(../../../assets/images/icons/calendar.svg) no-repeat center
+    background-size: contain
+
+  &::-webkit-inner-spin-button
+    display: none
+
 .price-option .option-input
   width: 88px
 
@@ -30,3 +39,53 @@
   height: 30px
   font-size: 16px
   color: #2e0c20
+
+@media screen and (max-width: 1000px)
+  .option-input
+    width: 200px
+
+  .price-option .option-input
+    display: block
+
+@media screen and (max-width: 780px)
+
+  .options-container
+    display: flex
+    flex-direction: column
+
+  .option-block
+    padding: 10px
+
+  .select-sorting-container
+    display: inline-block
+    margin-left: 30px
+
+  .check-options-icon
+    display: inline-block
+    position: relative
+    top: 8px
+    cursor: pointer
+    margin-left: 30px
+
+  .options-container
+    display: none
+
+  #check-options:checked ~ .options-container
+    display: flex
+    margin-left: 20px
+
+@media screen and (max-width: 530px)
+  .select-sorting
+    font-size: 14px
+    width: 100%
+
+  .check-options-icon
+    width: 22px
+
+  .option-block
+    font-size: 16px
+
+  .option-input
+    width: 180px
+    font-size: 14px
+

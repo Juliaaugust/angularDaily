@@ -2,8 +2,8 @@ $header-color: #dfe8ed
 $text-shadow: 1px 1px 2px #021118, 0 0 1.5em #053841
 $btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
 $btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
-$btn-color: #4D1335
-$btn-hover-color: #3d0d29
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
 $input-color: #015f70
 
 .search-section
@@ -79,12 +79,26 @@ $input-color: #015f70
   position: relative
   bottom: 27px
 
+  &::-webkit-calendar-picker-indicator
+    color: transparent
+    opacity: 1
+    background: url(../../../assets/images/icons/calendar.svg) no-repeat center
+    background-size: contain
+
+  &::-webkit-inner-spin-button
+    display: none
+
+
 .main__search-dates
   display: flex
 
 .main__search-btn
+  display: block
+  text-decoration: none
+  text-align: center
   width: 220px
   height: 70px
+  line-height: 70px
   color: $btn-color
   font-size: 26px
   background: $btn-bg
@@ -105,18 +119,6 @@ $input-color: #015f70
     width: 100%
     margin: 0
 
-  .advantages-list
-    flex-wrap: wrap
-    padding-bottom: 0
-
-  .advantages-list__item
-    position: static
-    width: 100%
-
-  .advantages-list__item:nth-child(2n-1)
-    position: static
-
-
 @media screen and (max-width: 780px)
   .search-form-content-inputs
     display: block
@@ -136,6 +138,7 @@ $input-color: #015f70
 
   .main__search-btn
     height: 55px
+    line-height: 55px
     font-size: 22px
 
   .main__input
@@ -149,23 +152,3 @@ $input-color: #015f70
   .search-section h3
     font-size: 16px
 
-  .recommend-img
-    width: 100%
-
-  .sections-container
-    padding: 0
-
-  .main-section
-    padding: 30px 15px
-    margin: 0
-    border: none
-    box-shadow: none
-
-  .advantages-list__item
-    margin: 0
-
-  .socials-list
-    margin-left: -40px
-
-  .contacts-list__item > a
-    display: block

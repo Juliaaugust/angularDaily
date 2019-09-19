@@ -1,0 +1,126 @@
+$main-bg: #e0e9eb
+$sections-bg: #fff2c8
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.reservation-main
+  margin: 0 auto
+  padding: 10px 0
+  background: $main-bg
+  max-width: 1400px
+
+.reservation-section
+  padding: 20px 30px
+  margin: 20px 30px
+  border: 1px solid #015f705d
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: $sections-bg
+  color: #2e0c20
+  font-size: 18px
+
+.section-name
+  color: #6a1b4a
+  margin-top: 20px
+  margin-bottom: 6px
+
+.date-subsection
+  margin: 10px 0
+
+.reservation-input
+  width: 150px
+  color: #2e0c20
+  font-size: 16px
+  padding: 2px 5px
+  border-radius: 5px
+  border: none
+
+.reservation-input[type="date"]
+  margin: 0 7px
+
+  &::-webkit-calendar-picker-indicator
+    color: transparent
+    opacity: 1
+    background: url(../../../assets/images/icons/calendar.svg) no-repeat center
+    background-size: contain
+
+  &::-webkit-inner-spin-button
+    display: none
+
+.guest-info .reservation-input
+  width: 250px
+
+.guests h5
+  font-size: 18px
+
+.guest-info__item
+  padding-bottom: 10px
+
+.sum-value
+  font-size: 22px
+
+.add-guest
+  cursor: pointer
+  padding: 15px 0
+  font-weight: bold
+
+.plus-guest
+  font-size: 22px
+  position: relative
+  top: 2px
+
+#pets
+  position: relative
+  bottom: 2px
+
+.comment-textarea
+  width: 50%
+  max-width: 400px
+
+.payment-list__item
+  margin: 25px 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.payment-list__item > img
+  height: 50px
+
+.pay-btn
+  display: block
+  text-align: center
+  width: 200px
+  height: 50px
+  line-height: 50px
+  color: $btn-color
+  font-size: 24px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  margin-left: 5px
+  cursor: pointer
+
+.pay-btn:hover
+    cursor: pointer
+    color: $btn-hover-color
+    background: $btn-hover-bg
+
+@media screen and (max-width: 530px)
+  .date-subsection
+    display: flex
+    flex-direction: column
+
+  .date-input
+    margin-bottom: 10px
+
+  .guest-input
+    display: block
+
+  .comment-textarea
+    width: 80%
+
+  .guest-info .reservation-input, .reservation-input
+    width: 90%
+

@@ -22,7 +22,9 @@
             </div>
         </div>
       </div>
-      <input type="submit" value="Поиск жилья" class="main__search-btn">
+      <a class="main__search-btn" [routerLink]="['/rentals']"
+      [queryParams]="{city: 'Moskow'}"
+      >Поиск жилья</a>
     </div>
   </form>
 </section>

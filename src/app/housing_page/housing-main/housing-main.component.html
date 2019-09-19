@@ -1,0 +1,182 @@
+<main class="housing-main">
+  <section class="carousel-section-wrapper">
+    <h1 role="heading" class="section-name">Двухкомнатная квартира</h1>
+    <img src="" alt="">
+    <!-- карусель -->
+    <div class="carousel">
+      <ul class="slides">
+        <li class="slide-container">
+          <div class="slide-image">
+            <!-- <img src="../../../assets/images/housing_variants/var_0_1.jpg"> -->
+          </div>
+          <div class="carousel-controls">
+            <label for="img-4" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-2" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </div> <!--carousel-->
+  </section>
+
+  <section class="short-description">
+    <div class="housing-address">
+      <img src="../../../assets/images/icons/location.svg" alt="">
+      Москва, Старая Басманная, 5
+    </div>
+    <app-star-rating></app-star-rating>
+  </section>
+
+  <section class="housing-section housing-description">
+    <h2 role="heading" class="section-name">Описание</h2>
+    <ul class="descriptions-list">
+      <li class="descriptions-list__item">
+        Жилая площадь – 70м<sup>2</sup>
+      </li>
+      <li class="descriptions-list__item">
+        6 этаж из 7, есть лифт
+      </li>
+      <li class="descriptions-list__item">
+        1 км от метро Курская
+      </li>
+      <li class="descriptions-list__item">
+        Безлимитный Wi-Fi
+      </li>
+    </ul>
+  </section>
+
+  <section class="housing-section housing-prices">
+    <h2 role="heading" class="section-name">Цены</h2>
+    <p>Стоимость указана в рублях РФ</p>
+    <div class="main-price">
+      <div class="price"><span class="price-value">8 000₽</span> за сутки</div>
+      <div class="description">включает проживание не более <span class="guest-count">6</span> гостей</div>
+    </div>
+  </section>
+
+  <section class="housing-section housing-reviews">
+      <h2 role="heading" class="section-name">Оценка и отзывы</h2>
+      <div class="rating-container">
+        <div class="rating-value-box">
+          4.2
+        </div>
+        <div>
+          <p>На основании <span class="reviews-count">2</span> отзывов</p>
+          <app-star-rating></app-star-rating>
+        </div>
+      </div> <!--rating-->
+
+      <ul class="rating-list">
+        <li class="rating-list__item">
+          <div class="rating-name">
+            Чистота
+          </div>
+          <div class="rating-value">
+            <progress class="rating__progress-bar" role="progressbar" max="5" value="4.6"></progress>
+            <label class="rating__progress-value">4.6</label>
+          </div>
+        </li>
+        <li class="rating-list__item">
+          <div class="rating-name">
+            Обслуживание
+          </div>
+          <div class="rating-value">
+            <progress class="rating__progress-bar" role="progressbar" max="5" value="3.9"></progress>
+            <label class="rating__progress-value">3.9</label>
+          </div>
+        </li>
+        <li class="rating-list__item">
+          <div class="rating-name">
+            Расположение
+          </div>
+          <div class="rating-value">
+            <progress class="rating__progress-bar" role="progressbar" max="5" value="3.8"></progress>
+            <label class="rating__progress-value">3.8</label>
+          </div>
+        </li>
+        <li class="rating-list__item">
+          <div class="rating-name">
+            Удобства
+          </div>
+          <div class="rating-value">
+            <progress class="rating__progress-bar" role="progressbar" max="5" value="4.1"></progress>
+            <label class="rating__progress-value">4.1</label>
+          </div>
+        </li>
+        <li class="rating-list__item">
+          <div class="rating-name">
+            Цена-качество
+          </div>
+          <div class="rating-value">
+            <progress class="rating__progress-bar" role="progressbar" max="5" value="4.4"></progress>
+            <label class="rating__progress-value">4.4</label>
+          </div>
+        </li>
+        <li class="rating-list__item">
+          <div class="rating-name">
+            Комфорт
+          </div>
+          <div class="rating-value">
+            <progress class="rating__progress-bar" role="progressbar" max="5" value="4.7"></progress>
+            <label class="rating__progress-value">4.7</label>
+          </div>
+        </li>
+      </ul>
+
+      <div class="reviews-container">
+          <h3 class="section-name">Отзывы гостей</h3>
+          <ul class="reviews-list">
+            <li class="reviews-list__item">
+              <div class="comment-top">
+                <div>
+                  <img src="../../../assets/images/default_avatar.png" alt="" class="guest-avatar">
+                  <p class="guest-name">Анна</p>
+                </div>
+                <div>
+                  <app-star-rating></app-star-rating>
+                  <p class="comment-date">20 мая 2018</p>
+                </div>
+              </div>
+
+              <div class="comment-text">
+                <p class="comment-header">Достоинства</p>
+                <p class="comment-guest-text">Идеально расположен для любителей ходьбы и кардионагрузок.
+                    Кухонных принадлежностей достаточно, хороший холодильник, сантехника, планировка удобная.</p>
+                <p class="comment-header">Недостатки</p>
+                <p class="comment-guest-text">Отсутсвие магазинов поблизости.</p>
+                <p class="comment-header">Комментарий</p>
+                <p class="comment-guest-text">Хорошее жилье, рекомендую.</p>
+              </div>
+              <div class="comment-imges"></div>
+            </li>
+            <li class="reviews-list__item">
+              <div class="comment-top">
+                <div>
+                  <img src="../../../assets/images/default_avatar.png" alt="" class="guest-avatar">
+                  <p class="guest-name">Олег</p>
+                </div>
+                <div>
+                  <app-star-rating></app-star-rating>
+                  <p class="comment-date">7 сентября 2018</p>
+                </div>
+              </div>
+
+              <div class="comment-text">
+                <p class="comment-header">Достоинства</p>
+                <p class="comment-guest-text">Мягкая кровать, удобная планировка.</p>
+                <p class="comment-header">Недостатки</p>
+                <p class="comment-guest-text">Мало техники, нерабочий телевизор.</p>
+                <p class="comment-header">Комментарий</p>
+                <p class="comment-guest-text">Нормально, жить можно.</p>
+              </div>
+              <div class="comment-imges"></div>
+            </li>
+          </ul>
+
+          <a *ngIf="reviewCount > 3">Читать все отзывы</a>
+      </div>
+  </section>
+</main>

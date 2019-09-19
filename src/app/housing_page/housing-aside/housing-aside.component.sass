@@ -1,0 +1,94 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.options-container,
+.reservation-btn,
+.check-options-icon
+  margin: 25px 10px
+
+.option-block
+  margin-bottom: 25px
+  color: #2e0c20
+  font-size: 18px
+
+.option-input
+  width: 250px
+  color: #2e0c20
+  font-size: 16px
+  padding: 2px 5px
+  border-radius: 5px
+  border: none
+
+  &::-webkit-calendar-picker-indicator
+    color: transparent
+    opacity: 1
+    background: url(../../../assets/images/icons/calendar.svg) no-repeat center
+    background-size: contain
+
+  &::-webkit-inner-spin-button
+    display: none
+
+#check-options
+  display: none
+
+.check-options-icon
+  display: none
+
+.reservation-btn
+  display: inline-block
+  text-align: center
+  width: 260px
+  height: 70px
+  line-height: 70px
+  color: $btn-color
+  font-size: 26px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+
+.reservation-btn:hover
+  cursor: pointer
+  color: $btn-hover-color
+  background: $btn-hover-bg
+
+@media screen and (max-width: 1000px)
+  .option-input
+    width: 200px
+
+  .reservation-btn
+    width: 210px
+
+@media screen and (max-width: 780px)
+  .housing-aside
+    padding-left: 25px
+
+  .options-container
+    display: flex
+    flex-direction: column
+
+  .options-container, .reservation-btn, .check-options-icon
+    margin: 0
+
+  .short-description,
+  h1.section-name
+    margin: 10px 30px
+
+  .check-options-icon
+    display: inline-block
+    position: relative
+    top: 6px
+    cursor: pointer
+    margin-right: 30px
+
+  .reservation-btn
+    height: 40px
+    line-height: 40px
+    font-size: 22px
+
+  .options-container
+    display: none
+
+  #check-options:checked ~ .options-container
+    display: flex

@@ -1,0 +1,23 @@
+<aside class="housing-aside">
+  <form action="./reservation.html" class="reservation-form">
+    <input type="checkbox" id="check-options">
+    <label for="check-options">
+      <img  class="check-options-icon" src="../../../assets/images/icons/settings.png" alt="Settings">
+    </label>
+    <div class="options-container">
+      <div class="city-option option-block">
+        <p class="option-name">Город:</p>
+        <input class="option-input" type="text" name="city-input" value="Москва">
+      </div>
+      <div class="arrival-option option-block">
+        <p class="option-name">Дата заезда:</p>
+        <input class="option-input" type="date" name="arrival-input">
+      </div>
+      <div class="departure-option option-block">
+        <p class="option-name">Дата отъезда:</p>
+        <input class="option-input" type="date" name="departure-input">
+      </div>
+    </div>
+    <a [routerLink]="['/payment']" class="reservation-btn">Забронировать</a>
+  </form>
+</aside>
