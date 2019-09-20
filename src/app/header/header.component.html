@@ -25,7 +25,9 @@
       </li>
     </ul>
   </nav>
-  <button *ngIf="!isAuthoriz" role="button" class="header__enter-btn">Вход</button>
+  <button *ngIf="!isAuthoriz" role="button" class="header__enter-btn" routerLink="authentication">
+    Вход
+  </button>
   <div class="header__user-info">
     <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
     <p class="header__user-name">Julia</p>

@@ -24,6 +24,7 @@ import { PaymentSuccessComponent } from './payment/payment-success/payment-succe
 import { StarRatingComponent } from './optional_components/star-rating/star-rating.component';
 import { CarouselComponent } from './optional_components/carousel/carousel.component';
 import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { PersonalAreaComponent } from './personal_area/personal-area/personal-ar
     PaymentSuccessComponent,
     StarRatingComponent,
     CarouselComponent,
-    PersonalAreaComponent
+    PersonalAreaComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,

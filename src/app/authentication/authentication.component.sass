@@ -1,0 +1,87 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.dws-wrapper
+  background-image: url('../../assets/images/authoriz_bg.jpg')
+  background-size: cover
+  background-position: top center
+  min-height: 100vh
+  overflow: hidden
+  display: flex
+  height: 100vh
+  justify-content: center
+  align-items: center
+
+.dws-form
+  background-color: #e0e9ebbd
+  padding: 10px
+  width: 380px
+  border-radius: 8px
+
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+  input:not(.recover-input)
+    display: block
+    width: 100%
+
+.tab-form
+  background-color: #fff2c8
+  display: none
+  padding: 30px 20px 20px
+  border-radius: 0 8px 8px 8px
+  &.active
+    display: block
+
+label.tab
+  color: #fff
+  font-weight: 700
+  padding: 15px
+  display: inline-block
+  border-radius: 3px 3px 0 0
+  margin-bottom: -3px
+  cursor: pointer
+  &.active
+    background-color: #fff2c8
+    color: #6a1b4a
+    border-radius: 8px 8px 0 0
+
+.input
+  font-size: 16px
+  border: none
+  padding: 12px 14px
+  box-sizing: border-box
+  margin-bottom: 22px
+  color: #2e0c20
+  border-radius: 5px
+
+a.button
+  color: $btn-color
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  font-size: 20px
+  display: block
+  text-align: center
+  line-height: 46px
+  margin-top: 30px
+  margin-bottom: 10px
+  border-radius: 5px
+  &:hover
+    color: $btn-hover-color
+    background: $btn-hover-bg
+
+.recover-input
+  position: relative
+  bottom: 2px
+
+@media screen and (max-width: 530px)
+  .dws-form
+    width: 100%
+    margin: 10px
+    font-size: 16px
+  a.button
+    font-size: 18px

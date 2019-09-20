@@ -6,6 +6,8 @@ import { RentalsWrapperComponent } from './rentals_page/rentals-wrapper/rentals-
 import { HousingWrapperComponent } from './housing_page/housing-wrapper/housing-wrapper.component';
 import { PaymentPageComponent } from './payment/payment-page/payment-page.component';
 import { PaymentSuccessComponent } from './payment/payment-success/payment-success.component';
+import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
   { path: '', component: MainWrapperComponent},
@@ -13,13 +15,10 @@ const routes: Routes = [
   { path: 'housing/:id', component: HousingWrapperComponent},
   { path: 'payment', component: PaymentPageComponent},
   { path: 'payment/:status', component: PaymentSuccessComponent},
-  // { path: '**', component: Error404Component},
-  // { path: 'payment/:status', component: AuthenticationComponent, children: [
-  //   { path: 'rentals', component: RentalsWrapperComponent},
-  //   { path: 'housing/:id', component: HousingWrapperComponent},
-  //   { path: 'payment', component: PaymentPageComponent},
-  //   { path: 'payment/:status', component: PaymentSuccessComponent},
-  // ]},
+  { path: 'authentication', component: AuthenticationComponent, children: [
+    // { path: 'area/:id', component: PersonalAreaComponent},
+  ]},
+  { path: 'area/:id', component: PersonalAreaComponent},
 ];
 
 @NgModule({

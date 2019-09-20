@@ -1,0 +1,23 @@
+<div class="dws-wrapper">
+  <div class="dws-form">
+    <label class="tab" [ngClass]="{'active': isRegistered}" (click)="changeTab()" title="Вкладка 1">
+      Авторизация
+    </label>
+    <label class="tab" [ngClass]="{'active': !isRegistered}" (click)="changeTab()" title="Вкладка 2">
+      Регистрация
+    </label>
+
+    <form class="tab-form" [ngClass]="{'active': isRegistered}">
+        <input class="input" type="email" placeholder="Введите e-mail" required>
+        <input class="input" type="password" placeholder="Введите пароль" required>
+        <a [routerLink]="['/area', 2]" class="button">Войти</a>
+    </form>
+    <form [ngClass]="{'active': !isRegistered}" class="tab-form">
+      <input class="input" type="email" placeholder="Введите e-mail адрес" required>
+      <input class="input" type="text" placeholder="Введите имя" required>
+      <input class="input" type="password" placeholder="Придумайте пароль" required>
+      <input class="input" type="password" placeholder="Повторите пароль" required>
+      <a [routerLink]="['/area', 8]" class="button">Зарегистрироваться</a>
+    </form>
+  </div>
+</div>
