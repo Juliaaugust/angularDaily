@@ -1,23 +1,149 @@
 <div class="dws-wrapper">
   <div class="dws-form">
-    <label class="tab" [ngClass]="{'active': isRegistered}" (click)="changeTab()" title="Вкладка 1">
+    <label class="tab" [ngClass]="{'active': enterTab}" (click)="changeTab()" title="Вкладка авторизации">
       Авторизация
     </label>
-    <label class="tab" [ngClass]="{'active': !isRegistered}" (click)="changeTab()" title="Вкладка 2">
+    <label class="tab" [ngClass]="{'active': !enterTab}" (click)="changeTab()" title="Вкладка регистрации">
       Регистрация
     </label>
+    <form
+      [formGroup]="authorizForm"
+      (ngSubmit)="onSubmitAuth()"
+      class="tab-form"
+      [ngClass]="{'active': enterTab}"
+    >
+      <div class="message {{message.type}}-message" *ngIf="message.text">
+        {{ message.text }}
+      </div>
+      <label for="email" class="form-label">Email</label>
+      <input
+        class="input"
+        id="email"
+        type="email"
+        placeholder="Введите e-mail"
+        formControlName="email"
+        [ngClass]="{'has-err': authorizForm.get('email').invalid && authorizForm.get('email').touched}"
+      >
+      <span
+        class="form-help-text"
+        *ngIf="authorizForm.get('email').invalid && authorizForm.get('email').touched"
+      >
+        <span *ngIf="authorizForm.get('email')['errors']['required']">Email не может быть пустым</span>
+        <span *ngIf="authorizForm.get('email')['errors']['email']">Введите корректный Email</span>
+      </span>
 
-    <form class="tab-form" [ngClass]="{'active': isRegistered}">
-        <input class="input" type="email" placeholder="Введите e-mail" required>
-        <input class="input" type="password" placeholder="Введите пароль" required>
-        <a [routerLink]="['/area', 2]" class="button">Войти</a>
+      <label for="password" class="form-label">Пароль</label>
+      <input
+        class="input"
+        id="password"
+        type="password"
+        placeholder="Введите пароль"
+        formControlName="password"
+        [ngClass]="{'has-err': authorizForm.get('password').invalid && authorizForm.get('password').touched}"
+      >
+      <span
+        class="form-help-text"
+        *ngIf="authorizForm.get('password').invalid && authorizForm.get('password').touched"
+      >Пароль должен содержать больше 5 символов</span>
+      <!-- <a [routerLink]="['/area', 2]" class="button">Войти</a> -->
+      <button
+        type="submit"
+        class="button"
+        [disabled]="authorizForm.invalid"
+        [ngClass]="{'button-disabled': authorizForm.invalid}"
+      >Войти</button>
     </form>
-    <form [ngClass]="{'active': !isRegistered}" class="tab-form">
-      <input class="input" type="email" placeholder="Введите e-mail адрес" required>
-      <input class="input" type="text" placeholder="Введите имя" required>
-      <input class="input" type="password" placeholder="Придумайте пароль" required>
-      <input class="input" type="password" placeholder="Повторите пароль" required>
-      <a [routerLink]="['/area', 8]" class="button">Зарегистрироваться</a>
+
+    <form
+      [ngClass]="{'active': !enterTab}"
+      class="tab-form"
+      [formGroup]="registrForm"
+      (ngSubmit)="onSubmitReg()"
+    >
+      <div class="message {{message.type}}-message" *ngIf="message.text">
+        {{ message.text }}
+      </div>
+      <label for="email-reg" class="form-label">Email</label>
+      <input
+        class="input"
+        id="email-reg"
+        type="email"
+        placeholder="Введите e-mail адрес"
+        formControlName="email"
+        [ngClass]="{'has-err': registrForm.get('email').invalid && registrForm.get('email').touched}"
+      >
+      <span
+        class="form-help-text"
+        *ngIf="registrForm.get('email').invalid && registrForm.get('email').touched"
+      >
+        <span *ngIf="registrForm.get('email')['errors']['required']">Email не может быть пустым</span>
+        <span *ngIf="registrForm.get('email')['errors']['email']">Введите корректный Email</span>
+      </span>
+
+      <label for="name-reg" class="form-label">Ваше имя</label>
+      <input
+        class="input"
+        id="name-reg"
+        type="text"
+        placeholder="Введите имя"
+        formControlName="name"
+        [ngClass]="{'has-err': registrForm.get('name').invalid && registrForm.get('name').touched}"
+      >
+      <span
+        class="form-help-text"
+        *ngIf="registrForm.get('name').invalid && registrForm.get('name').touched"
+      >Имя не может быть пустым!</span>
+
+      <label for="password-reg-1" class="form-label">Пароль</label>
+      <input
+        class="input"
+        id="password-reg-1"
+        type="password"
+        placeholder="Придумайте пароль"
+        formControlName="password"
+        [ngClass]="{'has-err': registrForm.get('password').invalid && registrForm.get('password').touched}"
+      >
+      <span
+        class="form-help-text"
+        *ngIf="registrForm.get('password').invalid && registrForm.get('password').touched"
+      >Пароль должен содержать больше 5 символов</span>
+
+      <label for="password-reg-1" class="form-label">Пароль (еще раз)</label>
+      <input
+        class="input"
+        id="password-reg-1"
+        type="password"
+        placeholder="Повтортие пароль"
+        formControlName="password2"
+      >
+      <!-- <span
+        class="form-help-text"
+        *ngIf="(registrForm.get('password') !== registrForm.get('password2')) && registrForm.get('password2').touched"
+      >Пароли не совпадают!</span> -->
+
+      <div class="agree-block">
+        <label for="agree">
+          <input
+            type="checkbox"
+            id="agree"
+            class="agree-input"
+            formControlName="agree"
+            [ngClass]="{'has-err': registrForm.get('agree').invalid && registrForm.get('agree').touched}"
+          >
+          Ознакомлен(а) и принимаю
+          <a href="#">условия регистрации</a>
+        </label>
+        <span
+          class="form-help-text agree-help"
+          *ngIf="registrForm.get('agree').invalid && registrForm.get('agree').touched"
+        >Необходимо согласиться с условиями регистрации</span>
+        <button
+          type="submit"
+          class="button"
+          [disabled]="registrForm.invalid"
+          [ngClass]="{'button-disabled': registrForm.invalid}"
+        >Зарегистрироваться</button>
+      </div>
     </form>
   </div>
 </div>

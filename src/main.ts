@@ -6,6 +6,8 @@ import './app/probe';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import { map } from 'rxjs/operators';
+
 if (environment.production) {
   enableProdMode();
 }

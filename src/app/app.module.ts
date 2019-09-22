@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,9 @@ import { StarRatingComponent } from './optional_components/star-rating/star-rati
 import { CarouselComponent } from './optional_components/carousel/carousel.component';
 import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+
+import { UsersService } from './common/services/users.service';
+import { AuthenticationService } from './common/services/authentication.service';
 
 
 @NgModule({
@@ -51,9 +55,11 @@ import { AuthenticationComponent } from './authentication/authentication.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UsersService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

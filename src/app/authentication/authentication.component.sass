@@ -2,6 +2,7 @@ $btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
 $btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
 $btn-color: #f3d9e8
 $btn-hover-color: #e9c5da
+$button-disable-bg: linear-gradient(0deg, #838385 0%, #a6a6a7 100%)
 
 .dws-wrapper
   background-image: url('../../assets/images/authoriz_bg.jpg')
@@ -49,6 +50,10 @@ label.tab
     color: #6a1b4a
     border-radius: 8px 8px 0 0
 
+.form-label
+  display: block
+  color: #6b3d59
+
 .input
   font-size: 16px
   border: none
@@ -58,30 +63,58 @@ label.tab
   color: #2e0c20
   border-radius: 5px
 
-a.button
+.form-help-text
+  display: block
+  font-size: 12px
+  margin-top: -20px
+  margin-bottom: 10px
+  margin-left: 5px
+  color: #ad1b3b
+
+  &.agree-help
+    margin: 5px
+
+.has-err
+  border: 1px solid #ad1b3b
+
+.button
   color: $btn-color
   background: $btn-bg
+  height: 50px
+  width: 100%
   border: #ad807b
   border-radius: 8px
   font-size: 20px
   display: block
-  text-align: center
-  line-height: 46px
-  margin-top: 30px
-  margin-bottom: 10px
+  margin: 30px auto 10px
   border-radius: 5px
   &:hover
     color: $btn-hover-color
     background: $btn-hover-bg
+    cursor: pointer
 
-.recover-input
+.button-disabled
+  background: $button-disable-bg
+  color: #fff
+  &:hover
+    background: $button-disable-bg
+    cursor: not-allowed
+    color: #fff
+
+.agree-block
+  font-size: 13px
+  color: #442739
+
+#agree
+  display: inline
+  width: 15px
   position: relative
-  bottom: 2px
+  bottom: 1px
 
 @media screen and (max-width: 530px)
   .dws-form
     width: 100%
     margin: 10px
     font-size: 16px
-  a.button
+  .button
     font-size: 18px
