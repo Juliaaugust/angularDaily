@@ -78,6 +78,7 @@
       >
         <span *ngIf="registrForm.get('email')['errors']['required']">Email не может быть пустым</span>
         <span *ngIf="registrForm.get('email')['errors']['email']">Введите корректный Email</span>
+        <span *ngIf="registrForm.get('email')['errors']['forbiddenEmail']">Данный Email уже занят</span>
       </span>
 
       <label for="name-reg" class="form-label">Ваше имя</label>

@@ -4,77 +4,92 @@
       "name": "Ольга",
       "email": "olga@gmail.com",
       "password": "admolga",
-      "role": "admin",
-      "id": 1
+      "role": "администратор",
+      "id": 1,
+      "registrDate": "Mon Sep 23 2019",
+      "gender": "female",
+      "country": "Россия",
+      "city": "Москва",
+      "tel": "+7-911-345-87-91"
     },
     {
       "name": "Виктор",
       "email": "viktor@gmail.com",
       "password": "mypass",
-      "role": "landlord",
-      "id": 2
+      "role": "арендодатель",
+      "id": 2,
+      "registrDate": "Mon Sep 23 2019",
+      "gender": "male",
+      "country": "Германия",
+      "city": "Дрезден",
+      "tel": "+49-17-426-16-55"
     },
     {
-      "name": "Анна",
+      "name": "Иванова Анна Игоревна",
       "email": "anna@gmail.com",
       "password": "12345",
-      "role": "client",
-      "id": 3
+      "role": "клиент",
+      "id": 3,
+      "registrDate": "Mon Sep 23 2019",
+      "gender": "female",
+      "country": "Германия",
+      "city": "Дрезден",
+      "tel": "+49-17-426-16-55"
     },
     {
-      "name": "Олег",
+      "name": "Петров Олег",
       "email": "oleg@gmail.com",
       "password": "qwerty",
-      "role": "client",
-      "id": 4
+      "role": "клиент",
+      "id": 4,
+      "registrDate": "Mon Sep 23 2019",
+      "gender": "other",
+      "country": "Бельгия",
+      "city": "Брюссель",
+      "tel": "+49-17-426-16-55"
     },
     {
-      "email": "anny555@gmail.com",
-      "password": "12345",
-      "name": "Анна",
+      "email": "masha@mail.ru",
+      "password": "112233",
+      "name": "Кошкина Маша",
       "id": 5
     },
     {
-      "email": "anny555@gmail.com",
+      "email": "masha2@mail.ru",
       "password": "12345",
-      "name": "Анна",
+      "name": "Гномова Мария",
       "id": 6
     },
     {
-      "email": "anny555@gmail.com",
+      "email": "masha3@mail.ru",
       "password": "12345",
-      "name": "Анна",
+      "name": "Кошкина Мария",
+      "role": "Mon Sep 23 2019",
       "id": 7
     },
     {
-      "email": "masha@mail.ru",
-      "password": "eeeee",
-      "name": "Мария",
+      "email": "anny585@gmail.com",
+      "password": "22222",
+      "name": "Гульцева Юлия Алекссевна",
+      "role": "клиент",
+      "registrDate": "Mon Sep 23 2019",
       "id": 8
     },
     {
-      "email": "anny555@gmail.com",
-      "password": "123444",
-      "name": "Анна",
+      "email": "anny5885@gmail.com",
+      "password": "22222",
+      "name": "Гульцева Юлия Алекссевна",
+      "role": "клиент",
+      "registrDate": "Mon Sep 23 2019",
       "id": 9
     },
     {
-      "email": "anny555@gmail.com",
-      "password": "12345",
-      "name": "Анна",
+      "email": "qqqwww@mail.ru",
+      "password": "qwerty",
+      "name": "Гномова Мария",
+      "role": "клиент",
+      "registrDate": "Mon Sep 23 2019",
       "id": 10
-    },
-    {
-      "email": "masha@mail.ru",
-      "password": "12333",
-      "name": "ccc",
-      "id": 11
-    },
-    {
-      "email": "masha@mail.ru",
-      "password": "22222",
-      "name": "333",
-      "id": 12
     }
   ],
   "housing": [

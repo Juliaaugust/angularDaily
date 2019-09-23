@@ -3,20 +3,21 @@
         <img src="../../../assets/images/default_avatar.png" class="user-ava" alt="">
 
         <div class="short-info">
-            <div class="username">
-                <span class="name">Иванова</span>
-                <span class="surname">Анна</span>
-                <span class="patronymic"></span>
-            </div>
-            <div class="role">
-                <p>Роль в системе: <span class="role-value">клиент</span></p>
-            </div>
-            <div class="regist-date">
-                <p>Дата регистрации: <span class="regist-date-value">18.08.2019</span></p>
-            </div>
-            <div class="timezone">
-                <p>Часовой пояс: <span class="timezone-value">UTC +03:00</span></p>
-            </div>
+          <div class="username">
+              {{ surname }} {{ name }} {{ patronymic }}
+              <!-- <span class="surname">{{ surname }}</span>
+              <span class="">{{ name }}</span>
+              <span class="">{{ patronymic }}</span> -->
+          </div>
+          <div class="role">
+              <p>Роль в системе: <span class="role-value">{{ user.role }}</span></p>
+          </div>
+          <div class="regist-date">
+              <p>Дата регистрации: <span class="regist-date-value">{{ user.registrDate }}</span></p>
+          </div>
+          <div class="timezone">
+              <p>Часовой пояс: <span class="timezone-value">{{ date | date:'ZZZZ' }}</span></p>
+          </div>
         </div>
 
     </section>
@@ -25,36 +26,36 @@
         <h2 role="header">Личные данные</h2>
         <p>
             <label for="surname-input">Фамилия:</label>
-            <input type="text" id="surname-input" class="user-input" value="Иванова">
+            <input type="text" id="surname-input" class="user-input" [(ngModel)]="surname">
         </p>
 
         <p>
             <label for="name-input">Имя:</label>
-            <input type="text" id="name-input" class="user-input" value="Анна">
+            <input type="text" id="name-input" class="user-input" [(ngModel)]="name">
         </p>
 
         <p>
             <label for="patronymic-input">Отчество:</label>
-            <input type="text" id="patronymic-input" class="user-input" value="">
+            <input type="text" id="patronymic-input" class="user-input" [(ngModel)]="patronymic">
         </p>
 
         <p>
             <label>Пол:</label>
             <select class="sex-select user-input">
-                <option class="sex-select__option" selected>Женский</option>
-                <option class="sex-select__option">Мужской</option>
-                <option class="sex-select__option">Другой</option>
+                <option class="sex-select__option" [selected]="user.gender === 'female'">Женский</option>
+                <option class="sex-select__option" [selected]="user.gender === 'male'">Мужской</option>
+                <option class="sex-select__option" [selected]="user.gender === 'other'">Другой</option>
             </select>
         </p>
 
         <p>
             <label for="country-input">Страна проживания:</label>
-            <input type="text" id="country-input" class="user-input" value="Россия">
+            <input type="text" id="country-input" class="user-input" [(ngModel)]="user.country">
         </p>
 
         <p>
             <label for="city-input">Город проживания:</label>
-            <input type="text" id="city-input" class="user-input" value="Санкт-Петербург">
+            <input type="text" id="city-input" class="user-input" [(ngModel)]="user.city">
         </p>
     </section>
 
@@ -64,12 +65,12 @@
 
         <p>
             <label for="tel-input">Телефон:</label>
-            <input type="text" id="tel-input" class="user-input" value="89217482260">
+            <input type="text" id="tel-input" class="user-input" [(ngModel)]="user.tel">
         </p>
 
         <p>
             <label for="email-input">Email:</label>
-            <input type="email" id="email-input" class="user-input" value="guliaaugust96@gmail.com">
+            <input type="email" id="email-input" class="user-input" [(ngModel)]="user.email">
         </p>
     </section>
 
@@ -92,5 +93,5 @@
         </p>
     </section>
 
-    <button type="button" class="save-btn">Сохранить изменения</button>
+    <button type="button" class="save-btn" (click)="saveChanges()">Сохранить изменения</button>
 </div>

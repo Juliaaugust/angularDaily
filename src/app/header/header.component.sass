@@ -76,9 +76,46 @@ a
   box-shadow: 0 0 10px #6a1b4a91
   transition: 0.5s
 
+// header for user
+
+.header__user-container
+  display: flex
+
+.btndown
+  cursor: pointer
+
+.dropdown
+  position: relative
+  display: inline-block
+
+.wrapdown
+  display: none
+  position: absolute
+  background: linear-gradient(0deg, #58324a 0%, #7e4b6a 100%)
+  min-width: 170px
+  right: 0
+  border-radius: 5px
+
+  a
+    color: #f8d0a3
+    padding: 10px
+    display: block
+
+    &:hover
+      background: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+      color: #3d0d29
+
+.dropdown:hover
+  .wrapdown
+    display: block
+
+  .header__user-name
+    color: #c9759b
+
 .header__user-photo
   height: 40px
   border-radius: 50%
+  margin-right: 10px
 
 .header__user-name
   display: inline-block
@@ -86,9 +123,8 @@ a
   position: relative
   bottom: 10px
 
-.header__user-info
-  display: none
-
+// .header__user-info
+//   display: none
 
 @media screen and (max-width: 1000px)
   .main-navigation

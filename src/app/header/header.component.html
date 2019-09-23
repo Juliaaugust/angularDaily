@@ -28,8 +28,22 @@
   <button *ngIf="!isAuthoriz" role="button" class="header__enter-btn" routerLink="authentication">
     Вход
   </button>
-  <div class="header__user-info">
+  <div *ngIf="isAuthoriz" class="header__user-container">
+    <div class="dropdown">
+      <div class="user btndown">
+        <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
+        <p class="header__user-name">{{ user.name }}</p>
+      </div>
+      <ul class="wrapdown">
+        <li><a [routerLink]="['/area', 1]">Личный кабинет</a></li>
+        <li><a [routerLink]="['/']">Мои бронирования</a></li>
+        <li><a [routerLink]="['/']">К поиску жилья</a></li>
+        <li><a (click)="signOut()">Выйти</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="header__user-info">
     <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
     <p class="header__user-name">Julia</p>
-  </div>
+  </div> -->
 </header>

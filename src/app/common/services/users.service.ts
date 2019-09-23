@@ -19,4 +19,12 @@ export class UsersService {
   createNewUser(user: User) {
     return this.http.post('http://localhost:3000/users', user);
   }
+
+  changeUserParams(user: User, username: string, country: string , city: string) {
+    user.name = username;
+    user.country = country;
+    user.city = city;
+
+    return this.http.put(`http://localhost:3000/users/${user.id}`, user);
+  }
 }

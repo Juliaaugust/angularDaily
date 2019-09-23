@@ -44,7 +44,7 @@ export class AuthenticationComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(5)])
     });
     this.registrForm = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
+      email: new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails.bind(this)),
       name: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required, Validators.minLength(5)]),
       password2: new FormControl(null, [Validators.required, Validators.minLength(5)]),
@@ -63,19 +63,21 @@ export class AuthenticationComponent implements OnInit {
             this.message.text = '';
             window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
-            // this.router.navigate(['']);
+            this.router.navigate(['/area', user.id]);
           } else {
-            this.showMessage('Пароль неверный!');
+            this.showMessage('Пароль неверный!', 'error');
           }
         } else {
-          this.showMessage('Такого пользователя не существует!');
+          this.showMessage('Такого пользователя не существует!', 'error');
         }
       });
   }
 
   onSubmitReg() {
     const {email, password, name} = this.registrForm.value;
-    const user = new User(email, password, name);
+    const registrDate = new Date().toDateString();
+    const role = 'клиент';
+    const user = new User(email, password, name, role, registrDate);
 
     console.log(this.registrForm);
     if (this.registrForm.value.agree === true) {
@@ -84,17 +86,27 @@ export class AuthenticationComponent implements OnInit {
         this.userService.createNewUser(user)
         .subscribe((user: User) => {
           console.log(user);
+          this.authService.login();
           this.router.navigate(['/area', user.id]);
         });
       } else {
-        this.message.text = 'Пароли не совпадают!';
-        this.message.type = 'error';
+        this.showMessage('Пароли не совпадают!', 'error');
       }
     } else {
-      this.message.text = 'Необходимо согласиться с условиями регистрации';
-      this.message.type = 'error';
+      this.showMessage('Необходимо согласиться с условиями регистрации', 'error');
     }
-
   }
 
+  forbiddenEmails(control: FormControl) {
+    return new Promise((resolve, reject) => {
+      this.userService.getUserByEmail(control.value)
+        .subscribe((user: User) => {
+          if (user) {
+            return resolve({forbiddenEmail: true});
+          } else {
+            return resolve(null);
+          }
+        });
+    });
+  }
 }
