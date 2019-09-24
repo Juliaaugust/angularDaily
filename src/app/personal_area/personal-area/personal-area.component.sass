@@ -1,3 +1,8 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
 .page-wrapper
   margin: 0 auto
   padding: 10px
@@ -33,6 +38,8 @@
     margin: 10px 0 5px
   p
     margin-bottom: 10px
+  label
+    margin-right: 10px
 
 .user-input
   width: 250px
@@ -43,19 +50,18 @@
   border: none
 
 .save-btn
-  width: 220px
   padding: 15px
-  color: #4D1335
+  color: $btn-color
   font-size: 26px
   line-height: 26px
-  background: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+  background: $btn-bg
   border: #ad807b
   border-radius: 8px
-  margin-left: 20px
+  margin-top: 20px
   &:hover
     cursor: pointer
-    color: #3d0d29
-    background: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+    color: $btn-hover-color
+    background: $btn-hover-bg
 
 @media screen and (max-width: 530px)
   .username
@@ -70,7 +76,6 @@
     flex-direction: column
 
   .save-btn
-    width: 150px
     padding: 10px
     font-size: 22px
     line-height: 22px

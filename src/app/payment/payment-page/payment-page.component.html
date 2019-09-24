@@ -1,10 +1,14 @@
 <main class="reservation-main">
   <section class="reservation-section details">
+    <section class="reservation-subsection housing">
+        <h2 role="heading" class="section-name">Арендуемое помещение</h2>
+        <a class="housing-link" [routerLink]="['/housing', 2]" target="_blank">Двухкомнатная квартира</a>
+    </section>
     <section class="reservation-subsection date-time">
       <h2 role="heading" class="section-name">Дата и время</h2>
       <section class="date-subsection arrival-subsection">
         <span class="date-span">Заезд</span>
-        <input type="date" value="2019-08-27" class="reservation-input date-input arrival-input">
+        <input type="date" value="2019-08-27" class="reservation-input date-input arrival-input" disabled>
         <select class="reservation-input date-select">
           <option class="date-select__option">Ранний заезд</option>
           <option class="date-select__option" selected>14:00</option>
@@ -21,7 +25,7 @@
       </section>
       <section class="date-subsection departure-section">
         <span class="date-span">Отъезд</span>
-        <input type="date" value="2019-08-29" class="reservation-input date-input departure-input">
+        <input type="date" value="2019-08-29" class="reservation-input date-input departure-input" disabled>
         <select class="reservation-input date-select">
           <option class="date-select__option">00:00</option>
           <option class="date-select__option">01:00</option>

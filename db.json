@@ -68,12 +68,15 @@
       "id": 7
     },
     {
-      "email": "anny585@gmail.com",
+      "email": "anny5885@gmail.com",
       "password": "22222",
-      "name": "Гульцева Юлия Алекссевна",
+      "name": "Гульцеваaa Юлия Алекссевна",
       "role": "клиент",
       "registrDate": "Mon Sep 23 2019",
-      "id": 8
+      "id": 8,
+      "country": "ggg",
+      "city": "Москв",
+      "tel": "huh"
     },
     {
       "email": "anny5885@gmail.com",

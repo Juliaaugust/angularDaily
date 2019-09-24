@@ -34,16 +34,34 @@ export class PersonalAreaComponent implements OnInit {
     }
   }
 
-  saveChanges() {
+  savePersonalChanges() {
     const country = this.user.country;
     const city = this.user.city;
     const username = `${this.surname} ${this.name} ${this.patronymic}`;
 
-    this.userService.changeUserParams(this.user, username, country, city)
+    this.userService.changePersonalUserParams(this.user, username, country, city)
       .subscribe(data => {
-        console.log(data);
+        // console.log(data);
       });
+  }
 
+  saveContactsChanges() {
+    const email = this.user.email;
+    const tel = this.user.tel;
+
+    this.userService.changeContactsUserParams(this.user, tel, email)
+      .subscribe(data => {
+        // console.log(data);
+      });
+  }
+
+  savePasswordChanges() {
+    const password = this.user.password;
+
+    this.userService.changeUserPassword(this.user, password)
+      .subscribe(data => {
+        // console.log(data);
+      });
   }
 
 }

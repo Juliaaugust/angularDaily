@@ -20,10 +20,23 @@ export class UsersService {
     return this.http.post('http://localhost:3000/users', user);
   }
 
-  changeUserParams(user: User, username: string, country: string , city: string) {
+  changePersonalUserParams(user: User, username: string, country: string, city: string) {
     user.name = username;
     user.country = country;
     user.city = city;
+
+    return this.http.put(`http://localhost:3000/users/${user.id}`, user);
+  }
+
+  changeContactsUserParams(user: User, tel: string, email: string) {
+    user.email = email;
+    user.tel = tel;
+
+    return this.http.put(`http://localhost:3000/users/${user.id}`, user);
+  }
+
+  changeUserPassword(user: User, password: string) {
+    user.password = password;
 
     return this.http.put(`http://localhost:3000/users/${user.id}`, user);
   }
