@@ -9,9 +9,10 @@ export class HousingMainComponent implements OnInit {
 
   constructor() { }
 
-  reviewCount: number; // количество отзывов гостей
-
   ngOnInit() {
   }
+
+
+
 
 }

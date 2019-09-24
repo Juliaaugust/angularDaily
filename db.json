@@ -53,46 +53,6 @@
       "password": "112233",
       "name": "Кошкина Маша",
       "id": 5
-    },
-    {
-      "email": "masha2@mail.ru",
-      "password": "12345",
-      "name": "Гномова Мария",
-      "id": 6
-    },
-    {
-      "email": "masha3@mail.ru",
-      "password": "12345",
-      "name": "Кошкина Мария",
-      "role": "Mon Sep 23 2019",
-      "id": 7
-    },
-    {
-      "email": "anny5885@gmail.com",
-      "password": "22222",
-      "name": "Гульцеваaa Юлия Алекссевна",
-      "role": "клиент",
-      "registrDate": "Mon Sep 23 2019",
-      "id": 8,
-      "country": "ggg",
-      "city": "Москв",
-      "tel": "huh"
-    },
-    {
-      "email": "anny5885@gmail.com",
-      "password": "22222",
-      "name": "Гульцева Юлия Алекссевна",
-      "role": "клиент",
-      "registrDate": "Mon Sep 23 2019",
-      "id": 9
-    },
-    {
-      "email": "qqqwww@mail.ru",
-      "password": "qwerty",
-      "name": "Гномова Мария",
-      "role": "клиент",
-      "registrDate": "Mon Sep 23 2019",
-      "id": 10
     }
   ],
   "housing": [

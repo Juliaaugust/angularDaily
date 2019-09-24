@@ -29,6 +29,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 
 import { UsersService } from './common/services/users.service';
 import { AuthenticationService } from './common/services/authentication.service';
+import { HousingService } from './common/services/housing.service';
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { AuthenticationService } from './common/services/authentication.service'
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UsersService, AuthenticationService],
+  providers: [UsersService, AuthenticationService, HousingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

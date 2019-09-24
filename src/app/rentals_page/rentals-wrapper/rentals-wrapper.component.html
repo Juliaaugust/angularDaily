@@ -3,12 +3,16 @@
 
   <main class="rentals-main">
       <div class="variants-count">
-          Найдено вариантов: <span class="variants-count">3</span>
+          Найдено вариантов: <span class="variants-count"> {{ housings.length }}</span>
       </div>
       <div class="all-variants">
         <ul class="variants-list">
           <li class="variants-list__item">
-            <app-housing-card class="variant-card"></app-housing-card>
+            <app-housing-card
+              class="variant-card"
+              *ngFor="let h of housings"
+              [housing]="h"
+            ></app-housing-card>
           </li>
         </ul>
       </div>
