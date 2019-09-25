@@ -11,7 +11,6 @@ import { UsersService } from 'src/app/common/services/users.service';
 export class PersonalAreaComponent implements OnInit {
 
   user: User;
-  date = new Date().toDateString();
 
   name = '';
   surname = '';
@@ -20,7 +19,6 @@ export class PersonalAreaComponent implements OnInit {
   constructor(private userService: UsersService) { }
 
   ngOnInit() {
-    console.log(this.date);
     this.user = JSON.parse(window.localStorage.getItem('user'));
     const usernameArr = this.user.name.split(' ');
     if (usernameArr.length === 1) {

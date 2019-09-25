@@ -1,6 +1,6 @@
 <header class="main-header">
   <div class="header__logo">
-      <a href="index.html"><img src="../../assets/images/logo.png" alt="DAILY"></a>
+      <a routerLink="/"><img src="../../assets/images/logo.png" alt="DAILY"></a>
   </div>
   <input type="checkbox" id="menu-checkbox">
   <nav role="navigation">
@@ -9,39 +9,48 @@
     <ul class="main-navigation">
       <li class="main-navigation__item">
         <img src="../../assets/images/icons/search.svg" alt="" class="nav-icon">
-        <a href="index.html#main-search">Поиск</a>
+        <a routerLink="/">Поиск</a>
       </li>
       <li class="main-navigation__item">
         <img src="../../assets/images/icons/recommend.svg" alt="" class="nav-icon">
-        <a href="index.html#main-recommend">Рекомедации</a>
+        <a routerLink="/">Гарантии</a>
       </li>
       <li class="main-navigation__item">
         <img src="../../assets/images/icons/advantages.svg" alt="" class="nav-icon">
-        <a href="index.html#main-advantages">Преимущества</a>
+        <a routerLink="/">Поддержка</a>
       </li>
       <li class="main-navigation__item last-nav-li">
         <img src="../../assets/images/icons/contacts.svg" alt="" class="nav-icon">
-        <a href="index.html#main-contacts">Контакты</a>
+        <a routerLink="/">Контакты</a>
       </li>
     </ul>
   </nav>
-  <button *ngIf="!isAuthoriz" role="button" class="header__enter-btn" routerLink="authentication">
+  <button
+  *ngIf="!isAuthoriz;
+  else headerUser"
+  role="button"
+  class="header__enter-btn"
+  (click)="openAuthPage()">
     Вход
   </button>
-  <div *ngIf="isAuthoriz" class="header__user-container">
-    <div class="dropdown">
-      <div class="user btndown">
-        <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
-        <p class="header__user-name">{{ user.name }}</p>
+
+  <ng-template #headerUser>
+    <div class="header__user-container">
+      <div class="dropdown">
+        <div class="user btndown">
+          <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
+          <p class="header__user-name">{{ user.name }}</p>
+        </div>
+        <ul class="wrapdown">
+          <li><a [routerLink]="['/area', user.id]">Личный кабинет</a></li>
+          <li><a [routerLink]="['/']">Мои бронирования</a></li>
+          <li><a [routerLink]="['/']">К поиску жилья</a></li>
+          <li><a (click)="signOut()">Выйти</a></li>
+        </ul>
       </div>
-      <ul class="wrapdown">
-        <li><a [routerLink]="['/area', user.id]">Личный кабинет</a></li>
-        <li><a [routerLink]="['/']">Мои бронирования</a></li>
-        <li><a [routerLink]="['/']">К поиску жилья</a></li>
-        <li><a (click)="signOut()">Выйти</a></li>
-      </ul>
     </div>
-  </div>
+  </ng-template>
+
   <!-- <div class="header__user-info">
     <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
     <p class="header__user-name">Julia</p>

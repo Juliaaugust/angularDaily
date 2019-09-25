@@ -5,8 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './common/components/header/header.component';
+import { FooterComponent } from './common/components/footer/footer.component';
 import { MainWrapperComponent } from './main_page/main-wrapper/main-wrapper.component';
 import { MainSearchComponent } from './main_page/main-search/main-search.component';
 import { MainSectionsComponent } from './main_page/main-sections/main-sections.component';
@@ -22,8 +22,7 @@ import { HousingMainComponent } from './housing_page/housing-main/housing-main.c
 import { PaymentPageComponent } from './payment/payment-page/payment-page.component';
 import { PaymentSuccessComponent } from './payment/payment-success/payment-success.component';
 
-import { StarRatingComponent } from './optional_components/star-rating/star-rating.component';
-import { CarouselComponent } from './optional_components/carousel/carousel.component';
+import { StarRatingComponent } from './common/components/star-rating/star-rating.component';
 import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 
@@ -37,6 +36,7 @@ import { HousingService } from './common/services/housing.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    StarRatingComponent,
     MainWrapperComponent,
     MainSearchComponent,
     MainSectionsComponent,
@@ -48,8 +48,6 @@ import { HousingService } from './common/services/housing.service';
     HousingWrapperComponent,
     PaymentPageComponent,
     PaymentSuccessComponent,
-    StarRatingComponent,
-    CarouselComponent,
     PersonalAreaComponent,
     AuthenticationComponent
   ],

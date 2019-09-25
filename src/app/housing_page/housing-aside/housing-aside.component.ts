@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-housing-aside',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HousingAsideComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  rentHouse() {
+    this.id = +this.route.snapshot.params.id;
+    console.log(this.id);
+    this.router.navigate(['/payment', this.id]);
+    // проверка на авторизацию
+    // проверка на заполнение дат
   }
 
 }

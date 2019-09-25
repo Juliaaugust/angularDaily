@@ -31,7 +31,7 @@ export class AuthenticationComponent implements OnInit {
     this.message = new Message(type, text);
     window.setTimeout(() => {
       this.message.text = '';
-    }, 3000);
+    }, 2000);
   }
   changeTab() {
     this.enterTab = !this.enterTab;
@@ -83,9 +83,9 @@ export class AuthenticationComponent implements OnInit {
     if (this.registrForm.value.agree === true) {
       if (this.registrForm.value.password === this.registrForm.value.password2) {
         this.message.text = '';
+        window.localStorage.setItem('user', JSON.stringify(user));
         this.userService.createNewUser(user)
-        .subscribe((user: User) => {
-          console.log(user);
+        .subscribe(() => {
           this.authService.login();
           this.router.navigate(['/area', user.id]);
         });

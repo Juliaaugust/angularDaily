@@ -13,11 +13,9 @@ const routes: Routes = [
   { path: '', component: MainWrapperComponent},
   { path: 'rentals', component: RentalsWrapperComponent},
   { path: 'housing/:id', component: HousingWrapperComponent},
-  { path: 'payment', component: PaymentPageComponent},
-  { path: 'payment/:status', component: PaymentSuccessComponent},
-  { path: 'authentication', component: AuthenticationComponent, children: [
-    // { path: 'area/:id', component: PersonalAreaComponent},
-  ]},
+  { path: 'payment/:id', component: PaymentPageComponent},
+  { path: 'payment/:id/:status', component: PaymentSuccessComponent},
+  { path: 'authentication', component: AuthenticationComponent},
   { path: 'area/:id', component: PersonalAreaComponent},
 ];
 
