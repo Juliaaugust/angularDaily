@@ -1,25 +1,36 @@
 <main class="housing-main">
   <section class="carousel-section-wrapper">
     <h1 role="heading" class="section-name">{{ houseInfo.name }}</h1>
-    <img src="" alt="">
+    <ul class="carousel-wrapper">
+      <!-- <app-carousel></app-carousel> -->
+      <!-- <div class="carousel"> -->
+        <!-- <ul class="slides"> -->
+            <input type="radio" name="radio-buttons" id="img-1" checked />
+            <li class="slide-container" *ngFor="let ph of houseInfo.photos">
+                <div class="slide-image">
+                  <img [src]="ph.src">
+                </div>
+                <div class="carousel-controls">
+                    <label for="img-4" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-2" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+            <div class="carousel-dots">
+                <label *ngFor="let ph of houseInfo.photos" for="img-1" class="carousel-dot" id="img-dot-1"></label>
+            </div>
+        <!-- </ul> -->
+      <!-- </div> -->
+    </ul>
+
     <!-- карусель -->
-    <div class="carousel">
-      <ul class="slides">
-        <li class="slide-container">
-          <div class="slide-image">
-            <!-- <img src="../../../assets/images/housing_variants/var_0_1.jpg"> -->
-          </div>
-          <div class="carousel-controls">
-            <label for="img-4" class="prev-slide">
-              <span>&lsaquo;</span>
-            </label>
-            <label for="img-2" class="next-slide">
-              <span>&rsaquo;</span>
-            </label>
-          </div>
-        </li>
-      </ul>
-    </div> <!--carousel-->
+
+
+
+    <!-- carousel -->
   </section>
 
   <section class="short-description">
@@ -59,14 +70,13 @@
       </div> <!--rating-->
 
       <ul class="rating-list">
-        <li class="rating-list__item"
-        *ngFor="let ratingName of houseInfo.rating.names; let ratingVal of houseInfo.rating.values">
+        <li class="rating-list__item" *ngFor="let rat of houseInfo.rating">
           <div class="rating-name">
-              {{ ratingName }}
+              {{ rat.name }}
           </div>
           <div class="rating-value">
-            <progress class="rating__progress-bar" role="progressbar" max="5" value="4.6"></progress>
-            <label class="rating__progress-value">{{ ratingVal }}</label>
+            <progress class="rating__progress-bar" role="progressbar" max="5" [value]="rat.value"></progress>
+            <label class="rating__progress-value">{{ rat.value }}</label>
           </div>
         </li>
       </ul>

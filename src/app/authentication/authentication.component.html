@@ -117,10 +117,10 @@
         placeholder="Повтортие пароль"
         formControlName="password2"
       >
-      <!-- <span
+      <span
         class="form-help-text"
-        *ngIf="(registrForm.get('password') !== registrForm.get('password2')) && registrForm.get('password2').touched"
-      >Пароли не совпадают!</span> -->
+        *ngIf="registrForm.get('password2').invalid && registrForm.get('password2').touched"
+      >Пароль должен содержать больше 5 символов</span>
 
       <div class="agree-block">
         <label for="agree">

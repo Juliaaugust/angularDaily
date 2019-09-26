@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +30,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { UsersService } from './common/services/users.service';
 import { AuthenticationService } from './common/services/authentication.service';
 import { HousingService } from './common/services/housing.service';
+import { CarouselComponent } from './common/components/carousel/carousel.component';
 
 
 @NgModule({
@@ -49,10 +51,12 @@ import { HousingService } from './common/services/housing.service';
     PaymentPageComponent,
     PaymentSuccessComponent,
     PersonalAreaComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
+    // BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

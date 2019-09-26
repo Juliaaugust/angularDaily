@@ -4,11 +4,13 @@
 
 .housing-address > img
   width: 25px
+  height: 25px
   position: relative
   top: 6px
 
 .short-description
   margin-bottom: 20px
+  margin-top: 20px
 
 .housing-section
   padding: 10px 30px
@@ -84,6 +86,132 @@
   font-weight: bold
   margin: 10px 0 0
 
+
+// CAROUSEL
+
+.carousel-wrapper
+  height: 600px
+  width: 800px
+  margin: 0 auto
+  position: relative
+  display: block
+  // margin: 0 auto
+  // padding: 0
+  // overflow: hidden
+
+.carousel-wrapper input
+  display: none
+
+.slide-container
+  display: block
+
+.slide-image
+  display: block
+  position: absolute
+  height: 100%
+  width: 90%
+  top: 0
+  opacity: 0
+  transition: all .7s ease-in-out
+
+  img
+    width: auto
+    max-height: 100%
+    position: absolute
+    left: 0
+    right: 0
+
+.carousel-controls
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 2
+  font-size: 80px
+  line-height: 600px
+  color: #fff
+
+  label
+    display: none
+    position: absolute
+    padding: 0 20px
+    opacity: 0
+    transition: opacity .2s
+    cursor: pointer
+
+.slide-image:hover + .carousel-controls label
+  opacity: 0.5
+
+.carousel-controls
+  label:hover
+    opacity: 1
+
+  .prev-slide
+    width: 50%
+    text-align: left
+    left: 0
+
+  .next-slide
+    width: 50%
+    text-align: right
+    right: 0
+
+.carousel-dots
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 20px
+  z-index: 9
+  text-align: center
+
+  .carousel-dot
+    display: inline-block
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-color: #fff
+    opacity: 0.5
+    margin: 10px
+
+input
+  &:checked + .slide-container
+    .slide-image
+      opacity: 1
+      transform: scale(1)
+      transition: opacity 1s ease-in-out
+
+    .carousel-controls label
+      display: block
+
+  &#img-1:checked ~ .carousel-dots label#img-dot-1, &#img-2:checked ~ .carousel-dots label#img-dot-2, &#img-3:checked ~ .carousel-dots label#img-dot-3, &#img-4:checked ~ .carousel-dots label#img-dot-4
+    opacity: 1
+
+  &:checked + .slide-container .nav label
+    display: block
+
+
+@media screen and (max-width: 1225px)
+  .carousel-wrapper
+    height: 400px
+    width: 600px
+
+  .carousel-controls
+    line-height: 400px
+
+@media screen and (max-width: 1000px)
+  .carousel-wrapper
+    height: 250px
+    width: 400px
+
+  .carousel-controls
+    line-height: 250px
+    font-size: 50px
+
+  .carousel-dots .carousel-dot
+    width: 20px
+    height: 20px
+
+
 @media screen and (max-width: 780px)
   .housing-section
     border-radius: 0
@@ -94,3 +222,7 @@
 
   .housing-main
     padding-top: 0
+
+  .carousel-dots .carousel-dot
+    width: 15px
+    height: 15px

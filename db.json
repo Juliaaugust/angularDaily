@@ -100,27 +100,22 @@
         "street": "Старая Басманная",
         "house": 5
       },
-      "photos": [],
+      "photos": [
+        {"id": "img-1", "src": "../../../assets/images/housing_variants/var_1_1.jpg"},
+        {"id": "img-2", "src": "../../../assets/images/housing_variants/var_1_2.jpg"},
+        {"id": "img-3", "src": "../../../assets/images/housing_variants/var_2_1.jpg"},
+        {"id": "img-4", "src": "../../../assets/images/housing_variants/var_2_2.jpg"}
+      ],
       "description": "Жилая площадь – 70м2; 6 этаж из 7, есть лифт; 1 км от метро Курская; Безлимитный Wi-Fi",
       "maxGuests": 6,
-      "rating": {
-        "names": [
-          "Чистота",
-          "Обслуживание",
-          "Расположениe",
-          "Удобства",
-          "Цена-качество",
-          "Комфорт"
-        ],
-        "values": [
-          4.6,
-          3.9,
-          3.8,
-          4.1,
-          4.4,
-          4.7
-        ]
-      },
+      "rating": [
+        {"name": "Чистота", "value": 4.4},
+        {"name": "Обслуживание", "value": 4.6},
+        {"name": "Расположение", "value": 3.9},
+        {"name": "Удобства", "value": 4.1},
+        {"name": "Цена-качество", "value": 4.2},
+        {"name": "Комфорт", "value": 4.7}
+      ],
       "reviews": [
         {
           "guestName": "Анна",
@@ -150,27 +145,22 @@
         "street": "Новый Арбат",
         "house": 28
       },
-      "photos": [],
+      "photos": [
+        {"id": "img-1", "src": "../../../assets/images/housing_variants/var_1_1.jpg"},
+        {"id": "img-2", "src": "../../../assets/images/housing_variants/var_1_2.jpg"},
+        {"id": "img-3", "src": "../../../assets/images/housing_variants/var_2_1.jpg"},
+        {"id": "img-4", "src": "../../../assets/images/housing_variants/var_2_2.jpg"}
+      ],
       "description": "Жилая площадь – 120м2; 18 этаж из 27, есть лифт; Безлимитный Wi-Fi, кухня, джакузи",
       "maxGuests": 6,
-      "rating": {
-        "names": [
-          "Чистота",
-          "Обслуживание",
-          "Расположениe",
-          "Удобства",
-          "Цена-качество",
-          "Комфорт"
-        ],
-        "values": [
-          4.6,
-          3.9,
-          3.8,
-          4.1,
-          4.4,
-          4.7
-        ]
-      },
+      "rating": [
+        {"name": "Чистота", "value": 4.4},
+        {"name": "Обслуживание", "value": 4.6},
+        {"name": "Расположение", "value": 3.9},
+        {"name": "Удобства", "value": 4.1},
+        {"name": "Цена-качество", "value": 4.2},
+        {"name": "Комфорт", "value": 4.7}
+      ],
       "reviews": [
         {
           "guestName": "Валентин",

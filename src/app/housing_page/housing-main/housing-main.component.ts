@@ -10,7 +10,6 @@ import { HousingService } from 'src/app/common/services/housing.service';
 })
 export class HousingMainComponent implements OnInit {
 
-  // @Input() housing: Housing;
   id: number;
   houseInfo: any;
 
@@ -24,7 +23,8 @@ export class HousingMainComponent implements OnInit {
     .subscribe(h => {
       this.houseInfo = h;
       console.log(this.houseInfo);
-      console.log(this.houseInfo.rating.names);
+      console.log(this.houseInfo.rating);
+      console.log(this.houseInfo.photos);
     });
   }
 
