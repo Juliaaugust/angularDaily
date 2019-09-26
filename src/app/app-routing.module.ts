@@ -5,7 +5,7 @@ import { MainWrapperComponent } from './main_page/main-wrapper/main-wrapper.comp
 import { RentalsWrapperComponent } from './rentals_page/rentals-wrapper/rentals-wrapper.component';
 import { HousingWrapperComponent } from './housing_page/housing-wrapper/housing-wrapper.component';
 import { PaymentPageComponent } from './payment/payment-page/payment-page.component';
-import { PaymentSuccessComponent } from './payment/payment-success/payment-success.component';
+import { PaymentSuccessComponent } from './payment/payment-page/payment-success/payment-success.component';
 import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 

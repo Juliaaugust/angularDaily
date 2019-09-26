@@ -5,6 +5,9 @@ $btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
 $btn-color: #f3d9e8
 $btn-hover-color: #e9c5da
 
+fieldset
+  border: none
+
 .reservation-main
   margin: 0 auto
   padding: 10px 0
@@ -30,6 +33,7 @@ $btn-hover-color: #e9c5da
   color: #6a1b4a
   &:hover
     color: #c9759b
+    cursor: pointer
 
 .date-subsection
   margin: 10px 0
@@ -45,15 +49,6 @@ $btn-hover-color: #e9c5da
 .reservation-input[type="date"]
   margin: 0 7px
 
-  &::-webkit-calendar-picker-indicator
-    color: transparent
-    opacity: 1
-    background: url(../../../assets/images/icons/calendar.svg) no-repeat center
-    background-size: contain
-
-  &::-webkit-inner-spin-button
-    display: none
-
 .guest-info .reservation-input
   width: 250px
 
@@ -66,15 +61,46 @@ $btn-hover-color: #e9c5da
 .sum-value
   font-size: 22px
 
+.guest-info-group
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.under-guest
+  border: none
+  color: #7e4b6a
+  background-color: #7e4b6a
+  height: 1px
+  margin-bottom: 15px
+
 .add-guest
   cursor: pointer
   padding: 15px 0
   font-weight: bold
+  border: none
+  background: transparent
+  display: block
+  font-size: 18px
+
+  &:hover
+    color: #7e4b6a
 
 .plus-guest
   font-size: 22px
   position: relative
   top: 2px
+
+.remove-guest
+  border: none
+  color: $btn-color
+  font-size: 24px
+  width: 35px
+  height: 35px
+  background: #7e4b6a
+
+  &:hover
+    cursor: pointer
+    background: #c9759b
 
 #pets
   position: relative
@@ -117,8 +143,12 @@ $btn-hover-color: #e9c5da
     display: flex
     flex-direction: column
 
+  .reservation-input[type="date"]
+    margin: 7px 0
+
   .date-input
     margin-bottom: 10px
+    margin: 10px
 
   .guest-input
     display: block

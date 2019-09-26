@@ -21,7 +21,7 @@ import { HousingAsideComponent } from './housing_page/housing-aside/housing-asid
 import { HousingMainComponent } from './housing_page/housing-main/housing-main.component';
 
 import { PaymentPageComponent } from './payment/payment-page/payment-page.component';
-import { PaymentSuccessComponent } from './payment/payment-success/payment-success.component';
+import { PaymentSuccessComponent } from './payment/payment-page/payment-success/payment-success.component';
 
 import { StarRatingComponent } from './common/components/star-rating/star-rating.component';
 import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';

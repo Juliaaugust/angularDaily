@@ -1,56 +1,70 @@
 <main class="reservation-main">
-  <section class="reservation-section details">
-    <section class="reservation-subsection housing">
-        <h2 role="heading" class="section-name">Арендуемое помещение</h2>
-        <a class="housing-link" [routerLink]="['/housing', 2]" target="_blank">Двухкомнатная квартира</a>
-    </section>
-    <section class="reservation-subsection date-time">
-      <h2 role="heading" class="section-name">Дата и время</h2>
-      <section class="date-subsection arrival-subsection">
-        <span class="date-span">Заезд</span>
-        <input type="date" value="2019-08-27" class="reservation-input date-input arrival-input" disabled>
-        <select class="reservation-input date-select">
-          <option class="date-select__option">Ранний заезд</option>
-          <option class="date-select__option" selected>14:00</option>
-          <option class="date-select__option">15:00</option>
-          <option class="date-select__option">16:00</option>
-          <option class="date-select__option">17:00</option>
-          <option class="date-select__option">18:00</option>
-          <option class="date-select__option">19:00</option>
-          <option class="date-select__option">20:00</option>
-          <option class="date-select__option">21:00</option>
-          <option class="date-select__option">22:00</option>
-          <option class="date-select__option">23:00</option>
-        </select>
-      </section>
-      <section class="date-subsection departure-section">
-        <span class="date-span">Отъезд</span>
-        <input type="date" value="2019-08-29" class="reservation-input date-input departure-input" disabled>
-        <select class="reservation-input date-select">
-          <option class="date-select__option">00:00</option>
-          <option class="date-select__option">01:00</option>
-          <option class="date-select__option">02:00</option>
-          <option class="date-select__option">03:00</option>
-          <option class="date-select__option">04:00</option>
-          <option class="date-select__option">05:00</option>
-          <option class="date-select__option">06:00</option>
-          <option class="date-select__option">07:00</option>
-          <option class="date-select__option">08:00</option>
-          <option class="date-select__option">09:00</option>
-          <option class="date-select__option">10:00</option>
-          <option class="date-select__option">11:00</option>
-          <option class="date-select__option" selected="selected">12:00</option>
-          <option class="date-select__option">Поздний отъезд</option>
-        </select>
-      </section>
-    </section>
-    <section class="reservation-subsection guests">
+  <form
+    class="payment-form"
+    [formGroup]="paymentForm"
+    (ngSubmit)="payForHousing()"
+    >
+    <fieldset class="reservation-section details">
+      <fieldset class="reservation-subsection housing">
+          <h2 role="heading" class="section-name">Арендуемое помещение</h2>
+          <!-- <a class="housing-link" (click)="openHousingPage()" target="_blank">Двухкомнатная квартира</a> -->
+          <a class="housing-link" [routerLink]="['/housing', this.route.snapshot.params.id]" target="_blank">Двухкомнатная квартира</a>
+
+      </fieldset>
+      <fieldset class="reservation-subsection date-time">
+        <h2 role="heading" class="section-name">Дата и время</h2>
+        <fieldset class="date-subsection arrival-subsection">
+          <span class="date-span">Заезд</span>
+          <input type="date" value="2019-08-27" class="reservation-input date-input arrival-input" disabled>
+          <select class="reservation-input date-select" formControlName="arrivalTime">
+            <option class="date-select__option">Ранний заезд</option>
+            <option class="date-select__option" selected>14:00</option>
+            <option class="date-select__option">15:00</option>
+            <option class="date-select__option">16:00</option>
+            <option class="date-select__option">17:00</option>
+            <option class="date-select__option">18:00</option>
+            <option class="date-select__option">19:00</option>
+            <option class="date-select__option">20:00</option>
+            <option class="date-select__option">21:00</option>
+            <option class="date-select__option">22:00</option>
+            <option class="date-select__option">23:00</option>
+          </select>
+        </fieldset>
+        <fieldset class="date-subsection departure-section">
+          <span class="date-span">Отъезд</span>
+          <input type="date" value="2019-08-29" class="reservation-input date-input departure-input" disabled>
+          <select class="reservation-input date-select" formControlName="departureTime">
+            <option class="date-select__option">00:00</option>
+            <option class="date-select__option">01:00</option>
+            <option class="date-select__option">02:00</option>
+            <option class="date-select__option">03:00</option>
+            <option class="date-select__option">04:00</option>
+            <option class="date-select__option">05:00</option>
+            <option class="date-select__option">06:00</option>
+            <option class="date-select__option">07:00</option>
+            <option class="date-select__option">08:00</option>
+            <option class="date-select__option">09:00</option>
+            <option class="date-select__option">10:00</option>
+            <option class="date-select__option">11:00</option>
+            <option class="date-select__option" selected="selected">12:00</option>
+            <option class="date-select__option">Поздний отъезд</option>
+          </select>
+        </fieldset>
+      </fieldset>
+      <fieldset class="reservation-subsection guests" formGroupName="guestInfoArr">
         <h2 role="heading" class="section-name">Состав гостей</h2>
-        <h5>Гость 1:</h5>
-        <ul class="guest-info">
+
+        <div class="guest-info-group"
+          *ngFor="let control of paymentForm.get('guestInfoArr').controls; let idx = index"
+        >
+          <!-- <h5>Гость {{ idx+1 }}:</h5> -->
+          <!-- <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input"> -->
+          <ul class="guest-info">
+            <hr class="under-guest">
+            <h5>Гость {{ idx+1 }}:</h5>
             <li class="guest-info__item">
                 <label for="guest-fio-input">ФИО:
-                  <input type="text" id="guest-fio-input" class="reservation-input guest-input" required>
+                  <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input" required>
                 </label>
             </li>
             <li class="guest-info__item">
@@ -63,64 +77,68 @@
                   <input type="email" id="guest-email-input" class="reservation-input guest-input" required>
                 </label>
             </li>
-        </ul>
-        <p class="add-guest"><span class="plus-guest">+</span> Добавить гостя</p>
-        <label for="pets"><input type="checkbox" id="pets"> С питомцами</label>
-    </section>
-    <section class="reservation-subsection target">
-      <h2 role="heading" class="section-name">Цель заезда</h2>
-      <select class="reservation-input target-select">
-        <option class="target-select__option" selected>Выбор цели</option>
-        <option class="target-select__option">Работа</option>
-        <option class="target-select__option">Отдых</option>
-        <option class="target-select__option">Вечеринка</option>
-        <option class="target-select__option">Другое</option>
-      </select>
-    </section>
-    <section class="reservation-subsection comment">
-      <h2 role="heading" class="section-name">Комментарий к бронированию</h2>
-      <textarea class="reservation-input comment-textarea" placeholder="Ваш комментарий" cols="40" rows="5"></textarea>
-    </section>
-  </section>
-  <section class="reservation-section payment">
-    <section class="reservation-subsection sum">
-      <h2 role="heading" class="section-name">Сумма заказа</h2>
-      <p>К оплате:</p>
-      <p class="sum-value">16 000 ₽</p>
-    </section>
-    <section class="reservation-subsection payment-method">
-      <h2 role="heading" class="section-name">Способ оплаты</h2>
+          </ul>
+          <button type="button" class="remove-guest" (click)="removeGuest($event)">&times;</button>
+          <p></p>
+        </div>
+        <button type="button" class="add-guest" (click)="addGuest()"><span class="plus-guest">+</span> Добавить гостя</button>
+      </fieldset>
+      <label for="pets"><input type="checkbox" id="pets" formControlName="pets"> С питомцами</label>
+      <fieldset class="reservation-subsection target">
+        <h2 role="heading" class="section-name">Цель заезда</h2>
+        <select class="reservation-input target-select" formControlName="target">
+          <option class="target-select__option" selected>Выбор цели</option>
+          <option class="target-select__option">Работа</option>
+          <option class="target-select__option">Отдых</option>
+          <option class="target-select__option">Вечеринка</option>
+          <option class="target-select__option">Другое</option>
+        </select>
+      </fieldset>
+      <fieldset class="reservation-subsection comment">
+        <h2 role="heading" class="section-name">Комментарий к бронированию</h2>
+        <textarea formControlName="comment" class="reservation-input comment-textarea" placeholder="Ваш комментарий" cols="40" rows="5"></textarea>
+      </fieldset>
+    </fieldset>
+    <fieldset class="reservation-section payment">
+      <fieldset class="reservation-subsection sum">
+        <h2 role="heading" class="section-name">Сумма заказа</h2>
+        <p>К оплате:</p>
+        <p class="sum-value">16 000 ₽</p>
+      </fieldset>
+      <fieldset class="reservation-subsection payment-method">
+        <h2 role="heading" class="section-name">Способ оплаты</h2>
 
-      <form class="payment-form">
-      <p>Выберете удобный Вам способ оплаты:</p>
-      <ul class="payment-list">
-        <li class="payment-list__item">
-          <label for="card">
-            <input name="payment-method" type="radio" id="card">
-          Банковская карта</label>
-          <img src="../../../assets/images/icons/payment/card.png" alt="">
-        </li>
-        <li class="payment-list__item">
-          <label for="sber">
-            <input name="payment-method" type="radio" id="sber">
-          Сбербанк oнлайн</label>
-          <img src="../../../assets/images/icons/payment/sber.png" alt="">
-        </li>
-        <li class="payment-list__item">
-          <label for="webmoney">
-            <input name="payment-method" type="radio" id="webmoney">
-          WebMoney</label>
-          <img src="../../../assets/images/icons/payment/webmoney.png" alt="">
-        </li>
-        <li class="payment-list__item">
-          <label for="ya-money">
-            <input name="payment-method" type="radio" id="ya-money">
-          Яндекс.Деньги</label>
-          <img src="../../../assets/images/icons/payment/ya-money.gif" alt="">
-        </li>
-      </ul>
-        <a class="pay-btn" (click)="payForHousing()">Оплатить</a>
-      </form>
-    </section>
-  </section>
+        <p>Выберете удобный Вам способ оплаты:</p>
+        <ul class="payment-list">
+          <li class="payment-list__item">
+            <label for="card">
+              <input formControlName="payMethod" type="radio" value="card" id="card">
+            Банковская карта</label>
+            <img src="../../../assets/images/icons/payment/card.png" alt="">
+          </li>
+          <li class="payment-list__item">
+            <label for="sber">
+              <input formControlName="payMethod" type="radio" value="sber" id="sber">
+            Сбербанк oнлайн</label>
+            <img src="../../../assets/images/icons/payment/sber.png" alt="">
+          </li>
+          <li class="payment-list__item">
+            <label for="webmoney">
+              <input formControlName="payMethod" type="radio" value="webmoney" id="webmoney">
+            WebMoney</label>
+            <img src="../../../assets/images/icons/payment/webmoney.png" alt="">
+          </li>
+          <li class="payment-list__item">
+            <label for="ya-money">
+              <input formControlName="payMethod" type="radio" value="ya-money" id="ya-money">
+            Яндекс.Деньги</label>
+            <img src="../../../assets/images/icons/payment/ya-money.gif" alt="">
+          </li>
+        </ul>
+          <button type="submit" class="pay-btn" [disabled]="paymentForm.invalid">
+            Оплатить
+          </button>
+      </fieldset>
+    </fieldset>
+  </form>
 </main>
