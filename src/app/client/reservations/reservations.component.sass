@@ -1,0 +1,111 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.page-wrapper
+  margin: 0 auto
+  padding: 10px 30px
+  background: #e0e9eb
+  max-width: 1400px
+
+h1
+  color: #6a1b4a
+
+.toggles
+  margin: 20px 0
+
+  button
+    border: none
+    background: #e0e9eb
+    color: #6a1b4a
+    cursor: pointer
+    font-size: 18px
+    margin: 0 5px
+
+    &:hover
+      color: #b16f8c
+
+    &:after
+      content: " / "
+
+    &:last-child:after
+      content: ""
+
+.reservation-card
+  display: flex
+  padding: 20px
+  margin-bottom: 15px
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+  color: #2e0c20
+
+.housing-description
+  position: relative
+  width: 100%
+
+.review
+  position: absolute
+  bottom: 20px
+
+.housing-description
+  .housing-address
+    color: #2e0c20
+
+  .housing-name
+    color: #6a1b4a
+
+.description-top
+  display: flex
+  justify-content: space-between
+  margin-bottom: 10px
+
+.variant-image
+  width: 320px
+
+.carousel-wrapper
+  width: 320px
+  margin-right: 20px
+
+.housing-address > img
+  width: 25px
+  position: relative
+  top: 6px
+
+.review-btn
+  width: 200px
+  padding: 10px
+  color: $btn-color
+  font-size: 24px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  cursor: pointer
+
+  &:hover
+    cursor: pointer
+    color: $btn-hover-color
+    background: $btn-hover-bg
+
+  &.no-review
+    background: linear-gradient(0deg, #816b79 0%, #e0c0cf 100%)
+
+    &:hover
+      cursor: not-allowed
+
+@media screen and (max-width: 780px)
+  .reservation-card, .description-top
+    flex-direction: column
+
+  .review
+    position: static
+    margin-top: 20px
+
+@media screen and (max-width: 530px)
+  .carousel-wrapper, .variant-image
+    width: 100%
+
+  .review-btn
+    padding: 5px
+    font-size: 20px

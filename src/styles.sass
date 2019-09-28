@@ -27,3 +27,37 @@ a
   color: #4d9f2d
   background: #d4f5c7
   border: 1px solid #4d9f2d
+
+
+// for inputs range
+
+input[type=range]
+  -webkit-appearance: none
+  margin-right: 10px
+  background: transparent
+
+  &:focus
+    outline: none
+
+  &::-webkit-slider-runnable-track
+    width: 100%
+    height: 6px
+    cursor: pointer
+    animate: 0.2s
+    box-shadow: 1px 1px 1px #6b3d59
+    background: #c9759b
+    border-radius: 2px
+
+  &::-webkit-slider-thumb
+    box-shadow: 3px 3px 3px #6b3d59
+    border: 2px solid #996183
+    height: 20px
+    width: 20px
+    border-radius: 50%
+    background: #c98cb1
+    cursor: pointer
+    -webkit-appearance: none
+    margin-top: -7px
+
+  &:focus::-webkit-slider-runnable-track
+    background: #b16286

@@ -1,0 +1,114 @@
+<div class="page-wrapper">
+  <h1 role="heading">Отзыв о жилье</h1>
+
+  <div class="reservation-card">
+    <div class="carousel-wrapper">
+        <img src="../../../assets/images/housing_variants/var_1_1.jpg" alt="" class="variant-image">
+    </div>
+    <div class="housing-description">
+      <div class="reservation-date">
+        <span class="arrival-date">18.08.2019</span>
+        –
+        <span class="departure-date">20.08.2019</span>
+      </div>
+
+      <a href="./housing.html" target="_blank">
+        <h2 class="housing-name">Двухкомнатная квартира</h2>
+        <div class="housing-address">
+            <img src="../../../assets/images/icons/location.svg" alt="">
+            Москва, Старая Басманная, 5
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <section class="review-section">
+    <div class="rating">
+      <div class="common-rating">
+        <p>Общая оценка:</p>
+        <app-star-rating></app-star-rating>
+      </div>
+
+      <ul class="rating-list">
+        <li class="rating-list__item">
+          <div class="rating-name">
+              Чистота
+          </div>
+          <div class="rating-value">
+              <input class="option-input" type="range" min="1" max="5" step="1" value="5" (change)="setRatingValue1($event)">
+              <span id="rating-value-1">{{ ratingValue1 }}</span>
+          </div>
+        </li>
+
+        <li class="rating-list__item">
+          <div class="rating-name">
+              Обслуживание
+          </div>
+          <div class="rating-value">
+              <input class="option-input" type="range" min="1" max="5" step="1" value="5" (change)="setRatingValue2($event)">
+              <span id="rating-value-2">{{ ratingValue2 }}</span>
+          </div>
+        </li>
+
+        <li class="rating-list__item">
+          <div class="rating-name">
+              Расположение
+          </div>
+          <div class="rating-value">
+              <input class="option-input" type="range" min="1" max="5" step="1" value="5" (change)="setRatingValue3($event)">
+              <span id="rating-value-3">{{ ratingValue3 }}</span>
+          </div>
+        </li>
+
+        <li class="rating-list__item">
+          <div class="rating-name">
+              Удобства
+          </div>
+          <div class="rating-value">
+              <input class="option-input" type="range" min="1" max="5" step="1" value="5" (change)="setRatingValue4($event)">
+              <datalist id="range-rating-4"></datalist>
+              <span id="rating-value-4">{{ ratingValue4 }}</span>
+          </div>
+        </li>
+
+        <li class="rating-list__item">
+          <div class="rating-name">
+              Цена-качество
+          </div>
+          <div class="rating-value">
+              <input class="option-input" type="range" min="1" max="5" step="1" value="5" (change)="setRatingValue5($event)">
+              <span id="rating-value-5">{{ ratingValue5 }}</span>
+          </div>
+        </li>
+
+        <li class="rating-list__item">
+          <div class="rating-name">
+              Комфорт
+          </div>
+          <div class="rating-value">
+              <input class="option-input" type="range" min="1" max="5" step="1" value="5" (change)="setRatingValue6($event)">
+              <span id="rating-value-6">{{ ratingValue2 }}</span>
+          </div>
+        </li>
+      </ul>
+
+    </div> <!--rating-->
+
+      <div class="comments">
+        <div class="comment-block">
+          <h3 class="comment-header">Достоинства:</h3>
+          <textarea cols="40" rows="7" class="comment-area"></textarea>
+        </div>
+        <div class="comment-block">
+          <h3 class="comment-header">Недостатки:</h3>
+          <textarea cols="40" rows="7" class="comment-area"></textarea>
+        </div>
+        <div class="comment-block">
+          <h3 class="comment-header">Комментарий:</h3>
+          <textarea cols="40" rows="7" class="comment-area"></textarea>
+        </div>
+      </div>
+
+      <button class="review-btn" (click)="submitReview()">Отправить</button>
+  </section>
+</div>

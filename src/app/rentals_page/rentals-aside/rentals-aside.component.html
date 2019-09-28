@@ -47,9 +47,8 @@
     </div>
     <div class="rating-option option-block">
       <p>Минимальный рейтинг:</p>
-      <input class="option-input" type="range" min="1" max="5" step="1" value="3" list="range-rating" onchange="document.getElementById('rating-value').innerHTML = this.value;">
-      <datalist id="range-rating"></datalist>
-      <span id="rating-value">3</span>
+      <input class="option-input rating-input" type="range" min="1" max="5" step="1" value="3" (change)="setRatingValue($event)">
+      <span id="rating-value">{{ ratingValue }}</span>
     </div>
   </div>
 </aside>

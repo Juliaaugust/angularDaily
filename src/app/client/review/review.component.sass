@@ -1,0 +1,131 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.page-wrapper
+  margin: 0 auto
+  padding: 10px 30px
+  background: #e0e9eb
+  max-width: 1400px
+
+h1
+  color: #6a1b4a
+
+.reservation-card, .review-section
+  padding: 20px
+  margin-bottom: 15px
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+  color: #2e0c20
+
+.reservation-card
+  display: flex
+
+.housing-description
+  position: relative
+  width: 100%
+
+.rewiew
+  position: absolute
+  bottom: 20px
+
+.housing-description
+  a
+    color: #2e0c20
+
+  .housing-name
+    color: #6a1b4a
+
+.variant-image
+  width: 320px
+
+.carousel-wrapper
+  width: 320px
+  margin-right: 20px
+
+.housing-address > img
+  width: 25px
+  position: relative
+  top: 6px
+
+.common-rating
+  display: flex
+
+  > p
+    margin-right: 10px
+
+.stars-rating__item
+  display: inline-block
+
+  > img
+    width: 15px
+
+.icon-star-black
+  opacity: 0.5
+
+.rating-list
+  display: flex
+  flex-wrap: wrap
+  margin: 20px 0
+
+.rating-list__item
+  margin-right: 40px
+
+.comment-block
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin: 10px 0
+
+.comment-header
+  color: #6a1b4a
+  margin-right: 20px
+
+.comment-area
+  color: #2e0c20
+  font-size: 16px
+  padding: 2px 5px
+  border-radius: 5px
+  border: none
+  width: 60%
+
+.review-btn
+  width: 200px
+  padding: 10px
+  color: $btn-color
+  font-size: 24px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  cursor: pointer
+  margin-top: 20px
+
+  &:hover
+    cursor: pointer
+    color: $btn-hover-color
+    background: $btn-hover-bg
+
+@media screen and (max-width: 780px)
+  .reservation-card, .description-top
+    flex-direction: column
+
+@media screen and (max-width: 530px)
+  .carousel-wrapper, .variant-image
+    width: 100%
+
+  .rewiew-btn
+    padding: 5px
+    font-size: 20px
+
+  .common-rating, .comment-block
+    flex-direction: column
+
+  .comment-area
+    width: 80%
+
+  .review-btn
+    padding: 5px
+    font-size: 20px
+    width: 130px

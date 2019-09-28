@@ -31,6 +31,14 @@ import { UsersService } from './common/services/users.service';
 import { AuthenticationService } from './common/services/authentication.service';
 import { HousingService } from './common/services/housing.service';
 import { CarouselComponent } from './common/components/carousel/carousel.component';
+import { InfoPageComponent } from './info-page/info-page.component';
+import { ReservationsComponent } from './client/reservations/reservations.component';
+import { ReviewComponent } from './client/review/review.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LandlordInfoComponent } from './admin/landlord-info/landlord-info.component';
+import { CreateVacancyComponent } from './landlord/create-vacancy/create-vacancy.component';
+import { RequestsComponent } from './landlord/requests/requests.component';
+import { VacanciesComponent } from './landlord/vacancies/vacancies.component';
 
 
 @NgModule({
@@ -52,7 +60,15 @@ import { CarouselComponent } from './common/components/carousel/carousel.compone
     PaymentSuccessComponent,
     PersonalAreaComponent,
     AuthenticationComponent,
-    CarouselComponent
+    CarouselComponent,
+    InfoPageComponent,
+    ReservationsComponent,
+    ReviewComponent,
+    DashboardComponent,
+    LandlordInfoComponent,
+    CreateVacancyComponent,
+    RequestsComponent,
+    VacanciesComponent
   ],
   imports: [
     BrowserModule,

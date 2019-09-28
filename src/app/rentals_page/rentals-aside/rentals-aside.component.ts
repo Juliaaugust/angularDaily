@@ -9,6 +9,12 @@ export class RentalsAsideComponent implements OnInit {
 
   constructor() { }
 
+  ratingValue = '3';
+
+  setRatingValue(event: Event) {
+    this.ratingValue = (event.target as HTMLInputElement).value;
+  }
+
   ngOnInit() {
   }
 
