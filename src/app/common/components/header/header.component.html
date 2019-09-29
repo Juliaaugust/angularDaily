@@ -30,7 +30,8 @@
 
   role="button"
   class="header__enter-btn"
-  (click)="openAuthPage()">
+  (click)="openAuthPage()"
+  *ngIf="!isAuthoris; else headerUser">
     Вход
   </button>
 

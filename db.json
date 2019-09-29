@@ -101,20 +101,51 @@
         "house": 5
       },
       "photos": [
-        {"id": "img-1", "src": "../../../assets/images/housing_variants/var_1_1.jpg"},
-        {"id": "img-2", "src": "../../../assets/images/housing_variants/var_1_2.jpg"},
-        {"id": "img-3", "src": "../../../assets/images/housing_variants/var_2_1.jpg"},
-        {"id": "img-4", "src": "../../../assets/images/housing_variants/var_2_2.jpg"}
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
       ],
       "description": "Жилая площадь – 70м2; 6 этаж из 7, есть лифт; 1 км от метро Курская; Безлимитный Wi-Fi",
       "maxGuests": 6,
+      "type": "flat/apartments",
       "rating": [
-        {"name": "Чистота", "value": 4.4},
-        {"name": "Обслуживание", "value": 4.6},
-        {"name": "Расположение", "value": 3.9},
-        {"name": "Удобства", "value": 4.1},
-        {"name": "Цена-качество", "value": 4.2},
-        {"name": "Комфорт", "value": 4.7}
+        {
+          "name": "Чистота",
+          "value": 4.4
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 3.9
+        },
+        {
+          "name": "Удобства",
+          "value": 4.1
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.2
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.7
+        }
       ],
       "reviews": [
         {
@@ -146,20 +177,51 @@
         "house": 28
       },
       "photos": [
-        {"id": "img-1", "src": "../../../assets/images/housing_variants/var_1_1.jpg"},
-        {"id": "img-2", "src": "../../../assets/images/housing_variants/var_1_2.jpg"},
-        {"id": "img-3", "src": "../../../assets/images/housing_variants/var_2_1.jpg"},
-        {"id": "img-4", "src": "../../../assets/images/housing_variants/var_2_2.jpg"}
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
       ],
       "description": "Жилая площадь – 120м2; 18 этаж из 27, есть лифт; Безлимитный Wi-Fi, кухня, джакузи",
       "maxGuests": 6,
+      "type": "flat/apartments",
       "rating": [
-        {"name": "Чистота", "value": 4.4},
-        {"name": "Обслуживание", "value": 4.6},
-        {"name": "Расположение", "value": 3.9},
-        {"name": "Удобства", "value": 4.1},
-        {"name": "Цена-качество", "value": 4.2},
-        {"name": "Комфорт", "value": 4.7}
+        {
+          "name": "Чистота",
+          "value": 4.4
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 3.9
+        },
+        {
+          "name": "Удобства",
+          "value": 4.1
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.2
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.7
+        }
       ],
       "reviews": [
         {
@@ -185,6 +247,174 @@
           "disadvantages": "Не обнаружил",
           "comment": "Рекомендую это жилье на большую компанию",
           "stars": 5
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Отель \"Олимп\"",
+      "price": 6800,
+      "address": {
+        "country": "Россия",
+        "city": "Сочи",
+        "street": "ул. Гагарина",
+        "house": 40
+      },
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_0_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "Первая линия пляжа. Бесплатная парковка, ресторан,  Wi-Fi доступен на всей территории. Номера строго для некурящих.",
+      "maxGuests": 3,
+      "type": "hotel/hostel",
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.8
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.7
+        },
+        {
+          "name": "Расположение",
+          "value": 5.0
+        },
+        {
+          "name": "Удобства",
+          "value": 4.7
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.3
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.9
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Игнат",
+          "date": "2018-08-10T22:15:12.511Z",
+          "advantages": "Потрясающий отель с превосходным персоналом",
+          "disadvantages": "Не обнаружено",
+          "comment": "Спасибо!",
+          "stars": 5
+        },
+        {
+          "guestName": "Кристина",
+          "date": "2016-10-11T15:12:22.511Z",
+          "advantages": "Хорошие номера, ресторан, присутствуют зоны отдыха для пар с детьми",
+          "disadvantages": "Цена.",
+          "comment": "В целом рекомендую семьям с детьми",
+          "stars": 4
+        },
+        {
+          "guestName": "Алина",
+          "date": "2014-03-23T18:25:43.511Z",
+          "advantages": "Красивый вид из окна и хороший персонал, очень чисто, в ресторане вкусно готовят",
+          "disadvantages": "",
+          "comment": "",
+          "stars": 5
+        },
+        {
+          "guestName": "Антон",
+          "date": "2013-05-23T18:25:43.511Z",
+          "advantages": "Отличный пляж и шумоизоляция номеров",
+          "disadvantages": "Дороговато, по сравнению с другими отелями",
+          "comment": "",
+          "stars": 4
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Хостел \"Alpha\"",
+      "price": 1800,
+      "address": {
+        "country": "Россия",
+        "city": "Сочи",
+        "street": "ул. Черноморская",
+        "house": 10
+      },
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "Жилая площадь – 120м2; 18 этаж из 27, есть лифт; Безлимитный Wi-Fi, кухня, джакузи",
+      "maxGuests": 8,
+      "type": "hotel/hostel",
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.3
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 3.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.1
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 3.3
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Ульяна",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хорошие соседи, чисто",
+          "disadvantages": "Маленькая комната",
+          "comment": "Хорошее жилье за свои деньги",
+          "stars": 4
+        },
+        {
+          "guestName": "Марат",
+          "date": "2017-01-12T15:10:22.511Z",
+          "advantages": "Цена",
+          "disadvantages": "Неудобные кровати, нерегулярная уборка",
+          "comment": "",
+          "stars": 3
         }
       ]
     }

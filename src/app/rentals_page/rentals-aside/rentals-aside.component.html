@@ -16,19 +16,19 @@
   <div class="options-container">
     <div class="city-option option-block">
       <p class="option-name">Город:</p>
-      <input class="option-input" type="text" name="city-input" value="Москва">
+      <input class="option-input" type="text" name="city-input" [(ngModel)]="city">
     </div>
     <div class="guests-option option-block">
       <p class="option-name">Число гостей:</p>
-      <input class="option-input" type="number" min="1" max="50" name="guests-input" value="2">
+      <input class="option-input" type="number" min="1" max="50" name="guests-input" [(ngModel)]="guests">
     </div>
     <div class="arrival-option option-block">
       <p class="option-name">Дата заезда:</p>
-      <input class="option-input" type="date" name="arrival-input">
+      <input class="option-input" type="date" name="arrival-input" [(ngModel)]="arrivalDate" [ngModelOptions]="{standalone: true}" [min]="minArrivalDate">
     </div>
     <div class="departure-option option-block">
       <p class="option-name">Дата отъезда:</p>
-      <input class="option-input" type="date" name="departure-input">
+      <input class="option-input" type="date" name="departure-input" [(ngModel)]="departureDate" [ngModelOptions]="{standalone: true}" [min]="minDepartureDate">
     </div>
     <div class="type-option option-block">
       <p class="option-name">Тип жилья:</p>
@@ -42,8 +42,8 @@
     </div>
     <div class="price-option option-block">
       <p class="option-name">Цена за сутки:</p>
-      От <input class="option-input" type="number" min="0" step="100" name="min-price-input">
-      До <input class="option-input" type="number" min="0" step="100" name="max-price-input">
+      От <input class="option-input" type="number" min="0" step="100" name="min-price-input" [(ngModel)]="minPrice">
+      До <input class="option-input" type="number" min="0" step="100" name="max-price-input" [(ngModel)]="minPrice">
     </div>
     <div class="rating-option option-block">
       <p>Минимальный рейтинг:</p>

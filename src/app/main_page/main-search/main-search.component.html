@@ -1,6 +1,9 @@
 <section class="main-section search-section" id="main-search">
   <h1 role="heading">Поиск посуточного жилья</h1>
   <h3>Множество вариантов заселения специально для Вас!</h3>
+  <div class="message {{message.type}}-message" *ngIf="message.text">
+    {{ message.text }}
+  </div>
   <form action="./rentals.html" class="search-form">
     <div class="search-form-content">
       <div class="search-form-content-inputs">
@@ -11,7 +14,7 @@
           </div>
           <div class="main__search-guests">
             <div class="search-form-info">Число гостей</div>
-            <input type="number" min=1 max=50 class="main__input guests-input" placeholder="2" [(ngModel)]="guests" [ngModelOptions]="{standalone: true}">
+            <input type="number" min=1 max=50 class="main__input guests-input" placeholder="1" [(ngModel)]="guests" [ngModelOptions]="{standalone: true}">
           </div>
         </div>
         <div class="main__search-block">
@@ -26,9 +29,10 @@
         </div>
       </div>
       <a class="main__search-btn"
-      (click)="info()"
+      (click)="searchHousing()"
       >Поиск жилья</a>
-      <!-- [queryParams]="{city: 'Moskow'}" [routerLink]="['/rentals']" -->
+      <!-- [routerLink]="['/rentals']"
+      [queryParams]="{city: city, guests: guests}" -->
     </div>
   </form>
 </section>

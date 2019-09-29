@@ -33,6 +33,7 @@ export class AuthenticationComponent implements OnInit {
       this.message.text = '';
     }, 2000);
   }
+
   changeTab() {
     this.enterTab = !this.enterTab;
   }

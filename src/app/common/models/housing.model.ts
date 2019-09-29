@@ -9,7 +9,9 @@ export class Housing {
       house: number,
     },
     public maxGuests: string,
+    public type?: string,
     public description?: string,
     public id?: number,
+    public rating?: number,
   ) {}
 }
