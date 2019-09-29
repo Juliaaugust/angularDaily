@@ -1,1 +1,46 @@
-<p>landlord-info works!</p>
+<div class="page-wrapper">
+
+    <section class="ll_info-section top-info">
+        <img src="../../../assets/images/default_avatar.png" class="user-ava" alt="">
+
+        <div class="short-info">
+            <div class="username">
+                <span class="name">Комаров</span>
+                <span class="surname">Виктор</span>
+                <span class="patronymic"></span>
+            </div>
+            <div class="role">
+                <p>Роль в системе: <span class="role-value">продавец</span></p>
+            </div>
+            <div class="regist-date">
+                <p>Дата регистрации: <span class="regist-date-value">28.05.2017</span></p>
+            </div>
+            <div class="timezone">
+                <p>Часовой пояс: <span class="timezone-value">UTC +03:00</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ll_info-section contacts">
+        <h2 role="header">Контактные данные</h2>
+
+        <p>
+          <span>Телефон:</span>
+          <a href="tel:+79555578789">+7 (955) 557-87-89</a>
+          <!-- <label for="tel-input">Телефон:</label>
+          <input type="text" id="tel-input" class="user-input" value="89555578789" disabled> -->
+        </p>
+
+        <p>
+          <span>Email:</span>
+          <a href="mailto: komarrrov@gmail.com">komarrrov@gmail.com</a>
+          <!-- <label for="email-input">Email:</label> -->
+          <!-- <input type="email" id="email-input" class="user-input" value="komarrrov@gmail.com" disabled> -->
+        </p>
+    </section>
+
+    <section class="ll_info-section ads">
+      <h2 role="header">Объявляения пользователя</h2>
+      <app-landlord-vacancies></app-landlord-vacancies>
+    </section>
+</div>

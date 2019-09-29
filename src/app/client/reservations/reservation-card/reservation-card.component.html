@@ -1,0 +1,29 @@
+<div class="reservation-card">
+    <div class="carousel-wrapper">
+        <img src="../../../assets/images/housing_variants/var_0_1.jpg" alt="" class="variant-image">
+    </div>
+    <div class="housing-description">
+        <div class="description-top">
+            <div class="reservation-date">
+                <span class="arrival-date">27.09.2019</span>
+                –
+                <span class="departure-date">02.10.2019</span>
+            </div>
+            <div class="reservation-status">
+                Текущее
+            </div>
+        </div>
+
+        <a href="./housing.html" target="_blank">
+            <h2 class="housing-name">Двухкомнатная квартира</h2>
+            <div class="housing-address">
+                <img src="../../../assets/images/icons/location.svg" alt="">
+                Москва, Старая Басманная, 5
+            </div>
+        </a>
+        <div class="review">
+            <!-- <a [routerLink]="['review'], 8" class="review-btn no-review">Оставить отзыв</a> -->
+            <button class="review-btn" [ngClass]="{'no-review': true}" (click)="openReviewPage()">Оставить отзыв</button>
+        </div>
+    </div>
+</div>

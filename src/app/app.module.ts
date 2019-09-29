@@ -39,6 +39,13 @@ import { LandlordInfoComponent } from './admin/landlord-info/landlord-info.compo
 import { CreateVacancyComponent } from './landlord/create-vacancy/create-vacancy.component';
 import { RequestsComponent } from './landlord/requests/requests.component';
 import { VacanciesComponent } from './landlord/vacancies/vacancies.component';
+import { ViewedVacanciesComponent } from './admin/dashboard/viewed-vacancies/viewed-vacancies.component';
+import { NewVacanciesComponent } from './admin/dashboard/new-vacancies/new-vacancies.component';
+import { LandlordVacanciesComponent } from './admin/landlord-info/landlord-vacancies/landlord-vacancies.component';
+import { ReservationCardComponent } from './client/reservations/reservation-card/reservation-card.component';
+import { VacancyCardComponent } from './landlord/vacancies/vacancy-card/vacancy-card.component';
+import { NewRequestComponent } from './landlord/requests/new-request/new-request.component';
+import { ViewedRequestComponent } from './landlord/requests/viewed-request/viewed-request.component';
 
 
 @NgModule({
@@ -68,7 +75,14 @@ import { VacanciesComponent } from './landlord/vacancies/vacancies.component';
     LandlordInfoComponent,
     CreateVacancyComponent,
     RequestsComponent,
-    VacanciesComponent
+    VacanciesComponent,
+    ViewedVacanciesComponent,
+    NewVacanciesComponent,
+    LandlordVacanciesComponent,
+    ReservationCardComponent,
+    VacancyCardComponent,
+    NewRequestComponent,
+    ViewedRequestComponent
   ],
   imports: [
     BrowserModule,

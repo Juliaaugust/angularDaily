@@ -1,0 +1,111 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.page-wrapper
+  margin: 0 auto
+  padding: 10px 30px
+  background: #e0e9eb
+  max-width: 1400px
+  min-height: calc(100vh - 250px)
+
+h1
+  color: #6a1b4a
+
+.toggles
+  margin: 20px 0
+
+  button
+    border: none
+    background: #e0e9eb
+    color: #6a1b4a
+    cursor: pointer
+    font-size: 18px
+    margin: 0 5px
+
+    &:hover
+      color: #b16f8c
+
+    &:after
+      content: " / "
+
+    &:last-child:after
+      content: ""
+
+.vacancy-card
+  display: flex
+  padding: 20px
+  margin-bottom: 15px
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+  color: #2e0c20
+
+.housing-description
+  position: relative
+
+.housing-params
+  position: absolute
+  bottom: 0
+
+.housing-description
+  a
+    color: #2e0c20
+
+  .housing-name
+    color: #6a1b4a
+
+.vacancy-image
+  width: 320px
+
+.carousel-wrapper
+  width: 320px
+  margin-right: 20px
+
+.housing-address > img, .housing-price > img
+  width: 25px
+  position: relative
+  top: 6px
+
+.status
+  margin-bottom: 10px
+  font-size: 1.2em
+  font-weight: bold
+
+.status-name
+  font-style: italic
+
+.edit-btn, .delete-btn
+  padding: 5px 10px
+  color: $btn-color
+  font-size: 20px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  cursor: pointer
+  margin-bottom: 5px
+  margin-right: 10px
+
+.edit-btn:hover, .delete-btn:hover
+  cursor: pointer
+  color: $btn-hover-color
+  background: $btn-hover-bg
+
+.buttons
+  display: flex
+
+@media screen and (max-width: 780px)
+  .vacancy-card
+    flex-direction: column
+
+  .housing-params
+    position: static
+    margin-top: 20px
+
+@media screen and (max-width: 530px)
+  .carousel-wrapper, .vacancy-image
+    width: 100%
+
+  .buttons
+    flex-direction: column

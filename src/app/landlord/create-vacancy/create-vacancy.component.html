@@ -1,1 +1,151 @@
-<p>create-vacancy works!</p>
+<div class="page-wrapper">
+  <form action="">
+    <section class="add_vacancy-section housing-type">
+        <h2 role="heading" class="section-name">Тип жилья</h2>
+        <ul class="housing-type-list">
+            <li class="housing-type-list__item">
+                <input name="housing-type" type="radio" id="hotels">
+                <label for="hotels">Номера, спальные места (в отеле или хостеле)</label>
+            </li>
+            <li class="housing-type-list__item">
+                <input name="housing-type" type="radio" id="apartments">
+                <label for="apartments">Квартиры, апартаменты</label>
+            </li>
+            <li class="housing-type-list__item">
+                <input name="housing-type" type="radio" id="houses">
+                <label for="houses">Дома, коттеджи</label>
+            </li>
+            <li class="housing-type-list__item">
+                <input name="housing-type" type="radio" id="rooms">
+                <label for="rooms">Отдельные комнаты</label>
+            </li>
+        </ul>
+    </section>
+
+    <section class="add_vacancy-section housing-type">
+        <h2 role="heading" class="section-name">Адрес</h2>
+
+        <p>
+            <label for="country-input">Страна:</label>
+            <input type="text" id="country-input" class="address-input vacancy-input" value="Россия">
+        </p>
+
+        <p>
+            <label for="city-input">Город:</label>
+            <input type="text" id="city-input" class="address-input vacancy-input" value="Санкт-Петербург">
+        </p>
+
+        <p>
+            <label for="street-input">Улица:</label>
+            <input type="text" id="street-input" class="address-input vacancy-input">
+        </p>
+        <p>
+            <label for="house-input">Номер дома:</label>
+            <input type="text" id="house-input" class="address-input vacancy-input">
+        </p>
+
+        <p>
+            <label for="building-input">Строение/корпус:</label>
+            <input type="text" id="building-input" class="address-input vacancy-input">
+        </p>
+    </section>
+
+    <section class="add_vacancy-section housing-description">
+        <h2 role="heading" class="section-name">Описание</h2>
+        <textarea class="description-area vacancy-input" cols="40" rows="10"
+        placeholder="Максимально подробно постарайтесь описать сдаваемое помещение: жилая площадь, оснащение, инфраструктура поблизости и т.д."></textarea>
+        <p>
+            <label for="guests-max">Максимальное число гостей:</label>
+            <input type="number" min="1" max="50" id="guests-max" class="description-input vacancy-input" value="1">
+        </p>
+        <label for="pets"><input type="checkbox" id="pets"> Можно с питомцами</label>
+    </section>
+
+    <section class="add_vacancy-section housing-prices">
+            <h2 role="heading" class="section-name">Цены</h2>
+            <p>
+              <label>Валюта:</label>
+              <select class="curr-select vacancy-input">
+                <option class="curr-select__option" selected>RUB – Российский рубль</option>
+                <option class="curr-select__option">USD – Доллар США</option>
+                <option class="curr-select__option">EUR – Евро</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="min-term">Минимальный срок заселения:</label>
+              <input type="number" min="1" id="min-term" class="vacancy-input"> суток
+            </p>
+
+            <p>
+              <label for="price-input">Цена за сутки, ₽:</label>
+              <input type="number" id="price-input" class="vacancy-input">
+            </p>
+
+            <span class="date-span">Заезд после</span>
+            <select class="vacancy-input date-select">
+              <option class="date-select__option">0:00</option>
+              <option class="date-select__option">1:00</option>
+              <option class="date-select__option">2:00</option>
+              <option class="date-select__option">3:00</option>
+              <option class="date-select__option">4:00</option>
+              <option class="date-select__option">5:00</option>
+              <option class="date-select__option">6:00</option>
+              <option class="date-select__option">7:00</option>
+              <option class="date-select__option">8:00</option>
+              <option class="date-select__option">9:00</option>
+              <option class="date-select__option">10:00</option>
+              <option class="date-select__option">11:00</option>
+              <option class="date-select__option">12:00</option>
+              <option class="date-select__option">13:00</option>
+              <option class="date-select__option" selected>14:00</option>
+              <option class="date-select__option">15:00</option>
+              <option class="date-select__option">16:00</option>
+              <option class="date-select__option">17:00</option>
+              <option class="date-select__option">18:00</option>
+              <option class="date-select__option">19:00</option>
+              <option class="date-select__option">20:00</option>
+              <option class="date-select__option">21:00</option>
+              <option class="date-select__option">22:00</option>
+              <option class="date-select__option">23:00</option>
+            </select>
+
+            <span class="date-span">Отъезд до</span>
+            <select class="vacancy-input date-select">
+              <option class="date-select__option">0:00</option>
+              <option class="date-select__option">1:00</option>
+              <option class="date-select__option">2:00</option>
+              <option class="date-select__option">3:00</option>
+              <option class="date-select__option">4:00</option>
+              <option class="date-select__option">5:00</option>
+              <option class="date-select__option">6:00</option>
+              <option class="date-select__option">7:00</option>
+              <option class="date-select__option">8:00</option>
+              <option class="date-select__option">9:00</option>
+              <option class="date-select__option">10:00</option>
+              <option class="date-select__option">11:00</option>
+              <option class="date-select__option" selected>12:00</option>
+              <option class="date-select__option">13:00</option>
+              <option class="date-select__option">14:00</option>
+              <option class="date-select__option">15:00</option>
+              <option class="date-select__option">16:00</option>
+              <option class="date-select__option">17:00</option>
+              <option class="date-select__option">18:00</option>
+              <option class="date-select__option">19:00</option>
+              <option class="date-select__option">20:00</option>
+              <option class="date-select__option">21:00</option>
+              <option class="date-select__option">22:00</option>
+              <option class="date-select__option">23:00</option>
+            </select>
+    </section>
+
+    <section class="add_vacancy-section housing-photos">
+      <h2 role="heading" class="section-name">Фотографии</h2>
+      <label for="housing-photos">Выберите файлы для загрузки:</label>
+      <br>
+      <input type="file" name="uploadingFile" id="housing-photos">
+    </section>
+
+    <button class="add_vacancy-btn">Опубликовать</button>
+  </form>
+</div>

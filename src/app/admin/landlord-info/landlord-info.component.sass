@@ -1,0 +1,114 @@
+.page-wrapper
+  margin: 0 auto
+  padding: 10px
+  background: #e0e9eb
+  max-width: 1400px
+
+.top-info
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-end
+  position: relative
+
+.user-ava
+  width: 150px
+  border-radius: 50%
+  margin-right: 30px
+
+.username
+  font-size: 22px
+  position: absolute
+  top: 15px
+
+.ll_info-section
+  padding: 20px
+  margin: 20px
+  border: 1px solid #015f705d
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+  color: #2e0c20
+
+  h2
+    color: #6a1b4a
+    margin: 10px 0 5px
+
+  p
+    margin-bottom: 10px
+
+.contacts
+  span
+    margin-right: 10px
+  a
+    color: #2e0c20
+    &:hover
+      color: #6b3d59
+
+.user-input
+  width: 250px
+  color: #2e0c20
+  font-size: 16px
+  padding: 2px 5px
+  border-radius: 5px
+  border: none
+
+.vacancy-card
+  display: flex
+  padding: 10px
+  margin: 20px 0
+  color: #4D1335
+  background: #f5c5e256
+  box-shadow: 0 0 10px #c9759b
+  border-radius: 5px
+
+.housing-description
+  position: relative
+
+.housing-params
+  position: absolute
+  bottom: 0
+
+.housing-description
+  a
+    color: #2e0c20
+
+  .housing-name
+    color: #6a1b4a
+
+.vacancy-image
+  width: 320px
+
+.carousel-wrapper
+  width: 320px
+  margin-right: 20px
+
+.housing-address > img, .housing-price > img
+  width: 25px
+  position: relative
+  top: 6px
+
+.status
+  margin-bottom: 10px
+
+@media screen and (max-width: 780px)
+  .vacancy-card
+    flex-direction: column
+
+  .housing-params
+    position: static
+    margin-top: 20px
+
+@media screen and (max-width: 530px)
+  .username
+    position: static
+    margin-bottom: 10px
+
+  .user-input
+    width: 80%
+
+  .ll_info-section p
+    display: flex
+    flex-direction: column
+
+  .carousel-wrapper, .vacancy-image
+    width: 100%

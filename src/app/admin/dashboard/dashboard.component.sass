@@ -1,0 +1,95 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
+.page-wrapper
+  margin: 0 auto
+  padding: 10px
+  background: #e0e9eb
+  max-width: 1400px
+
+h1
+  color: #6a1b4a
+  margin: 20px
+
+.title-vacancies
+  text-align: center
+  color: #58324a
+  margin-top: 10px
+
+.vacancies-section
+  padding: 10px 30px
+  margin: 20px
+  border-radius: 5px
+  box-shadow: -5px 5px 15px #97b4b8
+  background: #fff2c8
+  color: #2e0c20
+
+.vacancy-card
+  display: flex
+  padding: 10px
+  margin: 20px 0
+  color: #4D1335
+  background: #f5c5e256
+  box-shadow: 0 0 10px #c9759b
+  border-radius: 5px
+
+.housing-description
+  a
+    color: #2e0c20
+
+  .housing-name
+    color: #6a1b4a
+
+.vacancy-image
+  width: 320px
+
+.carousel-wrapper
+  width: 320px
+  margin-right: 20px
+
+.housing-icon
+  width: 25px
+  position: relative
+  top: 6px
+
+.housing-description
+  position: relative
+
+.status
+  position: absolute
+  bottom: 0
+
+.landlord-link
+  text-decoration: underline
+
+  &:hover
+    color: #7e4b6a!important
+
+.buttons button
+  padding: 5px 10px
+  color: $btn-color
+  font-size: 22px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+  margin-top: 20px
+  margin-right: 10px
+
+  &:hover
+    cursor: pointer
+    color: $btn-hover-color
+    background: $btn-hover-bg
+
+@media screen and (max-width: 780px)
+  .vacancy-card
+    flex-direction: column
+
+  .status
+    position: static
+    margin-top: 20px
+
+@media screen and (max-width: 530px)
+  .carousel-wrapper, .vacancy-image
+    width: 100%
