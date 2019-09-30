@@ -1,6 +1,11 @@
-# TestApp
+# DAILY Rental Housing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+Этот проект был сгенерирован с помощью [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+Он является учебной версией для изучения фреймворка Angular.
+
+## Запуск приложения
+
+Запустите команду `npm run dev` для одновременного запуска json-сервера и самого приложения. Зайдите в браузере по адресу `http://localhost:4200/`.
 
 ## Development server
 

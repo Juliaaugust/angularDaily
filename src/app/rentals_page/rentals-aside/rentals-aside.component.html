@@ -50,5 +50,6 @@
       <input class="option-input rating-input" type="range" min="1" max="5" step="1" value="3" (change)="setRatingValue($event)">
       <span id="rating-value">{{ ratingValue }}</span>
     </div>
+    <button class="apply-btn" (click)="applyParams()">Применить</button>
   </div>
 </aside>

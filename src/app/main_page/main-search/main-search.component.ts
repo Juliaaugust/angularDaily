@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HousingService } from '../../common/services/housing.service';
 import { Message } from '../../common/models/message.model';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-search',
@@ -39,21 +40,21 @@ export class MainSearchComponent implements OnInit {
   searchHousing() {
 
     if (this.city) {
-      // this.message.text = '';
+      this.message.text = '';
       this.housingService.getHousingBySearchParams(this.city, this.guests)
         .subscribe(housings => {
-          console.log(housings);
+          // console.log(housings);
           if (housings) {
             this.message.text = '';
-            this.router.navigate(['/rentals'], { queryParams: {city: this.city, guests: this.guests} });
+            this.router.navigate(['/rentals'], { queryParams: {city: this.city, guests: this.guests}});
           } else {
-            this.showMessage('Жилья с данными параметрами не найдено', 'info');
-            console.log('Жилья с данными параметрами не найдено');
+            this.showMessage('Жилье с данными параметрами не найдено', 'info');
           }
         });
     } else {
       this.showMessage('Заполните город!', 'error');
     }
+
   }
 
 }

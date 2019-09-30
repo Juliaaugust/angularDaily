@@ -1,3 +1,8 @@
+$btn-bg: linear-gradient(0deg, #7e4b6a 0%, #e08ab1 100%)
+$btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
+$btn-color: #f3d9e8
+$btn-hover-color: #e9c5da
+
 .options-container
   margin: 25px 10px
 
@@ -44,12 +49,33 @@
   font-size: 16px
   color: #2e0c20
 
+.apply-btn
+  display: inline-block
+  text-align: center
+  width: 260px
+  height: 70px
+  line-height: 70px
+  color: $btn-color
+  font-size: 26px
+  background: $btn-bg
+  border: #ad807b
+  border-radius: 8px
+
+.apply-btn:hover
+  cursor: pointer
+  color: $btn-hover-color
+  background: $btn-hover-bg
+
+
 @media screen and (max-width: 1000px)
   .option-input
     width: 200px
 
   .price-option .option-input
     display: block
+
+  .apply-btn
+    width: 210px
 
 @media screen and (max-width: 780px)
 
@@ -77,6 +103,11 @@
   #check-options:checked ~ .options-container
     display: flex
     margin-left: 20px
+
+  .apply-btn
+    height: 40px
+    line-height: 40px
+    font-size: 22px
 
 @media screen and (max-width: 530px)
   .select-sorting

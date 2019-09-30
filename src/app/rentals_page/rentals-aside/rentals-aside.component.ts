@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,7 +6,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './rentals-aside.component.html',
   styleUrls: ['./rentals-aside.component.sass']
 })
-export class RentalsAsideComponent implements OnInit, DoCheck {
+export class RentalsAsideComponent implements OnInit {
+
+  @Output() onApplyParams: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private route: ActivatedRoute) { }
 
@@ -35,8 +37,8 @@ export class RentalsAsideComponent implements OnInit, DoCheck {
     console.log(this.city, this.guests);
   }
 
-  ngDoCheck() {
-    // console.log('Change rent!');
+  applyParams() {
+    this.onApplyParams.emit(this.city);
   }
 
 }

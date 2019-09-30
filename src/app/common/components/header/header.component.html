@@ -31,7 +31,7 @@
   role="button"
   class="header__enter-btn"
   (click)="openAuthPage()"
-  *ngIf="!isAuthoris; else headerUser">
+  *ngIf="!isAuthenticated; else headerUser">
     Вход
   </button>
 
