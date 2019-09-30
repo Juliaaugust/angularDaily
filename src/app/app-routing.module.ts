@@ -26,29 +26,44 @@ const routes: Routes = [
 
   { path: 'authentication', component: AuthenticationComponent},
 
-  { path: 'client', component: PersonalAreaComponent, children: [
-    { path: '', redirectTo: 'area/8', pathMatch: 'full'},
-    // { path: '**', redirectTo: 'area/8', pathMatch: 'full'},
-    { path: 'area/:id', component: PersonalAreaComponent},
-    { path: 'reservaions', component: ReservationsComponent},
-    { path: 'review/:id', component: ReviewComponent},
-  ]},
+  { path: 'client', component: PersonalAreaComponent},
+  { path: 'client/area/:id', component: PersonalAreaComponent},
+  { path: 'client/reservaions', component: ReservationsComponent},
+  { path: 'client/review/:id', component: ReviewComponent},
 
-  { path: 'admin', component: PersonalAreaComponent, children: [
-    // { path: '', redirectTo: 'area/8', pathMatch: 'full'},
-    { path: 'area/:id', component: PersonalAreaComponent},
-    { path: 'dashboard', component: DashboardComponent},
-    { path: 'landlord/:id', component: LandlordInfoComponent},
-  ]},
+  { path: 'admin', component: PersonalAreaComponent},
+  { path: 'admin/area/:id', component: PersonalAreaComponent},
+  { path: 'admin/dashboard', component: DashboardComponent},
+  { path: 'admin/landlord/:id', component: LandlordInfoComponent},
 
-  { path: 'landlord', component: PersonalAreaComponent, children: [
-    // { path: '', redirectTo: 'area/8', pathMatch: 'full'},
-    { path: 'area/:id', component: PersonalAreaComponent},
-    { path: 'create', component: CreateVacancyComponent},
-    { path: 'requests', component: RequestsComponent},
-    { path: 'vacamcies', component: VacanciesComponent},
-  ]},
+  { path: 'landlord', component: PersonalAreaComponent},
+  { path: 'landlord/area/:id', component: PersonalAreaComponent},
+  { path: 'landlord/create', component: CreateVacancyComponent},
+  { path: 'landlord/requests', component: RequestsComponent},
+  { path: 'landlord/vacamcies', component: VacanciesComponent},
 
+  // { path: 'client', component: PersonalAreaComponent, children: [
+  //   { path: '', redirectTo: 'area/:id', pathMatch: 'full'},
+  //   // { path: '**', redirectTo: 'area/8', pathMatch: 'full'},
+  //   { path: 'area/:id', component: PersonalAreaComponent},
+  //   { path: 'reservaions', component: ReservationsComponent},
+  //   { path: 'review/:id', component: ReviewComponent}
+  // ]},
+
+  // { path: 'admin', component: PersonalAreaComponent, children: [
+  //   // { path: '', redirectTo: 'area/8', pathMatch: 'full'},
+  //   { path: 'area/:id', component: PersonalAreaComponent},
+  //   { path: 'dashboard', component: DashboardComponent},
+  //   { path: 'landlord/:id', component: LandlordInfoComponent}
+  // ]},
+
+  // { path: 'landlord', component: PersonalAreaComponent, children: [
+  //   // { path: '', redirectTo: 'area/8', pathMatch: 'full'},
+  //   { path: 'area/:id', component: PersonalAreaComponent},
+  //   { path: 'create', component: CreateVacancyComponent},
+  //   { path: 'requests', component: RequestsComponent},
+  //   { path: 'vacamcies', component: VacanciesComponent}
+  // ]},
 
 ];
 

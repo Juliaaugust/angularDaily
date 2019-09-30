@@ -1,5 +1,6 @@
 import { Component, OnInit, DoCheck, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HousingService } from '../../common/services/housing.service';
 
 @Component({
   selector: 'app-rentals-aside',
@@ -8,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RentalsAsideComponent implements OnInit {
 
-  @Output() onApplyParams: EventEmitter<string> = new EventEmitter<string>();
+  // @Output() onApplyParams: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router, private housingService: HousingService) { }
 
   city: string;
   guests: number;
@@ -32,13 +33,27 @@ export class RentalsAsideComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.city = this.route.snapshot.queryParams.city;
-    this.guests = +this.route.snapshot.queryParams.guests;
-    console.log(this.city, this.guests);
+    this.route.queryParams.subscribe(val => {
+      console.log(val.city);
+      this.city = val.city;
+      this.guests = val.guests;
+    });
+    // this.city = this.route.snapshot.queryParams.city;
+    // this.guests = +this.route.snapshot.queryParams.guests;
+    // console.log(this.city, this.guests);
   }
 
   applyParams() {
-    this.onApplyParams.emit(this.city);
+    console.log(this.city);
+    console.log(this.route.queryParams);
+    this.housingService.getHousingBySearchParams(this.city, this.guests)
+    .subscribe(housings => {
+      console.log(housings);
+      this.router.navigate(['/rentals'], { queryParams: {city: this.city, guests: this.guests}});
+      console.log(this.city);
+    });
+    // this.route.queryParams.value.city = this.city;
+    // this.onApplyParams.emit(this.city);
   }
 
 }

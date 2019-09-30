@@ -43,19 +43,19 @@
           <p class="header__user-name">{{ user.name }}</p>
         </div>
         <ul  class="wrapdown">
-          <li><a [routerLink]="['/area', user.id]">Личный кабинет</a></li>
-          <li><a [routerLink]="['/']">Мои бронирования</a></li>
+          <li><a [routerLink]="['/client/area', user.id]">Личный кабинет</a></li>
+          <li><a [routerLink]="['/client/reservaions']">Мои бронирования</a></li>
           <li><a [routerLink]="['/']">К поиску жилья</a></li>
           <li><a (click)="signOut()">Выйти</a></li>
         </ul>
         <ul *ngIf="user.isAdmin" class="wrapdown">
-          <li><a [routerLink]="['/area', user.id]">Личный кабинет</a></li>
+          <li><a [routerLink]="['/admin/area', user.id]">Личный кабинет</a></li>
           <li><a [routerLink]="['/']">Вакансии продавцов</a></li>
           <li><a [routerLink]="['/']">К поиску жилья</a></li>
           <li><a (click)="signOut()">Выйти</a></li>
         </ul>
         <ul *ngIf="user.isLandlord" class="wrapdown">
-          <li><a [routerLink]="['/area', user.id]">Личный кабинет</a></li>
+          <li><a [routerLink]="['/landlord/area', user.id]">Личный кабинет</a></li>
           <li><a [routerLink]="['/']">Создать вакансию</a></li>
           <li><a [routerLink]="['/']">Мои вакансии</a></li>
           <li><a [routerLink]="['/']">Мои заявки</a></li>

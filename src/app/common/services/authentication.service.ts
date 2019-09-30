@@ -27,28 +27,4 @@ export class AuthenticationService {
     this.onChange.next(false);
   }
 
-  // private isAuthenticated = false;
-
-  // login() {
-  //   this.isAuthenticated = true;
-  // }
-  // logout() {
-  //   this.isAuthenticated = false;
-  //   window.localStorage.clear();
-  // }
-
-  // isLoggedIn(): boolean {
-  //   return this.isAuthenticated;
-  // }
-
-  // status(): Observable<any> {
-
-  //   return this.http.get(url)
-  //     .pipe(map((data: any) => {
-  //       const json = data;
-  //       /// тут может быть парсинг
-  //       return json;
-  //     }));
-  // }
-
 }

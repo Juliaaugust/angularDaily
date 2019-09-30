@@ -25,12 +25,12 @@ export class HousingService {
       .pipe(
         // filter((housings, i) => housings[i].address.city.toLowerCase() === city.toLowerCase()),
 
-        filter((housings, i) => {
-          if ((housings && housings[i] && housings[i].hasOwnProperty('maxGuests'))) {
-            return +housings[i].maxGuests >= guests;
-          }
-          return true;
-        })
+        // filter((housings, i) => {
+        //   if ((housings && housings[i] && housings[i].hasOwnProperty('maxGuests'))) {
+        //     return +housings[i].maxGuests >= guests;
+        //   }
+        //   return true;
+        // })
       );
   }
 }

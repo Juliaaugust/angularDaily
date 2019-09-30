@@ -67,15 +67,15 @@ export class AuthenticationComponent implements OnInit {
 
             switch (user.role) {
               case 'клиент': {
-                this.router.navigate(['client/area', user.id]);
+                this.router.navigate(['/client/area', user.id]);
                 break;
               }
               case 'администратор': {
-                this.router.navigate(['admin/area', user.id]);
+                this.router.navigate(['/admin/area', user.id]);
                 break;
               }
               case 'арендодатель': {
-                this.router.navigate(['landlord/area', user.id]);
+                this.router.navigate(['/landlord/area', user.id]);
                 break;
               }
             }
@@ -103,7 +103,7 @@ export class AuthenticationComponent implements OnInit {
         this.userService.createNewUser(user)
         .subscribe(() => {
           this.authService.login();
-          this.router.navigate(['client/area', user.id]);
+          this.router.navigate(['/client/area', user.id]);
         });
       } else {
         this.showMessage('Пароли не совпадают!', 'error');

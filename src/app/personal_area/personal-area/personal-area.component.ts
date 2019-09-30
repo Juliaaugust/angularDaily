@@ -16,6 +16,8 @@ export class PersonalAreaComponent implements OnInit {
   surname = '';
   patronymic = '';
 
+  date = new Date();
+
   constructor(private userService: UsersService) { }
 
   ngOnInit() {

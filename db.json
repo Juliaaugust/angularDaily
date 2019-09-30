@@ -49,43 +49,44 @@
       "tel": "+49-17-426-16-55"
     },
     {
-      "email": "masha12345@mail.ru",
-      "password": "121212",
-      "name": "Петрова Ирина",
+      "email": "masha@mail.ru",
+      "password": "12345",
+      "name": "Кошкина Маша ",
       "role": "клиент",
-      "registrDate": "Wed Sep 25 2019",
-      "id": 5
+      "registrDate": "Mon Sep 30 2019",
+      "id": 5,
+      "country": "Бельгия"
     },
     {
-      "email": "masha777@mail.ru",
+      "email": "masha123@mail.ru",
       "password": "121212",
-      "name": "Рубинова Ира",
+      "name": "Маша123",
       "role": "клиент",
-      "registrDate": "Wed Sep 25 2019",
+      "registrDate": "Mon Sep 30 2019",
       "id": 6
     },
     {
-      "email": "viktor777@mail.ru",
-      "password": "12345",
-      "name": "Енотов Виктор",
+      "email": "masha123@mail.ru",
+      "password": "121212",
+      "name": "Маша123",
       "role": "клиент",
-      "registrDate": "Wed Sep 25 2019",
+      "registrDate": "Mon Sep 30 2019",
       "id": 7
     },
     {
-      "email": "viktor1997@mail.ru",
-      "password": "12345",
-      "name": "Енотов Виктор",
+      "email": "masha123@mail.ru",
+      "password": "121212",
+      "name": "Маша123",
       "role": "клиент",
-      "registrDate": "Wed Sep 25 2019",
+      "registrDate": "Mon Sep 30 2019",
       "id": 8
     },
     {
-      "email": "masha@mail.ru",
-      "password": "12345",
-      "name": "Гномова Мария",
+      "email": "masha123@mail.ru",
+      "password": "121212",
+      "name": "Маша123",
       "role": "клиент",
-      "registrDate": "Wed Sep 25 2019",
+      "registrDate": "Mon Sep 30 2019",
       "id": 9
     }
   ],
@@ -292,7 +293,7 @@
         },
         {
           "name": "Расположение",
-          "value": 5.0
+          "value": 5
         },
         {
           "name": "Удобства",

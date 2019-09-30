@@ -34,17 +34,20 @@ export class MainSearchComponent implements OnInit {
     this.message = new Message(type, text);
     window.setTimeout(() => {
       this.message.text = '';
-    }, 2000);
+    }, 2500);
   }
 
   searchHousing() {
 
     if (this.city) {
+      if (!this.guests) {
+        this.guests = 1;
+      }
       this.message.text = '';
       this.housingService.getHousingBySearchParams(this.city, this.guests)
         .subscribe(housings => {
           // console.log(housings);
-          if (housings) {
+          if (housings[0]) {
             this.message.text = '';
             this.router.navigate(['/rentals'], { queryParams: {city: this.city, guests: this.guests}});
           } else {
