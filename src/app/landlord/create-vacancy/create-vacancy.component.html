@@ -1,6 +1,8 @@
 <div class="page-wrapper">
-  <form action="">
-    <section class="add_vacancy-section housing-type">
+  <form
+    [formGroup]="createForm"
+    (ngSubmit)="createVacancy()">
+    <fieldset class="add_vacancy-section housing-type">
         <h2 role="heading" class="section-name">Тип жилья</h2>
         <ul class="housing-type-list">
             <li class="housing-type-list__item">
@@ -20,9 +22,9 @@
                 <label for="rooms">Отдельные комнаты</label>
             </li>
         </ul>
-    </section>
+    </fieldset>
 
-    <section class="add_vacancy-section housing-type">
+    <fieldset class="add_vacancy-section housing-type">
         <h2 role="heading" class="section-name">Адрес</h2>
 
         <p>
@@ -48,9 +50,9 @@
             <label for="building-input">Строение/корпус:</label>
             <input type="text" id="building-input" class="address-input vacancy-input">
         </p>
-    </section>
+    </fieldset>
 
-    <section class="add_vacancy-section housing-description">
+    <fieldset class="add_vacancy-section housing-description">
         <h2 role="heading" class="section-name">Описание</h2>
         <textarea class="description-area vacancy-input" cols="40" rows="10"
         placeholder="Максимально подробно постарайтесь описать сдаваемое помещение: жилая площадь, оснащение, инфраструктура поблизости и т.д."></textarea>
@@ -59,9 +61,9 @@
             <input type="number" min="1" max="50" id="guests-max" class="description-input vacancy-input" value="1">
         </p>
         <label for="pets"><input type="checkbox" id="pets"> Можно с питомцами</label>
-    </section>
+    </fieldset>
 
-    <section class="add_vacancy-section housing-prices">
+    <fieldset class="add_vacancy-section housing-prices">
             <h2 role="heading" class="section-name">Цены</h2>
             <p>
               <label>Валюта:</label>
@@ -137,14 +139,14 @@
               <option class="date-select__option">22:00</option>
               <option class="date-select__option">23:00</option>
             </select>
-    </section>
+    </fieldset>
 
-    <section class="add_vacancy-section housing-photos">
+    <fieldset class="add_vacancy-section housing-photos">
       <h2 role="heading" class="section-name">Фотографии</h2>
       <label for="housing-photos">Выберите файлы для загрузки:</label>
       <br>
       <input type="file" name="uploadingFile" id="housing-photos">
-    </section>
+    </fieldset>
 
     <button class="add_vacancy-btn">Опубликовать</button>
   </form>

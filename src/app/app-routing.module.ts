@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'landlord/area/:id', component: PersonalAreaComponent},
   { path: 'landlord/create', component: CreateVacancyComponent},
   { path: 'landlord/requests', component: RequestsComponent},
-  { path: 'landlord/vacamcies', component: VacanciesComponent},
+  { path: 'landlord/vacancies', component: VacanciesComponent},
 
   // { path: 'client', component: PersonalAreaComponent, children: [
   //   { path: '', redirectTo: 'area/:id', pathMatch: 'full'},

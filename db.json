@@ -10,10 +10,40 @@
       "gender": "female",
       "country": "Россия",
       "city": "Москва",
-      "tel": "+7-911-345-87-91"
+      "tel": "+7-911-345-87-91",
+      "newVacancies": [
+        {
+          "id": 8,
+          "name": "Двухкомнатная квартира",
+          "address": "Москва, Старая Басманная, 5",
+          "price": 12500
+        },
+        {
+          "id": 10,
+          "name": "Апартаменты",
+          "address": "Москва, Новый Арбат, 28",
+          "price": 12500
+        }
+      ],
+      "viewdVacancies": [
+        {
+          "id": 8,
+          "name": "Двухкомнатная квартира",
+          "address": "Москва, Старая Басманная, 5",
+          "price": 12500,
+          "status": "одобрено"
+        },
+        {
+          "id": 10,
+          "name": "Апартаменты",
+          "address": "Москва, Новый Арбат, 28",
+          "price": 12500,
+          "status": "отклонено"
+        }
+      ]
     },
     {
-      "name": "Виктор",
+      "name": "Комаров Виктор",
       "email": "viktor@gmail.com",
       "password": "mypass",
       "role": "арендодатель",
@@ -34,7 +64,44 @@
       "gender": "female",
       "country": "Германия",
       "city": "Дрезден",
-      "tel": "+49-17-426-16-55"
+      "tel": "+49-17-426-16-55",
+      "reservations": [
+        {
+          "housing": {
+            "id": 8,
+            "name": "Двухкомнатная квартира",
+            "address": "Москва, Старая Басманная, 5"
+          },
+          "status": "текущее",
+          "dates": "30.09.19 – 11.10.19"
+        },
+        {
+          "housing": {
+            "id": 9,
+            "name": "Гостиница \"Крым\"",
+            "address": "Симферополь, Киевская ул., 2"
+          },
+          "status": "прошедшее",
+          "dates": "02.02.19 – 16.02.19"
+        },
+        {
+          "housing": {
+            "name": "Хостел \"Alpha\"",
+            "address": "Сочи, ул. Черноморская, 10"
+          },
+          "status": "отмененное",
+          "dates": "02.02.19 – 16.02.19"
+        },
+        {
+          "housing": {
+            "id": 8,
+            "name": "Двухкомнатная квартира",
+            "address": "Москва, Старая Басманная, 5"
+          },
+          "status": "прошедшее",
+          "dates": "11.08.16 – 22.08.16"
+        }
+      ]
     },
     {
       "name": "Петров Олег",
@@ -58,36 +125,28 @@
       "country": "Бельгия"
     },
     {
-      "email": "masha123@mail.ru",
+      "email": "masha333@mail.ru",
       "password": "121212",
-      "name": "Маша123",
+      "name": "Гномова Мария",
       "role": "клиент",
-      "registrDate": "Mon Sep 30 2019",
+      "registrDate": "Wed Oct 02 2019",
       "id": 6
     },
     {
-      "email": "masha123@mail.ru",
-      "password": "121212",
-      "name": "Маша123",
+      "email": "masha22@mail.ru",
+      "password": "212122",
+      "name": "Гномова Мария",
       "role": "клиент",
-      "registrDate": "Mon Sep 30 2019",
+      "registrDate": "Wed Oct 02 2019",
       "id": 7
     },
     {
-      "email": "masha123@mail.ru",
+      "email": "masha55@mail.ru",
       "password": "121212",
-      "name": "Маша123",
+      "name": " Мария ",
       "role": "клиент",
-      "registrDate": "Mon Sep 30 2019",
+      "registrDate": "Wed Oct 02 2019",
       "id": 8
-    },
-    {
-      "email": "masha123@mail.ru",
-      "password": "121212",
-      "name": "Маша123",
-      "role": "клиент",
-      "registrDate": "Mon Sep 30 2019",
-      "id": 9
     }
   ],
   "housing": [
@@ -169,6 +228,74 @@
     },
     {
       "id": "9",
+      "name": "Гостиница \"Крым\"",
+      "price": 4000,
+      "address": {
+        "country": "Россия",
+        "city": "Симферополь",
+        "street": "Киевская ул.",
+        "house": 2
+      },
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "Собственный пляж; Wi-Fi на всей территории; имеется ресторан, завтраки включены в стоимость",
+      "maxGuests": 6,
+      "type": "flat/apartments",
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4
+        },
+        {
+          "name": "Обслуживание",
+          "value": 5
+        },
+        {
+          "name": "Расположение",
+          "value": 5
+        },
+        {
+          "name": "Удобства",
+          "value": 4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4
+        },
+        {
+          "name": "Комфорт",
+          "value": 5
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Мария",
+          "date": "2014-06-10T22:15:12.511Z",
+          "advantages": "Отличная гостиница с идеальным расположением",
+          "disadvantages": "Мало магазинов рядом, не очень чистый пляж",
+          "comment": "Мне понравилось",
+          "stars": 4
+        }
+      ]
+    },
+    {
+      "id": "10",
       "name": "Апартаменты",
       "price": 12500,
       "address": {
@@ -252,7 +379,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "11",
       "name": "Отель \"Олимп\"",
       "price": 6800,
       "address": {
@@ -344,7 +471,7 @@
       ]
     },
     {
-      "id": "11",
+      "id": "12",
       "name": "Хостел \"Alpha\"",
       "price": 1800,
       "address": {
@@ -416,6 +543,150 @@
           "disadvantages": "Неудобные кровати, нерегулярная уборка",
           "comment": "",
           "stars": 3
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Гранд Отель Абхазия",
+      "price": 2400,
+      "address": {
+        "country": "Абхазия",
+        "city": "Гагра",
+        "street": "ул. Демерджипа",
+        "house": 55
+      },
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "Первая линия, частный пляж",
+      "maxGuests": 8,
+      "type": "hotel/hostel",
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.8
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Кристина",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хороший персонал, чисто",
+          "disadvantages": "Маленькая комната",
+          "comment": "Отличный отель",
+          "stars": 4
+        },
+        {
+          "guestName": "Жанна",
+          "date": "2017-01-12T15:10:22.511Z",
+          "advantages": "Расположение, качество обслуживания",
+          "disadvantages": "-",
+          "comment": "Красивый отель для пляжого отдыха",
+          "stars": 5
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Grand Area",
+      "price": 3400,
+      "address": {
+        "country": "Болгария",
+        "city": "София",
+        "street": "ул. Йордан Йосифов",
+        "house": 49
+      },
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "Первая линия, частный пляж",
+      "maxGuests": 8,
+      "type": "hotel/hostel",
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.8
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Кристина",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хороший персонал, чисто",
+          "disadvantages": "Маленькая комната",
+          "comment": "Уютный домик",
+          "stars": 5
         }
       ]
     }

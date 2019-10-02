@@ -18,10 +18,6 @@ export class HeaderComponent implements OnInit {
   user: User;
   isAuthenticated: boolean;
 
-  id: number;
-
-  // sub: Subscription;
-
   private destroyed$: Subject<void> = new Subject<void>();
 
   constructor(
@@ -32,12 +28,13 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = JSON.parse(window.localStorage.getItem('user'));
-    console.log(this.user);
-
-    // if (this.user) {
-    //   this.isAuthenticated = true;
-    // }
+    if (!JSON.parse(window.localStorage.getItem('user'))) {
+      this.isAuthenticated = false;
+    } else {
+      this.user = JSON.parse(window.localStorage.getItem('user'));
+      console.log(this.user);
+      this.isAuthenticated = true;
+    }
 
     this.authService
       .watchStatus()
@@ -45,17 +42,21 @@ export class HeaderComponent implements OnInit {
       .subscribe((isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
         console.log('Subscribe!', isAuthenticated);
-        // this.user = JSON.parse(window.localStorage.getItem('user'));
-        // console.log(this.user);
+
+        if (!JSON.parse(window.localStorage.getItem('user'))) {
+          this.isAuthenticated = false;
+        } else {
+          this.user = JSON.parse(window.localStorage.getItem('user'));
+          console.log(this.user);
+          this.isAuthenticated = true;
+        }
 
       });
 
-      // this.userService.getUserById()
+    // if (this.isAuthenticated) {
+    //   this.userService.currentUser.next()
+    // }
 
-    // this.route.paramMap.subscribe(params => {
-    //     this.id = +params.get('id');
-    //     console.log(this.id);
-    //   });
   }
 
   signOut() {

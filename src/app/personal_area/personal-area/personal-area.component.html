@@ -57,6 +57,9 @@
         <label for="city-input">Город проживания:</label>
         <input type="text" id="city-input" class="user-input" [(ngModel)]="user.city">
       </p>
+      <div class="message {{message.type}}-message" *ngIf="message.text && (forArea==='personalChanges')">
+        {{ message.text }}
+      </div>
       <button type="button" class="save-btn" (click)="savePersonalChanges()">Сохранить</button>
     </section>
 
@@ -73,6 +76,9 @@
         <label for="email-input">Email:</label>
         <input type="email" id="email-input" class="user-input" [(ngModel)]="user.email">
       </p>
+      <div class="message {{message.type}}-message" *ngIf="message.text && (forArea==='contactsChanges')">
+        {{ message.text }}
+      </div>
       <button type="button" class="save-btn" (click)="saveContactsChanges()">Сохранить</button>
     </section>
 
@@ -93,6 +99,9 @@
         <label for="re-pass-input">Повторите пароль:</label>
         <input type="password" id="re-pass-input" class="user-input">
       </p>
+      <div class="message {{message.type}}-message" *ngIf="message.text && (forArea==='passwordChanges')">
+        {{ message.text }}
+      </div>
       <button type="button" class="save-btn" (click)="savePasswordChanges()">Сохранить</button>
     </section>
 

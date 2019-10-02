@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-vacancy',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateVacancyComponent implements OnInit {
 
+  createForm: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+    this.createForm = new FormGroup({
+      guestInfo: new FormGroup({
+        name: new FormControl(''),
+        tel: new FormControl('')
+      }),
+    });
   }
 
 }

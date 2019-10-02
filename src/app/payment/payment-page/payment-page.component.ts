@@ -54,11 +54,16 @@ export class PaymentPageComponent implements OnInit {
     //   });
     (this.paymentForm.get('guestInfoArr') as FormArray).push(guestInfo);
 
+    console.log(guestInfo);
+
     console.log((this.paymentForm.get('guestInfoArr') as FormArray).controls);
   }
 
-  removeGuest(id: number) {
-    console.log(id);
+  removeGuest(idx: number) {
+    console.log(idx);
+    const guests = this.paymentForm.get('guestInfoArr') as FormArray;
+    guests.removeAt(guests.value.findIndex(guest => guest.id === idx));
+
     // console.log((this.paymentForm.get('guestInfoArr') as FormArray));
   }
 
