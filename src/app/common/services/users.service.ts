@@ -9,19 +9,19 @@ import { Response } from 'selenium-webdriver/http';
 @Injectable()
 export class UsersService {
 
-  public token: string;
-  private logger = new Subject<boolean>();
-  private loggedIn: boolean;
+  // public token: string;
+  // private logger = new Subject<boolean>();
+  // private loggedIn: boolean;
 
   constructor(private http: HttpClient) {
-    this.init();
+    // this.init();
   }
 
-  init() {
-    const currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
-    this.token = currentUser && currentUser.token;
-    this.loggedIn = this.token ? true : false;
-  }
+  // init() {
+  //   const currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
+  //   this.token = currentUser && currentUser.token;
+  //   this.loggedIn = this.token ? true : false;
+  // }
 
   getUserByEmail(email: string) {
     return this.http.get(`http://localhost:3000/users?email=${email}`)
@@ -57,4 +57,8 @@ export class UsersService {
 
     return this.http.put(`http://localhost:3000/users/${user.id}`, user);
   }
+
+  // changeUserParams(user: User) {
+  //   return this.http.put(`http://localhost:3000/users/${user.id}`, user);
+  // }
 }

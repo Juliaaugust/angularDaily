@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "Комаров Виктор",
+      "name": "Комаров Виктор ",
       "email": "viktor@gmail.com",
       "password": "mypass",
       "role": "арендодатель",
@@ -123,30 +123,6 @@
       "registrDate": "Mon Sep 30 2019",
       "id": 5,
       "country": "Бельгия"
-    },
-    {
-      "email": "masha333@mail.ru",
-      "password": "121212",
-      "name": "Гномова Мария",
-      "role": "клиент",
-      "registrDate": "Wed Oct 02 2019",
-      "id": 6
-    },
-    {
-      "email": "masha22@mail.ru",
-      "password": "212122",
-      "name": "Гномова Мария",
-      "role": "клиент",
-      "registrDate": "Wed Oct 02 2019",
-      "id": 7
-    },
-    {
-      "email": "masha55@mail.ru",
-      "password": "121212",
-      "name": " Мария ",
-      "role": "клиент",
-      "registrDate": "Wed Oct 02 2019",
-      "id": 8
     }
   ],
   "housing": [

@@ -57,12 +57,12 @@ export class PersonalAreaComponent implements OnInit {
 
     this.userService.changePersonalUserParams(this.user, username, country, city)
       .subscribe(user => {
-        console.log(user);
-        this.user = JSON.parse(window.localStorage.getItem('user'));
+        localStorage.setItem('user', JSON.stringify(user));
       });
 
     this.showMessage('Новые изменения вступили в силу', 'info', 'personalChanges');
   }
+
 
   saveContactsChanges() {
     this.message.text = '';
@@ -72,8 +72,7 @@ export class PersonalAreaComponent implements OnInit {
 
     this.userService.changeContactsUserParams(this.user, tel, email)
       .subscribe(user => {
-        console.log(user);
-        this.user = JSON.parse(window.localStorage.getItem('user'));
+        localStorage.setItem('user', JSON.stringify(user));
       });
 
     this.showMessage('Новые изменения вступили в силу', 'info', 'contactsChanges');
@@ -86,8 +85,7 @@ export class PersonalAreaComponent implements OnInit {
 
     this.userService.changeUserPassword(this.user, password)
       .subscribe(user => {
-        console.log(user);
-        this.user = JSON.parse(window.localStorage.getItem('user'));
+        localStorage.setItem('user', JSON.stringify(user));
       });
 
     this.showMessage('Новые изменения вступили в силу', 'info', 'passwordChanges');

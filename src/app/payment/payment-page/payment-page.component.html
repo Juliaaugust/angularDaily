@@ -15,7 +15,7 @@
         <h2 role="heading" class="section-name">Дата и время</h2>
         <fieldset class="date-subsection arrival-subsection">
           <span class="date-span">Заезд</span>
-          <input type="date" [value]="arrivalDate" class="reservation-input date-input arrival-input" disabled>
+          <input type="date" [value]="arrivalDateStr" class="reservation-input date-input arrival-input" disabled>
           <select class="reservation-input date-select" formControlName="arrivalTime">
             <option class="date-select__option">Ранний заезд</option>
             <option class="date-select__option" selected>14:00</option>
@@ -32,7 +32,7 @@
         </fieldset>
         <fieldset class="date-subsection departure-section">
           <span class="date-span">Отъезд</span>
-          <input type="date" [value]="departureDate" class="reservation-input date-input departure-input" disabled>
+          <input type="date" [value]="departureDateStr" class="reservation-input date-input departure-input" disabled>
           <select class="reservation-input date-select" formControlName="departureTime">
             <option class="date-select__option">00:00</option>
             <option class="date-select__option">01:00</option>
@@ -51,35 +51,52 @@
           </select>
         </fieldset>
       </fieldset>
-      <fieldset class="reservation-subsection guests" formGroupName="guestInfoArr">
+      <fieldset class="reservation-subsection guests">
         <h2 role="heading" class="section-name">Состав гостей</h2>
 
-        <div class="guest-info-group"
-          *ngFor="let control of paymentForm.get('guestInfoArr').controls; let idx = index"
-        >
-          <!-- <h5>Гость {{ idx+1 }}:</h5> -->
-          <!-- <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input"> -->
-          <ul class="guest-info">
-            <hr class="under-guest">
-            <h5>Гость {{ idx+1 }}:</h5>
-            <li class="guest-info__item">
-                <label for="guest-fio-input">ФИО:
-                  <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input" required>
-                </label>
-            </li>
-            <li class="guest-info__item">
-                <label for="guest-tel-input">Номер телефона:
-                  <input type="tel" id="guest-tel-input" class="reservation-input guest-input" required>
-                </label>
-            </li>
-            <li class="guest-info__item">
-                <label for="guest-email-input">E-mail:
-                  <input type="email" id="guest-email-input" class="reservation-input guest-input" required>
-                </label>
-            </li>
-          </ul>
-          <button type="button" class="remove-guest" (click)="removeGuest(idx)">&times;</button>
-          <p></p>
+        <label for="guest-count-input">Количество:
+          <input
+            type="number"
+            min="1" [max]="maxGuests"
+            id="guest-count-input"
+            class="reservation-input guests-count-input"
+            formControlName="guestsCount"
+            [ngClass]="{'has-err': paymentForm.get('guestsCount').invalid && paymentForm.get('guestsCount').touched}"
+          >
+        </label>
+        <span
+        class="form-help-text"
+        *ngIf="paymentForm.get('guestsCount').invalid && paymentForm.get('guestsCount').touched"
+      >Количество гостей должно быть в диапазоне от 1 до {{ maxGuests }}</span>
+
+        <div formGroupName="guestInfoArr">
+          <div class="guest-info-group"
+            *ngFor="let control of paymentForm.get('guestInfoArr').controls; let idx = index"
+          >
+            <!-- <h5>Гость {{ idx+1 }}:</h5> -->
+            <!-- <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input"> -->
+            <ul class="guest-info">
+              <hr class="under-guest">
+              <h5>Гость {{ idx+1 }}:</h5>
+              <li class="guest-info__item">
+                  <label for="guest-fio-input">ФИО:
+                    <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input" required>
+                  </label>
+              </li>
+              <li class="guest-info__item">
+                  <label for="guest-tel-input">Номер телефона:
+                    <input type="tel" id="guest-tel-input" class="reservation-input guest-input" required>
+                  </label>
+              </li>
+              <li class="guest-info__item">
+                  <label for="guest-email-input">E-mail:
+                    <input type="email" id="guest-email-input" class="reservation-input guest-input" required>
+                  </label>
+              </li>
+            </ul>
+            <button type="button" class="remove-guest" (click)="removeGuest(idx)">&times;</button>
+            <p></p>
+          </div>
         </div>
         <button type="button" class="add-guest" (click)="addGuest()"><span class="plus-guest">+</span> Добавить гостя</button>
       </fieldset>
@@ -105,7 +122,7 @@
       <fieldset class="reservation-subsection sum">
         <h2 role="heading" class="section-name">Сумма заказа</h2>
         <p>К оплате:</p>
-        <p class="sum-value">16 000 ₽</p>
+        <p class="sum-value">{{ cost }} ₽</p>
       </fieldset>
       <fieldset class="reservation-subsection payment-method">
         <h2 role="heading" class="section-name">Способ оплаты</h2>
