@@ -34,9 +34,12 @@ export class RentalsAsideComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(val => {
-      console.log(val.city);
+      console.log(val.arrival);
+      console.log(val.departure);
       this.city = val.city;
       this.guests = val.guests;
+      this.arrivalDate = val.arrival;
+      this.departureDate = val.departure;
     });
     // this.city = this.route.snapshot.queryParams.city;
     // this.guests = +this.route.snapshot.queryParams.guests;
@@ -46,10 +49,11 @@ export class RentalsAsideComponent implements OnInit {
   applyParams() {
     console.log(this.city);
     console.log(this.route.queryParams);
-    this.housingService.getHousingBySearchParams(this.city, this.guests)
+    this.housingService.getHousingBySearchParams(this.city, this.guests, this.arrivalDate, this.departureDate)
     .subscribe(housings => {
       console.log(housings);
-      this.router.navigate(['/rentals'], { queryParams: {city: this.city, guests: this.guests}});
+      this.router.navigate(['/rentals'],
+        { queryParams: {city: this.city, guests: this.guests, arrival: this.arrivalDate, departure: this.departureDate}});
       console.log(this.city);
     });
     // this.route.queryParams.value.city = this.city;

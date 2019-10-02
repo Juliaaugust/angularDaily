@@ -15,7 +15,7 @@
         <h2 role="heading" class="section-name">Дата и время</h2>
         <fieldset class="date-subsection arrival-subsection">
           <span class="date-span">Заезд</span>
-          <input type="date" value="2019-08-27" class="reservation-input date-input arrival-input" disabled>
+          <input type="date" [value]="arrivalDate" class="reservation-input date-input arrival-input" disabled>
           <select class="reservation-input date-select" formControlName="arrivalTime">
             <option class="date-select__option">Ранний заезд</option>
             <option class="date-select__option" selected>14:00</option>
@@ -32,7 +32,7 @@
         </fieldset>
         <fieldset class="date-subsection departure-section">
           <span class="date-span">Отъезд</span>
-          <input type="date" value="2019-08-29" class="reservation-input date-input departure-input" disabled>
+          <input type="date" [value]="departureDate" class="reservation-input date-input departure-input" disabled>
           <select class="reservation-input date-select" formControlName="departureTime">
             <option class="date-select__option">00:00</option>
             <option class="date-select__option">01:00</option>
@@ -137,9 +137,12 @@
             <img src="../../../assets/images/icons/payment/ya-money.gif" alt="">
           </li>
         </ul>
-          <button type="submit" class="pay-btn" [disabled]="paymentForm.invalid">
-            Оплатить
-          </button>
+        <div class="message {{message.type}}-message" *ngIf="message.text">
+          {{ message.text }}
+        </div>
+        <button type="submit" class="pay-btn" [disabled]="paymentForm.invalid">
+          Оплатить
+        </button>
       </fieldset>
     </fieldset>
   </form>

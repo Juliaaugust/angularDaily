@@ -44,12 +44,13 @@ export class MainSearchComponent implements OnInit {
         this.guests = 1;
       }
       this.message.text = '';
-      this.housingService.getHousingBySearchParams(this.city, this.guests)
+      this.housingService.getHousingBySearchParams(this.city, this.guests, this.arrivalDate, this.departureDate)
         .subscribe(housings => {
           // console.log(housings);
           if (housings[0]) {
             this.message.text = '';
-            this.router.navigate(['/rentals'], { queryParams: {city: this.city, guests: this.guests}});
+            this.router.navigate(['/rentals'],
+              { queryParams: {city: this.city, guests: this.guests, arrival: this.arrivalDate, departure: this.departureDate}});
           } else {
             this.showMessage('Жилье с данными параметрами не найдено', 'info');
           }

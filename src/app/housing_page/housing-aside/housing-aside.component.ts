@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Validators } from '@angular/forms';
+import { Message } from '../../common/models/message.model';
 
 @Component({
   selector: 'app-housing-aside',
@@ -10,16 +11,46 @@ import { Validators } from '@angular/forms';
 export class HousingAsideComponent implements OnInit {
 
   id: number;
+  isAuthenticated: boolean;
+  message: Message;
+
+  city = 'Москва';
+  today = new Date();
+
+  minArrivalDate = this.today.toISOString().slice(0, 10);
+  minDeparturelDate = new Date(this.today.setDate(this.today.getDate() + 1)).toISOString().slice(0, 10);
+
+  arrivalDate = this.minArrivalDate;
+  departureDate = this.minDeparturelDate;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    this.message = new Message('error', '');
+
+    if (!JSON.parse(window.localStorage.getItem('user'))) {
+      this.isAuthenticated = false;
+    } else {
+      this.isAuthenticated = true;
+    }
+  }
+
+  private showMessage(text: string, type: string = 'error') {
+    this.message = new Message(type, text);
+    window.setTimeout(() => {
+      this.message.text = '';
+    }, 2500);
   }
 
   rentHouse() {
     this.id = +this.route.snapshot.params.id;
     console.log(this.id);
-    this.router.navigate(['/payment', this.id]);
+    if (this.isAuthenticated) {
+      this.router.navigate(['/payment', this.id]);
+    } else {
+      this.showMessage('Для бронирования жилья необходимо авторизоваться', 'error');
+    }
+
     // проверка на авторизацию
     // проверка на заполнение дат
   }

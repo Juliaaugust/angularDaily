@@ -16,9 +16,9 @@ export class HousingService {
     return this.http.get(`http://localhost:3000/housing/${id}`);
   }
 
-  getHousingBySearchParams(city: string, guests: number = 1) {
-    if (typeof(city) !== 'string' ) {
-      throw new Error('city is not a string');
+  getHousingBySearchParams(city: string, guests: number = 1, arrivalDate: string, departureDate: string) {
+    if ((typeof(city) !== 'string')) {
+      throw new Error('City is not a string');
     }
     // guests = Math.max(guests, 1);
     return this.http.get<Housing[]>(`http://localhost:3000/housing/`, {params: {'address.city': city}})
