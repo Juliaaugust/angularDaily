@@ -3,23 +3,26 @@
         <img src="../../../assets/images/housing_variants/var_0_1.jpg" alt="" class="vacancy-image">
     </div>
     <div class="housing-description">
-        <a href="./housing.html" target="_blank">
-            <h2 class="housing-name">Двухкомнатная квартира</h2>
+        <a [routerLink]="['/housing', landlordVacancyViewed.housingId]" target="_blank">
+            <h2 class="housing-name">{{ housingName }}</h2>
             <div class="housing-address">
                 <img src="../../../assets/images/icons/location.svg" class="housing-icon" alt="">
-                Москва, Старая Басманная, 5
+                {{ housingAddress }}
             </div>
             <div class="housing-price">
                 <img src="../../../assets/images/icons/price.svg" class="housing-icon" alt="">
-                <span class="price-card-value">8 000</span> ₽ за сутки
+                <span class="price-card-value">{{ housingPrice }}</span> ₽ за сутки
             </div>
             <div class="housing-landlord">
                 <img src="../../../assets/images/icons/avatar.svg" class="housing-icon" alt="">
-                Арендодатель: <a href="./landlord_info.html" class="landlord-link">Петр</a>
+                Арендодатель:
+                <a [routerLink]="['/admin/landlord', landlordVacancyViewed.landlordId]" class="landlord-link">
+                  {{ landlordName }}
+                </a>
             </div>
         </a>
         <div class="status">
-            Статус: <span class="status-name">одобрено</span>
+            Статус: <span class="status-name">{{ status }}</span>
         </div>
     </div>
 </div>

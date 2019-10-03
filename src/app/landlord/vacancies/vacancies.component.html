@@ -10,7 +10,10 @@
 
   <ul class="vacancies-list">
   <li class="vacancies-list__item">
-    <app-vacancy-card></app-vacancy-card>
+    <app-vacancy-card
+      *ngFor="let vac of vacancies"
+      [vacancy] = "vac"
+    ></app-vacancy-card>
   </li>
   </ul>
 

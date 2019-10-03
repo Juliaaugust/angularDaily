@@ -79,7 +79,7 @@
 
       <div class="reviews-container">
           <h3 class="section-name">Отзывы гостей</h3>
-          <ul class="reviews-list">
+          <ul class="reviews-list" *ngIf="houseInfo.reviews.length !== 0">
             <li class="reviews-list__item" *ngFor="let review of houseInfo.reviews">
               <div class="comment-top">
                 <div>

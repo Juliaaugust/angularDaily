@@ -13,12 +13,11 @@ export class ReservationsComponent implements OnInit {
   user: User;
   reservations: Reservation[];
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
     this.user = JSON.parse(window.localStorage.getItem('user'));
     this.reservations = this.user.reservations;
-    console.log(this.reservations);
   }
 
 }

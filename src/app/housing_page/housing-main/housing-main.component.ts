@@ -24,13 +24,14 @@ export class HousingMainComponent implements OnInit {
     this.hosingService.getHousingById(this.id)
     .subscribe(h => {
       this.houseInfo = h;
+      console.log('hhhhh', h);
       const ratingValues = [];
       for (let i of this.houseInfo.rating) {
         ratingValues.push(i.value);
       }
       this.ratingValue = ratingValues.length > 0 ? ratingValues.reduce((a, b) => a + b) / ratingValues.length : 0;
-
     });
+
   }
 
 }

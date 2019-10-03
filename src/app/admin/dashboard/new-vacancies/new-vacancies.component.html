@@ -3,25 +3,28 @@
         <img src="../../../assets/images/housing_variants/var_1_2.jpg" alt="" class="vacancy-image">
     </div>
     <div class="housing-description">
-        <a href="./housing.html" target="_blank">
-            <h2 class="housing-name">Апартамент</h2>
+        <a [routerLink]="['/housing', landlordVacancyNew.housingId]" target="_blank">
+            <h2 class="housing-name">{{ housingName }}</h2>
             <div class="housing-address">
                 <img src="../../../assets/images/icons/location.svg" class="housing-icon" alt="">
-                Москва, Тверская ул., 37
+                {{ housingAddress }}
             </div>
             <div class="housing-price">
                 <img src="../../../assets/images/icons/price.svg" class="housing-icon" alt="">
-                <span class="price-card-value">12 000</span> ₽ за сутки
+                <span class="price-card-value">{{ housingPrice }}</span> ₽ за сутки
             </div>
             <div class="housing-landlord">
                 <img src="../../../assets/images/icons/avatar.svg" class="housing-icon" alt="">
-                Арендодатель: <a href="./landlord_info.html" class="landlord-link">Виктор</a>
+                Арендодатель:
+                <a [routerLink]="['/admin/landlord', landlordVacancyNew.landlordId]" class="landlord-link">
+                  {{ landlordName }}
+                </a>
             </div>
         </a>
 
         <div class="buttons">
-            <button class="approve">Одобрить</button>
-            <button class="reject">Отклонить</button>
+            <button class="approve" (click)="onApprove(landlordVacancyNew.housingId)">Одобрить</button>
+            <button class="reject" (click)="onReject(landlordVacancyNew.housingId)">Отклонить</button>
         </div>
     </div>
 </div>

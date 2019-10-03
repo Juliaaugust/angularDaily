@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Vacancy } from '../../../common/models/vacancy.model';
+import { HousingService } from 'src/app/common/services/housing.service';
+import { Housing } from 'src/app/common/models/housing.model';
+import { UsersService } from '../../../common/services/users.service';
+import { User } from '../../../common/models/user.model';
 
 @Component({
   selector: 'app-viewed-vacancies',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewedVacanciesComponent implements OnInit {
 
-  constructor() { }
+  @Input() landlordVacancyViewed: Vacancy;
+
+  housingName = '';
+  housingAddress = '';
+  housingPrice: number;
+  landlordName: string;
+  status = '';
+
+  constructor(private housingService: HousingService, private userService: UsersService) { }
 
   ngOnInit() {
+    this.status = this.landlordVacancyViewed.status;
+
+    this.userService.getUserById(this.landlordVacancyViewed.landlordId)
+      .subscribe((val: User) => {
+        this.landlordName = val.name;
+      });
+
+    this.housingService.getHousingById(this.landlordVacancyViewed.housingId)
+      .subscribe((val: Housing) => {
+        this.housingName = val.name;
+        this.housingAddress = `${val.address.city}, ${val.address.house}, ${val.address.street}`;
+        this.housingPrice = val.price;
+      });
   }
 
 }

@@ -28,10 +28,9 @@ export class UsersService {
     .pipe(map((user) => user[0] ? user[0] : undefined));
   }
 
-  // getUserById(id: number) {
-  //   return this.http.get(`http://localhost:3000/users/${id}`)
-  //   .pipe(map((user) => user[0] ? user[0] : undefined));
-  // }
+  getUserById(id: number) {
+    return this.http.get(`http://localhost:3000/users/${id}`);
+  }
 
   createNewUser(user: User) {
     return this.http.post('http://localhost:3000/users', user);

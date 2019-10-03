@@ -11,34 +11,26 @@
       "country": "Россия",
       "city": "Москва",
       "tel": "+7-911-345-87-91",
-      "newVacancies": [
+      "landlordVacancies": [
         {
-          "id": 8,
-          "name": "Двухкомнатная квартира",
-          "address": "Москва, ул. Тверская, 15",
-          "price": 12500
+          "housingId": 15,
+          "status": "на рассмотрении",
+          "landlordId": 2
         },
         {
-          "id": 10,
-          "name": "Апартаменты",
-          "address": "Москва, Новый Арбат, 28",
-          "price": 12500
-        }
-      ],
-      "viewdVacancies": [
-        {
-          "id": 8,
-          "name": "Двухкомнатная квартира",
-          "address": "Москва, Старая Басманная, 5",
-          "price": 12500,
-          "status": "одобрено"
+          "housingId": 10,
+          "status": "одобрено",
+          "landlordId": 2
         },
         {
-          "id": 10,
-          "name": "Апартаменты",
-          "address": "Москва, Новый Арбат, 28",
-          "price": 12500,
-          "status": "отклонено"
+          "housingId": 7,
+          "status": "отклонено",
+          "landlordId": 2
+        },
+        {
+          "housingId": 8,
+          "status": "одобрено",
+          "landlordId": 2
         }
       ]
     },
@@ -55,19 +47,19 @@
       "tel": "+49-17-426-16-55",
       "vacancies": [
         {
-          "housing": 15,
+          "housingId": 15,
           "status": "на рассмотрении"
         },
         {
-          "housing": 10,
+          "housingId": 10,
           "status": "одобрено"
         },
         {
-          "housing": 7,
+          "housingId": 7,
           "status": "отклонено"
         },
         {
-          "housing": 8,
+          "housingId": 8,
           "status": "одобрено"
         }
       ]
@@ -175,6 +167,41 @@
   ],
   "housing": [
     {
+      "id": "7",
+      "name": "Мини-отель",
+      "price": 6500,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Балаклавский пр.",
+        "house": 152
+      },
+      "isVisible": false,
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "Отличный мини-отель, возможна почасовая оплата",
+      "maxGuests": 5,
+      "type": "hotel/hostel",
+      "rating": [],
+      "reviews": []
+    },
+    {
       "id": "8",
       "name": "Двухкомнатная квартира",
       "price": 8000,
@@ -184,6 +211,7 @@
         "street": "Старая Басманная",
         "house": 5
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -260,6 +288,7 @@
         "street": "Киевская ул.",
         "house": 2
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -328,6 +357,7 @@
         "street": "Новый Арбат",
         "house": 28
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -412,6 +442,7 @@
         "street": "ул. Гагарина",
         "house": 40
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -504,6 +535,7 @@
         "street": "ул. Черноморская",
         "house": 10
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -580,6 +612,7 @@
         "street": "ул. Демерджипа",
         "house": 55
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -656,6 +689,7 @@
         "street": "ул. Йордан Йосифов",
         "house": 49
       },
+      "isVisible": true,
       "photos": [
         {
           "id": "img-1",
@@ -712,6 +746,43 @@
           "comment": "Уютный домик",
           "stars": 5
         }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Однокомнатная квартира",
+      "price": 2400,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Севастопольский пр.",
+        "house": 149
+      },
+      "isVisible": false,
+      "photos": [
+        {
+          "id": "img-1",
+          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": "img-2",
+          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": "img-3",
+          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": "img-4",
+          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ],
+      "description": "13 этаж. Хорошая шумоизоляция. Множество магазинов поблизости, парк, площадка",
+      "maxGuests": 3,
+      "type": "flat",
+      "rating": [
+      ],
+      "reviews": [
       ]
     }
   ]

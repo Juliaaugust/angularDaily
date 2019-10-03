@@ -35,12 +35,16 @@ const routes: Routes = [
   { path: 'admin/area/:id', component: PersonalAreaComponent},
   { path: 'admin/dashboard', component: DashboardComponent},
   { path: 'admin/landlord/:id', component: LandlordInfoComponent},
+  { path: 'admin/reservaions', component: ReservationsComponent},
+  { path: 'admin/review/:id', component: ReviewComponent},
 
   { path: 'landlord', component: PersonalAreaComponent},
   { path: 'landlord/area/:id', component: PersonalAreaComponent},
   { path: 'landlord/create', component: CreateVacancyComponent},
   { path: 'landlord/requests', component: RequestsComponent},
   { path: 'landlord/vacancies', component: VacanciesComponent},
+  { path: 'landlord/reservaions', component: ReservationsComponent},
+  { path: 'landlord/review/:id', component: ReviewComponent},
 
   // { path: 'client', component: PersonalAreaComponent, children: [
   //   { path: '', redirectTo: 'area/:id', pathMatch: 'full'},

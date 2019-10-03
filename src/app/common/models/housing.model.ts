@@ -13,5 +13,6 @@ export class Housing {
     public description?: string,
     public id?: number,
     public rating?: number,
+    public isVisible?: boolean
   ) {}
 }

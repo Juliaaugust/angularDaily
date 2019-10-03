@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vacancy } from '../../common/models/vacancy.model';
+import { User } from 'src/app/common/models/user.model';
 
 @Component({
   selector: 'app-vacancies',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VacanciesComponent implements OnInit {
 
+  user: User;
+  vacancies: Vacancy[];
+
   constructor() { }
 
   ngOnInit() {
+    this.user = JSON.parse(window.localStorage.getItem('user'));
+    this.vacancies = this.user.vacancies;
   }
 
 }

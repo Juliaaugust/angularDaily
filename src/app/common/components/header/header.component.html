@@ -49,12 +49,14 @@
         </ul>
         <ul *ngIf="user.role==='администратор'" class="wrapdown">
           <li><a [routerLink]="['/admin/area', user.id]">Личный кабинет</a></li>
+          <li><a [routerLink]="['/admin/reservaions']">Мои бронирования</a></li>
           <li><a [routerLink]="['/admin/dashboard']">Вакансии продавцов</a></li>
           <li><a [routerLink]="['/']">К поиску жилья</a></li>
           <li><a (click)="signOut()">Выйти</a></li>
         </ul>
         <ul *ngIf="user.role==='арендодатель'" class="wrapdown">
           <li><a [routerLink]="['/landlord/area', user.id]">Личный кабинет</a></li>
+          <li><a [routerLink]="['/landlord/reservaions']">Мои бронирования</a></li>
           <li><a [routerLink]="['/landlord/create']">Создать вакансию</a></li>
           <li><a [routerLink]="['/landlord/vacancies']">Мои вакансии</a></li>
           <li><a [routerLink]="['/landlord/requests']">Мои заявки</a></li>

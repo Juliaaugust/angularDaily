@@ -45,6 +45,7 @@ export class HousingService {
       map(( housings ) => {
         return housings.filter((item) => {
           return 1
+          && (item.isVisible === true)
           && (!guests || +item.maxGuests >= guests)
           && (!params.minPrice || item.price >= +params.minPrice)
           && (!params.maxPrice || item.price <= +params.maxPrice)

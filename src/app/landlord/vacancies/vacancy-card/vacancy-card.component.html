@@ -3,21 +3,21 @@
       <img src="../../../assets/images/housing_variants/var_1_1.jpg" alt="" class="vacancy-image">
   </div>
   <div class="housing-description">
-    <a href="./housing.html" target="_blank">
-      <h2 class="housing-name">Апартамент</h2>
+    <a [routerLink]="['/housing', vacancy.housingId]" target="_blank">
+      <h2 class="housing-name">{{ housingName }}</h2>
       <div class="housing-address">
           <img src="../../../assets/images/icons/location.svg" alt="">
-          Москва, Тверская ул., 37
+          {{ housingAddress }}
       </div>
       <div class="housing-price">
           <img src="../../../assets/images/icons/price.svg" alt="">
-          <span class="price-card-value">12 000</span> ₽ за сутки
+          <span class="price-card-value">{{ housingPrice }}</span> ₽ за сутки
       </div>
     </a>
 
     <div class="housing-params">
       <div class="status">
-          Статус: <span class="status-name">на рассмотрении</span>
+          Статус: <span class="status-name">{{ status }}</span>
       </div>
       <div class="buttons">
           <button class="edit-btn">Редактировать</button>

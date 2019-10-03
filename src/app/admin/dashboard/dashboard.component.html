@@ -3,12 +3,18 @@
 
   <section class="vacancies-section">
     <div class="title-vacancies">Новых вакансий: 2</div>
-    <app-new-vacancies></app-new-vacancies>
+    <app-new-vacancies
+      *ngFor="let llVacNew of landlordVacanciesNew"
+      [landlordVacancyNew] = "llVacNew"
+    ></app-new-vacancies>
   </section>
 
   <section class="vacancies-section">
     <div class="title-vacancies">Просмотренные</div>
-    <app-viewed-vacancies></app-viewed-vacancies>
+    <app-viewed-vacancies
+      *ngFor="let llVacViewed of landlordVacanciesViewed"
+      [landlordVacancyViewed] = "llVacViewed"
+    ></app-viewed-vacancies>
   </section>
 
 </div>
