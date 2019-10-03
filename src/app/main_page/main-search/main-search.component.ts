@@ -21,7 +21,7 @@ export class MainSearchComponent implements OnInit {
   arrivalDate = this.minArrivalDate;
   departureDate = this.minDeparturelDate;
 
-  guests: number;
+  guests: string;
   city = '';
 
   constructor(private router: Router, private housingService: HousingService) { }
@@ -39,18 +39,18 @@ export class MainSearchComponent implements OnInit {
 
   searchHousing() {
 
+    const {city, arrivalDate, departureDate} = this;
+    const guests = (Math.max(+this.guests, 1 ) || 1).toString();
+
     if (this.city) {
-      if (!this.guests) {
-        this.guests = 1;
-      }
       this.message.text = '';
-      this.housingService.getHousingBySearchParams(this.city, this.guests, this.arrivalDate, this.departureDate)
+      this.housingService.getHousingBySearchParams({city, guests, arrivalDate, departureDate})
         .subscribe(housings => {
           // console.log(housings);
           if (housings[0]) {
             this.message.text = '';
             this.router.navigate(['/rentals'],
-              { queryParams: {city: this.city, guests: this.guests, arrival: this.arrivalDate, departure: this.departureDate}});
+              { queryParams: {city, guests, arrivalDate, departureDate}});
           } else {
             this.showMessage('Жилье с данными параметрами не найдено', 'info');
           }

@@ -1,6 +1,8 @@
 import { Component, OnInit, DoCheck, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HousingService } from '../../common/services/housing.service';
+import { filter } from 'rxjs/operators';
+import { HousingParams } from '../../common/models/housing-params.model';
 
 @Component({
   selector: 'app-rentals-aside',
@@ -14,7 +16,7 @@ export class RentalsAsideComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private housingService: HousingService) { }
 
   city: string;
-  guests: number;
+  guests: string;
 
   today = new Date();
 
@@ -26,38 +28,58 @@ export class RentalsAsideComponent implements OnInit {
 
   minPrice = '';
   maxPrice = '';
-  ratingValue = '3';
+  minRatingValue = '3';
+
+  sortingType: 'default' | 'asc' | 'desc' | 'rating' = 'default';
 
   setRatingValue(event: Event) {
-    this.ratingValue = (event.target as HTMLInputElement).value;
+    this.minRatingValue = (event.target as HTMLInputElement).value;
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(val => {
-      console.log(val.arrival);
-      console.log(val.departure);
+    this.route.queryParams.subscribe((val: HousingParams) => {
       this.city = val.city;
-      this.guests = val.guests;
-      this.arrivalDate = val.arrival;
-      this.departureDate = val.departure;
+      this.guests = (Math.max(+val.guests, 1 ) || 1).toString();
+      this.arrivalDate = val.arrivalDate;
+      this.departureDate = val.departureDate;
+      this.minPrice = val.minPrice;
+      this.maxPrice = val.maxPrice;
+      if (['default', 'asc', 'desc', 'rating'].includes(val.sorting) ) {
+        this.sortingType = val.sorting as any;
+      }
+      this.minRatingValue = val.rating;
     });
-    // this.city = this.route.snapshot.queryParams.city;
-    // this.guests = +this.route.snapshot.queryParams.guests;
-    // console.log(this.city, this.guests);
   }
 
   applyParams() {
+
+    const routeParams = this.getParams();
+
     console.log(this.city);
     console.log(this.route.queryParams);
-    this.housingService.getHousingBySearchParams(this.city, this.guests, this.arrivalDate, this.departureDate)
+    this.housingService.getHousingBySearchParams(routeParams)
     .subscribe(housings => {
       console.log(housings);
-      this.router.navigate(['/rentals'],
-        { queryParams: {city: this.city, guests: this.guests, arrival: this.arrivalDate, departure: this.departureDate}});
+      this.router.navigate(['/rentals'], {queryParams: routeParams});
       console.log(this.city);
     });
+
+    // this.router.navigate(['.'], { relativeTo: this.route, queryParams : newQueryParams });
     // this.route.queryParams.value.city = this.city;
     // this.onApplyParams.emit(this.city);
+  }
+
+  getParams(): HousingParams {
+    return {
+        city: this.city,
+        guests: this.guests,
+        arrivalDate: this.arrivalDate,
+        departureDate: this.departureDate,
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
+        rating: this.minRatingValue,
+        sorting: this.sortingType
+      };
   }
 
 }
