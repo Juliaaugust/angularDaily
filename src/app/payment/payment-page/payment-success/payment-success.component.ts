@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HousingService } from '../../../common/services/housing.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-payment-success',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentSuccessComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+
+  constructor(private route: ActivatedRoute, private housingService: HousingService) { }
 
   ngOnInit() {
+    this.id = +this.route.snapshot.params.id;
+    this.housingService.getHousingById(this.id)
+      .subscribe((housing) => {
+        console.log(housing);
+      });
   }
 
 }

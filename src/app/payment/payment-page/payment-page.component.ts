@@ -24,7 +24,7 @@ export class PaymentPageComponent implements OnInit {
   id: number;
 
   housingName = '';
-  maxGuests: number;
+  maxGuests = 10;
   price = 0;
   diffDays = 0;
   cost = 0;
@@ -62,10 +62,7 @@ export class PaymentPageComponent implements OnInit {
     const diffTime = Math.abs(+departureDate - +arrivalDate);
     this.diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-
-
     this.user = JSON.parse(window.localStorage.getItem('user'));
-
 
     this.id = +this.route.snapshot.params.id;
 
@@ -74,7 +71,7 @@ export class PaymentPageComponent implements OnInit {
         console.log(housing);
         this.housingName = housing.name;
         this.price = housing.price;
-        this.maxGuests = housing.maxGuests;
+        this.maxGuests = +housing.maxGuests;
         this.cost = this.diffDays * this.price;
       });
 

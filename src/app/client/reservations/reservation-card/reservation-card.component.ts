@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Reservation } from '../../../common/models/reservation.model';
+import { HousingService } from '../../../common/services/housing.service';
+import { Housing } from '../../../common/models/housing.model';
 
 @Component({
   selector: 'app-reservation-card',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() reservation: Reservation;
+
+  housingName = '';
+  housingAddress = '';
+
+  constructor(private housing: HousingService) { }
 
   ngOnInit() {
+    this.housing.getHousingById(this.reservation.housingId)
+      .subscribe((val: Housing) => {
+        this.housingName = val.name;
+        this.housingAddress = `${val.address.city}, ${val.address.house}, ${val.address.street}`;
+      });
   }
 
 }

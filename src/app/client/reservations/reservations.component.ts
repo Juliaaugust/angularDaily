@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../../common/models/user.model';
+import { Reservation } from '../../common/models/reservation.model';
 
 @Component({
   selector: 'app-reservations',
@@ -8,12 +10,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ReservationsComponent implements OnInit {
 
+  user: User;
+  reservations: Reservation[];
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.user = JSON.parse(window.localStorage.getItem('user'));
+    this.reservations = this.user.reservations;
+    console.log(this.reservations);
   }
 
-  openReviewPage() {
-    // this.router.navigate(['/review', housing.id], {relativeTo: this.route});
-  }
 }

@@ -8,10 +8,18 @@
       <button id="canceled">Отмененные</button>
   </div>
 
+  <div class="no-reservations" *ngIf="!reservations">
+    У вас пока нет ни одного бронирования
+  </div>
+
   <div class="reservations">
     <ul class="reservations-list">
       <li class="reservation-list__item">
-        <app-reservation-card></app-reservation-card>
+        <app-reservation-card
+          *ngFor="let res of reservations"
+          [reservation]="res"
+        >
+        </app-reservation-card>
       </li>
     </ul>
   </div> <!--reservations-->

@@ -26,13 +26,11 @@ export class RentalsWrapperComponent implements OnInit, OnDestroy {
 
   housings: Housing[] = [];
 
-  private isLoading = false;
-
+  public isLoading = false;
 
   private destroyed$: Subject<void> = new Subject<void>();
 
   ngOnInit() {
-
   }
 
   onQueryParamsChange(queryParams) {
@@ -51,11 +49,8 @@ export class RentalsWrapperComponent implements OnInit, OnDestroy {
     });
   }
 
-
-
   ngOnDestroy() {
     this.destroyed$.next();
     this.destroyed$.complete();
   }
-
 }
