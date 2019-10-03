@@ -57,7 +57,7 @@
       <h2 role="heading" class="section-name">Оценка и отзывы</h2>
       <div class="rating-container">
         <div class="rating-value-box">
-          4.2
+          {{ ratingValue | number:'1.2-2' }}
         </div>
         <div>
           <p>На основании {{ houseInfo.reviews.length }} отзывов</p>
@@ -72,7 +72,7 @@
           </div>
           <div class="rating-value">
             <progress class="rating__progress-bar" role="progressbar" max="5" [value]="rat.value"></progress>
-            <label class="rating__progress-value">{{ rat.value }}</label>
+            <label class="rating__progress-value">{{ rat.value | number:'1.1-1' }}</label>
           </div>
         </li>
       </ul>

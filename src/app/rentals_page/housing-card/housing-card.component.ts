@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Housing } from '../../common/models/housing.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-housing-card',
@@ -10,9 +11,16 @@ export class HousingCardComponent implements OnInit {
 
   @Input() housing: Housing;
 
-  constructor() { }
+  arrivalDate = '';
+  departureDate = '';
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe((val) => {
+      this.arrivalDate = val.arrivalDate;
+      this.departureDate = val.departureDate;
+    });
   }
 
 }

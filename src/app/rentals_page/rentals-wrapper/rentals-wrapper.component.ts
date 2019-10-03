@@ -12,8 +12,6 @@ import { Subscriber, Subject } from 'rxjs';
 })
 export class RentalsWrapperComponent implements OnInit, OnDestroy {
 
-  @Input() cityFromAside: string;
-
   constructor(
     private housingService: HousingService,
     private route: ActivatedRoute,

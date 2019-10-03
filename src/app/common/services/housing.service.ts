@@ -44,7 +44,6 @@ export class HousingService {
       ),
       map(( housings ) => {
         return housings.filter((item) => {
-          // console.log(Math.round(this.rating(item)));
           return 1
           && (!guests || +item.maxGuests >= guests)
           && (!params.minPrice || item.price >= +params.minPrice)
@@ -52,14 +51,6 @@ export class HousingService {
           && (!params.rating || Math.round(this.rating(item)) >= +params.rating);
         });
      })
-        // filter((housings, i) => housings[i].address.city.toLowerCase() === city.toLowerCase()),
-
-        // filter((housings, i) => {
-        //   if ((housings && housings[i] && housings[i].hasOwnProperty('maxGuests'))) {
-        //     return +housings[i].maxGuests >= guests;
-        //   }
-        //   return true;
-        // })
       );
   }
 
@@ -67,9 +58,7 @@ export class HousingService {
     return this.http.post('http://localhost:3000/housing', housing);
   }
 
-
   rating(item) {
-    // return item.rating.length > 0 ? item.rating.reduce((a, b) => a.value + b.value) / item.rating.length : 0;
     const ratingValues = [];
     for (let i of item.rating) {
       ratingValues.push(i.value);

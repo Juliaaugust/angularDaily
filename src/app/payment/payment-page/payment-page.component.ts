@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Message } from '../../common/models/message.model';
 import { HousingService } from '../../common/services/housing.service';
+import { Housing } from '../../common/models/housing.model';
+import { User } from 'src/app/common/models/user.model';
 
 @Component({
   selector: 'app-payment-page',
@@ -15,24 +17,20 @@ export class PaymentPageComponent implements OnInit {
 
   paymentForm: FormGroup;
 
+  user: User;
+
+  isChangeDisabled = false;
+
   id: number;
 
-  maxGuests = 10;
-  price = 8000;
+  housingName = '';
+  maxGuests: number;
+  price = 0;
+  diffDays = 0;
+  cost = 0;
 
-  arrivalDateStr = new Date().toISOString().slice(0, 10);
-  departureDateStr = new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().slice(0, 10);
-
-  arrivalParts = this.arrivalDateStr.split('-');
-  departureParts = this.departureDateStr.split('-');
-
-  arrivalDate = new Date(+this.arrivalParts[0], +this.arrivalParts[1] - 1, +this.arrivalParts[2]);
-  departureDate = new Date(+this.departureParts[0], +this.departureParts[1] - 1, +this.departureParts[2]);
-
-  diffTime = Math.abs(+this.departureDate - +this.arrivalDate);
-  diffDays = Math.ceil(this.diffTime / (1000 * 60 * 60 * 24)); // количество дней, кот нужно умножить на цену
-
-  cost: number;
+  arrivalDateStr = '';
+  departureDateStr = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -49,19 +47,37 @@ export class PaymentPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cost = this.price * this.diffDays;
 
-    console.log(this.diffDays);
+    this.route.queryParams.subscribe((val) => {
+      this.arrivalDateStr = val.arrivalDate;
+      this.departureDateStr = val.departureDate;
+    });
+
+    const arrivalParts = this.arrivalDateStr.split('-');
+    const departureParts = this.departureDateStr.split('-');
+
+    const arrivalDate = new Date(+arrivalParts[0], +arrivalParts[1] - 1, +arrivalParts[2]);
+    const departureDate = new Date(+departureParts[0], +departureParts[1] - 1, +departureParts[2]);
+
+    const diffTime = Math.abs(+departureDate - +arrivalDate);
+    this.diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+
+
+    this.user = JSON.parse(window.localStorage.getItem('user'));
+
+
     this.id = +this.route.snapshot.params.id;
-    console.log(this.id);
+
     this.housingService.getHousingById(this.id)
-      .subscribe(housing => {
+      .subscribe((housing) => {
         console.log(housing);
-        // console.log(housing.price);
-        // console.log(housing.maxGuests);
+        this.housingName = housing.name;
+        this.price = housing.price;
+        this.maxGuests = housing.maxGuests;
+        this.cost = this.diffDays * this.price;
       });
 
-    // console.log(hh);
 
     this.message = new Message('error', '');
 
@@ -121,5 +137,12 @@ export class PaymentPageComponent implements OnInit {
       this.showMessage('Необходимо выбрать способ оплаты!', 'error');
     }
 
+  }
+
+  changeDisabledField() {
+    this.isChangeDisabled = !this.isChangeDisabled;
+    setTimeout(() => {
+      this.isChangeDisabled = false;
+    }, 2000);
   }
 }

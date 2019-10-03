@@ -7,8 +7,7 @@
     <fieldset class="reservation-section details">
       <fieldset class="reservation-subsection housing">
           <h2 role="heading" class="section-name">Арендуемое помещение</h2>
-          <!-- <a class="housing-link" (click)="openHousingPage()" target="_blank">Двухкомнатная квартира</a> -->
-          <a class="housing-link" [routerLink]="['/housing', this.route.snapshot.params.id]" target="_blank">Двухкомнатная квартира</a>
+          <a class="housing-link" [routerLink]="['/housing', this.route.snapshot.params.id]" target="_blank">{{ housingName }}</a>
 
       </fieldset>
       <fieldset class="reservation-subsection date-time">
@@ -69,6 +68,26 @@
         *ngIf="paymentForm.get('guestsCount').invalid && paymentForm.get('guestsCount').touched"
       >Количество гостей должно быть в диапазоне от 1 до {{ maxGuests }}</span>
 
+      <ul (click)="changeDisabledField()" class="guest-info main-guest-info">
+          <h5>Гость 1:</h5>
+          <li class="guest-info__item">
+              <label for="guest-fio-input">ФИО:
+                <input type="text" id="guest-fio-input" class="reservation-input guest-input" [value]="user.name || ''" disabled>
+              </label>
+          </li>
+          <li class="guest-info__item">
+              <label for="guest-tel-input">Номер телефона:
+                <input type="tel" id="guest-tel-input" class="reservation-input guest-input" [value]="user.tel || ''" disabled>
+              </label>
+          </li>
+          <li class="guest-info__item">
+              <label for="guest-email-input">E-mail:
+                <input type="email" id="guest-email-input" class="reservation-input guest-input" [value]="user.email || ''" disabled>
+              </label>
+          </li>
+          <p class="red-help" [ngClass]="{'red-help-visible': isChangeDisabled}">Измененить свои данные можно в личном кабинете</p>
+        </ul>
+
         <div formGroupName="guestInfoArr">
           <div class="guest-info-group"
             *ngFor="let control of paymentForm.get('guestInfoArr').controls; let idx = index"
@@ -77,7 +96,7 @@
             <!-- <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input"> -->
             <ul class="guest-info">
               <hr class="under-guest">
-              <h5>Гость {{ idx+1 }}:</h5>
+              <h5>Гость {{ idx+2 }}:</h5>
               <li class="guest-info__item">
                   <label for="guest-fio-input">ФИО:
                     <input [formControlName]="idx" type="text" id="guest-fio-input" class="reservation-input guest-input" required>
@@ -122,7 +141,8 @@
       <fieldset class="reservation-subsection sum">
         <h2 role="heading" class="section-name">Сумма заказа</h2>
         <p>К оплате:</p>
-        <p class="sum-value">{{ cost }} ₽</p>
+        <p class="sum-value">{{ cost | currency:' ' }} ₽</p>
+        <p class="sum-value-desc">({{ diffDays }} суток по {{ price }} ₽)</p>
       </fieldset>
       <fieldset class="reservation-subsection payment-method">
         <h2 role="heading" class="section-name">Способ оплаты</h2>

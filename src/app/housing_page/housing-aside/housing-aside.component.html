@@ -5,10 +5,6 @@
       <img  class="check-options-icon" src="../../../assets/images/icons/settings.png" alt="Settings">
     </label>
     <div class="options-container">
-      <div class="city-option option-block">
-        <p class="option-name">Город:</p>
-        <input class="option-input" type="text" name="city-input" [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
-      </div>
       <div class="arrival-option option-block">
         <p class="option-name">Дата заезда:</p>
         <input class="option-input" type="date" name="arrival-input" [(ngModel)]="arrivalDate" [ngModelOptions]="{standalone: true}" [min]="minArrivalDate">

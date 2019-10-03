@@ -3,6 +3,14 @@
     [formGroup]="createForm"
     (ngSubmit)="createVacancy()">
     <fieldset class="add_vacancy-section housing-type">
+        <h2 role="heading" class="section-name">Название жилья</h2>
+      <p>
+        <label for="name-input">Наименование, котрое будет отражаться в заголовке:</label>
+        <br>
+        <input type="text" id="name-input" class="vacancy-input" value="">
+      </p>
+    </fieldset>
+    <fieldset class="add_vacancy-section housing-type">
         <h2 role="heading" class="section-name">Тип жилья</h2>
         <ul class="housing-type-list">
             <li class="housing-type-list__item">
@@ -11,7 +19,7 @@
             </li>
             <li class="housing-type-list__item">
                 <input name="housing-type" type="radio" id="apartments">
-                <label for="apartments">Квартиры, апартаменты</label>
+                <label for="apartments">Апартаменты</label>
             </li>
             <li class="housing-type-list__item">
                 <input name="housing-type" type="radio" id="houses">
@@ -19,9 +27,10 @@
             </li>
             <li class="housing-type-list__item">
                 <input name="housing-type" type="radio" id="rooms">
-                <label for="rooms">Отдельные комнаты</label>
+                <label for="rooms">Квартиры</label>
             </li>
         </ul>
+
     </fieldset>
 
     <fieldset class="add_vacancy-section housing-type">

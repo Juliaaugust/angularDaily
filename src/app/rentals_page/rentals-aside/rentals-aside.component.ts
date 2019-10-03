@@ -11,8 +11,6 @@ import { HousingParams } from '../../common/models/housing-params.model';
 })
 export class RentalsAsideComponent implements OnInit {
 
-  // @Output() onApplyParams: EventEmitter<string> = new EventEmitter<string>();
-
   constructor(private route: ActivatedRoute, private router: Router, private housingService: HousingService) { }
 
   city: string;
@@ -44,10 +42,12 @@ export class RentalsAsideComponent implements OnInit {
       this.departureDate = val.departureDate;
       this.minPrice = val.minPrice;
       this.maxPrice = val.maxPrice;
-      if (['default', 'asc', 'desc', 'rating'].includes(val.sorting) ) {
+      if (['default', 'asc', 'desc', 'rating'].includes(val.sorting)) {
         this.sortingType = val.sorting as any;
       }
-      this.minRatingValue = val.rating;
+      if (val.rating) {
+        this.minRatingValue = val.rating;
+      }
     });
   }
 
@@ -55,8 +55,6 @@ export class RentalsAsideComponent implements OnInit {
 
     const routeParams = this.getParams();
 
-    console.log(this.city);
-    console.log(this.route.queryParams);
     this.housingService.getHousingBySearchParams(routeParams)
     .subscribe(housings => {
       console.log(housings);
@@ -64,9 +62,6 @@ export class RentalsAsideComponent implements OnInit {
       console.log(this.city);
     });
 
-    // this.router.navigate(['.'], { relativeTo: this.route, queryParams : newQueryParams });
-    // this.route.queryParams.value.city = this.city;
-    // this.onApplyParams.emit(this.city);
   }
 
   getParams(): HousingParams {

@@ -13,6 +13,8 @@ export class HousingMainComponent implements OnInit {
   id: number;
   houseInfo: any;
 
+  ratingValue: number;
+
   constructor(
     private route: ActivatedRoute,
     private hosingService: HousingService) { }
@@ -22,9 +24,12 @@ export class HousingMainComponent implements OnInit {
     this.hosingService.getHousingById(this.id)
     .subscribe(h => {
       this.houseInfo = h;
-      console.log(this.houseInfo);
-      console.log(this.houseInfo.rating);
-      console.log(this.houseInfo.photos);
+      const ratingValues = [];
+      for (let i of this.houseInfo.rating) {
+        ratingValues.push(i.value);
+      }
+      this.ratingValue = ratingValues.length > 0 ? ratingValues.reduce((a, b) => a + b) / ratingValues.length : 0;
+
     });
   }
 

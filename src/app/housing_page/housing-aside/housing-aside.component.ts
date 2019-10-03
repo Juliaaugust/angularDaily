@@ -14,7 +14,6 @@ export class HousingAsideComponent implements OnInit {
   isAuthenticated: boolean;
   message: Message;
 
-  city = 'Москва';
   today = new Date();
 
   minArrivalDate = this.today.toISOString().slice(0, 10);
@@ -33,6 +32,11 @@ export class HousingAsideComponent implements OnInit {
     } else {
       this.isAuthenticated = true;
     }
+
+    this.route.queryParams.subscribe((val) => {
+      this.arrivalDate = val.arrivalDate;
+      this.departureDate = val.departureDate;
+    });
   }
 
   private showMessage(text: string, type: string = 'error') {
@@ -44,15 +48,14 @@ export class HousingAsideComponent implements OnInit {
 
   rentHouse() {
     this.id = +this.route.snapshot.params.id;
+    const {arrivalDate, departureDate} = this;
     console.log(this.id);
     if (this.isAuthenticated) {
-      this.router.navigate(['/payment', this.id]);
+      this.router.navigate(['/payment', this.id], {queryParams: {arrivalDate, departureDate}});
     } else {
       this.showMessage('Для бронирования жилья необходимо авторизоваться', 'error');
     }
 
-    // проверка на авторизацию
-    // проверка на заполнение дат
   }
 
 }
