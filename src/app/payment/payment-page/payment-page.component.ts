@@ -36,6 +36,8 @@ export class PaymentPageComponent implements OnInit {
   arrivalDateStr = '';
   departureDateStr = '';
 
+  date = new Date().toISOString().slice(0, 10);
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -163,7 +165,14 @@ export class PaymentPageComponent implements OnInit {
 
       this.userService.addOwnReservation(currentUser, reservation)
       .subscribe(() => {
-        this.router.navigate(['/payment', this.id, 'success']);
+        this.router.navigate(['/payment', this.id, 'success'],
+        { queryParams:
+          {
+            date: this.date,
+            days: this.diffDays,
+            cost: this.cost,
+            email: currentUser.email
+        }});
       });
 
     } else {

@@ -15,19 +15,24 @@
     <div class="info">
       <div class="email">
         <p>Email:</p>
-        <p>juliaaugust96@gmail.com</p>
+        <p>{{ userEmail }}</p>
       </div>
       <div class="date">
         <p>Дата платежа:</p>
-        <p>{{ payDate | date:'dd.MM.yyyy' }}</p>
+        <p>{{ payDate }}</p>
       </div>
       <div class="desc">
         <p>Описание заказа:</p>
-        <p><a [routerLink]="['/housing', '8']">Двухкомнатная квартира</a> сроком на <span class="num-days">2</span> суток</p>
+        <p>
+          <a [routerLink]="['/housing', id]" target="_blank">
+            {{ housingName }}
+          </a>
+          сроком на <span class="num-days">{{ days }}</span> суток
+        </p>
       </div>
       <div class="sum">
         <p>Оплачено:</p>
-        <p>16 000 ₽</p>
+        <p>{{ cost }}</p>
       </div>
     </div>
   </section>

@@ -101,6 +101,90 @@
       ],
       "requests": [
         {
+          "housingId": 8,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-13",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 64000,
+          "user": "Кошкина Кристина Игоревнa",
+          "status": "new"
+        },
+        {
+          "housingId": 8,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-13",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 64000,
+          "user": "Кошкина Кристина Игоревнa",
+          "status": "new"
+        },
+        {
+          "housingId": 8,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-13",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 64000,
+          "user": "Кошкина Кристина Игоревнa",
+          "status": "new"
+        },
+        {
+          "housingId": 8,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-13",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 64000,
+          "user": "Кошкина Кристина Игоревнa",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "webmoney",
+          "cost": 1800,
+          "user": "Комаров Виктор ",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "webmoney",
+          "cost": 1800,
+          "user": "Комаров Виктор ",
+          "status": "new"
+        },
+        {
           "housingId": 10,
           "arrivalDate": "2019-10-05",
           "arrivalTime": "14:00",
@@ -236,6 +320,11 @@
       "country": "Бельгия",
       "tel": "89998989",
       "reservations": [
+        {
+          "housingId": 8,
+          "status": "текущее",
+          "dates": "2019:10:05 – 2019:10:13"
+        },
         {
           "housingId": 8,
           "status": "текущее",
