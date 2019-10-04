@@ -7,14 +7,19 @@
 
 Запустите команду `npm run dev` для одновременного запуска json-сервера и самого приложения. Зайдите в браузере по адресу `http://localhost:4200/`.
 
-## Development server
+## Установка json-сервера
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Если на устройстве не установлен json server, его необходимо установить: `npm i json-server -g`.
 
-## Code scaffolding
+## Данные для входа
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Для того, чтобы зайти в программу под именем администратора, на странице авторизации необходимо ввести следующие данные: `email: olga@gmail.com`, `пароль: admolga`.
 
+Для того, чтобы зайти в программу под именем арендодателя, на странице авторизации необходимо ввести следующие данные: `email: viktor@gmail.com`, `пароль: mypass`.
+
+Для того, чтобы зайти в программу под именем администратора, на странице авторизации необходимо ввести следующие данные: `email: anna@gmail.com`, `пароль: 12345`.
+
+Так же всегда можно зарегистрировать нового пользователя (по умолчанию его роль в системе – клиент).
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.

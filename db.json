@@ -31,8 +31,19 @@
           "housingId": 8,
           "status": "одобрено",
           "landlordId": 2
+        },
+        {
+          "housingId": 23,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
+          "housingId": 24,
+          "status": "на рассмотрении",
+          "landlordId": 2
         }
-      ]
+      ],
+      "reservations": []
     },
     {
       "name": "Комаров Виктор ",
@@ -42,8 +53,8 @@
       "id": 2,
       "registrDate": "Mon Sep 23 2019",
       "gender": "male",
-      "country": "Германия",
-      "city": "Дрезден",
+      "country": "Россия",
+      "city": "Москва",
       "tel": "+49-17-426-16-55",
       "vacancies": [
         {
@@ -65,6 +76,16 @@
         {
           "housingId": 19,
           "status": "на рассмотрении"
+        },
+        {
+          "housingId": 23,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
+          "housingId": 24,
+          "status": "на рассмотрении",
+          "landlordId": 2
         }
       ]
     },
@@ -201,9 +222,7 @@
       ],
       "description": "Отличный мини-отель, возможна почасовая оплата",
       "maxGuests": 5,
-      "type": "hotel/hostel",
-      "rating": [],
-      "reviews": []
+      "type": "hotel/hostel"
     },
     {
       "id": 8,
@@ -783,9 +802,7 @@
       ],
       "description": "13 этаж. Хорошая шумоизоляция. Множество магазинов поблизости, парк, площадка",
       "maxGuests": 3,
-      "type": "flat",
-      "rating": [],
-      "reviews": []
+      "type": "flat"
     },
     {
       "name": "Отель",
@@ -846,6 +863,91 @@
       "type": "hotel/hostel",
       "description": "1212ddd",
       "id": 19
+    },
+    {
+      "name": "Отель \"Чайка\"",
+      "price": 3400,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Тверская",
+        "houseNum": "12",
+        "building": ""
+      },
+      "maxGuests": 4,
+      "type": "hotel/hostel",
+      "description": "Отель",
+      "rating": 0,
+      "isVisible": false,
+      "id": 20
+    },
+    {
+      "name": "Гостевой дом \"Успех\"",
+      "price": 6200,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Марата",
+        "houseNum": "32",
+        "building": ""
+      },
+      "maxGuests": 10,
+      "type": "house",
+      "description": "ййй",
+      "rating": 0,
+      "isVisible": false,
+      "id": 21
+    },
+    {
+      "name": "Дом",
+      "price": 2,
+      "address": {
+        "country": "Германия",
+        "city": "Дрезден",
+        "street": "Тверская",
+        "houseNum": "12",
+        "building": ""
+      },
+      "maxGuests": 3,
+      "type": "house",
+      "description": "qqq",
+      "rating": 0,
+      "isVisible": false,
+      "id": 22
+    },
+    {
+      "name": "Дом",
+      "price": 555,
+      "address": {
+        "country": "Германия",
+        "city": "Дрезден",
+        "street": "Растанная",
+        "houseNum": "333",
+        "building": ""
+      },
+      "maxGuests": 5,
+      "type": "house",
+      "description": "qwqw",
+      "rating": 0,
+      "isVisible": false,
+      "id": 23
+    },
+    {
+      "name": "Коттедж \"Звезда\"",
+      "price": 8999,
+      "address": {
+        "country": "Германия",
+        "city": "Дрезден",
+        "street": "Растанная",
+        "houseNum": "55",
+        "building": ""
+      },
+      "maxGuests": 15,
+      "type": "house",
+      "description": "ццц",
+      "rating": 0,
+      "isVisible": false,
+      "id": 24
     }
   ]
 }

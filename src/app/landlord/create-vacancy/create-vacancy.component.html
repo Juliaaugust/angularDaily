@@ -111,22 +111,18 @@
           type="text"
           id="house-input"
           class="address-input vacancy-input"
-          formControlName="houseNum"
-          [ngClass]="{'has-err': createVacancyForm.get('address.houseNum').invalid && (createVacancyForm.get('address.houseNum').touched || isClicked)}"
+          formControlName="house"
+          [ngClass]="{'has-err': createVacancyForm.get('address.house').invalid && (createVacancyForm.get('address.house').touched || isClicked)}"
         >
         <span
           class="form-help-text"
-          *ngIf="createVacancyForm.get('address.houseNum').invalid && (createVacancyForm.get('address.houseNum').touched || isClicked)"
+          *ngIf="createVacancyForm.get('address.house').invalid && (createVacancyForm.get('address.house').touched || isClicked)"
         >
-          <span *ngIf="createVacancyForm.get('address.houseNum')['errors']['required']">Заполните номер дома</span>
-          <span *ngIf="createVacancyForm.get('address.houseNum')['errors']['pattern']">Номер дома должен быть числом</span>
+          <span *ngIf="createVacancyForm.get('address.house')['errors']['required']">Заполните номер дома</span>
+          <span *ngIf="createVacancyForm.get('address.house')['errors']['pattern']">Номер дома должен быть числом</span>
         </span>
       </p>
 
-      <p>
-        <label for="building-input">Строение/корпус:</label>
-        <input type="text" id="building-input" class="address-input vacancy-input" formControlName="building">
-      </p>
     </fieldset>
 
     <fieldset class="add_vacancy-section housing-description">

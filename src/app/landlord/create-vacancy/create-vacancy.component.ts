@@ -17,8 +17,6 @@ export class CreateVacancyComponent implements OnInit {
 
   message: Message;
 
-  // vacancy: Vacancy;
-
   createVacancyForm: FormGroup;
 
   user: User;
@@ -62,7 +60,7 @@ export class CreateVacancyComponent implements OnInit {
         country: new FormControl(this.userCountry, Validators.required),
         city: new FormControl(this.userCity, Validators.required),
         street: new FormControl('', Validators.required),
-        houseNum: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
+        house: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
         building: new FormControl('')
       }),
       description: new FormControl(''),
@@ -92,6 +90,9 @@ export class CreateVacancyComponent implements OnInit {
       formData.description
     );
 
+    housing.isVisible = false;
+    housing.rating = 0;
+
     this.isClicked = true;
     if (this.createVacancyForm.invalid) {
       this.showMessage('Для создания вакансии заполните все необходимые поля!', 'error');
@@ -101,22 +102,26 @@ export class CreateVacancyComponent implements OnInit {
         .subscribe((newHouse: Housing) => {
 
           const currentLandlord = JSON.parse(window.localStorage.getItem('user'));
-          const vacancy = new Vacancy(newHouse.id, 'на рассмотрении');
+          const vacancy = new Vacancy(newHouse.id, 'на рассмотрении', currentLandlord.id);
 
           this.userService.addOwnVacancy(currentLandlord, vacancy)
             .subscribe(val => {
               console.log('landlord with vacancies', val);
             });
 
-          // this.userService.addLandlordVacancy()
+          this.userService.getUserById(1)
+            .subscribe(adm => {
+              this.userService.addLandlordVacancy(adm, vacancy)
+                .subscribe(val => {
+                  console.log('admin with ll vacancies', val);
+                });
+            });
 
           this.showMessage('Вакансия была успешно создана!', 'info');
         });
 
       this.createVacancyForm.reset();
       this.isClicked = false;
-
-      // добавить жилье в "мои вакансии" арендодателю и в "вакансии продавцов" админу
 
       // this.router.navigate(['landlord/vacancies']);
     }

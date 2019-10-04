@@ -8,7 +8,7 @@
       <button id="canceled">Отмененные</button>
   </div>
 
-  <div class="no-reservations" *ngIf="!reservations">
+  <div class="no-reservations" *ngIf="!reservations || reservations.length === 0">
     У вас пока нет ни одного бронирования
   </div>
 

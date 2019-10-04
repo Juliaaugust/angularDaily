@@ -17,20 +17,22 @@ export class HousingMainComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private hosingService: HousingService) { }
+    private hosingService: HousingService
+  ) { }
 
   ngOnInit() {
     this.id = +this.route.snapshot.params.id;
     this.hosingService.getHousingById(this.id)
-    .subscribe(h => {
-      this.houseInfo = h;
-      console.log('hhhhh', h);
-      const ratingValues = [];
-      for (let i of this.houseInfo.rating) {
-        ratingValues.push(i.value);
-      }
-      this.ratingValue = ratingValues.length > 0 ? ratingValues.reduce((a, b) => a + b) / ratingValues.length : 0;
-    });
+      .subscribe(h => {
+        this.houseInfo = h;
+        const ratingValues = [];
+        if (h.rating) {
+          for (let i of this.houseInfo.rating) {
+            ratingValues.push(i.value);
+          }
+          this.ratingValue = ratingValues.length > 0 ? ratingValues.reduce((a, b) => a + b) / ratingValues.length : 0;
+        }
+      });
 
   }
 

@@ -2,7 +2,7 @@
   <h1 role="heading">Вакансии продавцов</h1>
 
   <section class="vacancies-section">
-    <div class="title-vacancies">Новых вакансий: 2</div>
+    <div class="title-vacancies">Новых вакансий: {{ landlordVacanciesNew.length }}</div>
     <app-new-vacancies
       *ngFor="let llVacNew of landlordVacanciesNew"
       [landlordVacancyNew] = "llVacNew"

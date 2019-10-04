@@ -1,4 +1,4 @@
 <div class="page-wrapper">
-  <app-housing-aside class="housing-aside"></app-housing-aside>
-  <app-housing-main class="housing-main"></app-housing-main>
+  <app-housing-aside class="housing-aside" *ngIf="showAside"></app-housing-aside>
+  <app-housing-main class="housing-main" [ngClass]="{'only-main': !showAside}"></app-housing-main>
 </div>

@@ -53,7 +53,7 @@
     </div>
   </section>
 
-  <section class="housing-section housing-reviews">
+  <section class="housing-section housing-reviews" *ngIf="houseInfo.rating && houseInfo.reviews">
       <h2 role="heading" class="section-name">Оценка и отзывы</h2>
       <div class="rating-container">
         <div class="rating-value-box">

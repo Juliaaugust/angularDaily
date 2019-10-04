@@ -1,5 +1,6 @@
 import { Reservation } from './reservation.model';
 import { Vacancy } from './vacancy.model';
+import { HousingRequest } from './housing-reguest.model';
 export class User {
   constructor(
     public email: string,
@@ -14,6 +15,7 @@ export class User {
     public tel?: string,
     public reservations?: Reservation[],
     public vacancies?: Vacancy[],
-    public landlordVacancies?: Vacancy[]
+    public landlordVacancies?: Vacancy[],
+    public reguests?: HousingRequest[]
   ) { }
 }

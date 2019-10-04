@@ -6,6 +6,8 @@ import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
 import { Response } from 'selenium-webdriver/http';
 import { Vacancy } from '../models/vacancy.model';
+import { Reservation } from '../models/reservation.model';
+import { HousingRequest } from '../models/housing-reguest.model';
 
 @Injectable()
 export class UsersService {
@@ -63,14 +65,26 @@ export class UsersService {
   // }
 
   addOwnVacancy(landlord: User, vacancy: Vacancy) {
-    landlord.vacancies.push(vacancy);
+    landlord.vacancies.unshift(vacancy);
 
     return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
   }
 
   addLandlordVacancy(admin: User, vacancy: Vacancy) {
-    admin.vacancies.push(vacancy);
+    admin.landlordVacancies.unshift(vacancy);
 
     return this.http.put(`http://localhost:3000/users/${admin.id}`, admin);
+  }
+
+  addOwnReservation(user: User, reservation: Reservation) {
+    user.reservations.unshift(reservation);
+
+    return this.http.put(`http://localhost:3000/users/${user.id}`, user);
+  }
+
+  addRequest(landlord: User, reguest: HousingRequest) {
+    landlord.reguests.unshift(reguest);
+
+    return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
   }
 }
