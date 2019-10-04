@@ -47,6 +47,11 @@
         {
           "housingId": 10,
           "status": "текущее",
+          "dates": "2019:10:05 – 2019:10:06"
+        },
+        {
+          "housingId": 10,
+          "status": "текущее",
           "dates": "04.10.19 – 05.10.19"
         }
       ]
@@ -95,6 +100,20 @@
         }
       ],
       "requests": [
+        {
+          "housingId": 10,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-06",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 12500,
+          "user": "Ольга",
+          "status": "new"
+        },
         {
           "housingId": 8,
           "arrivalDate": "30.08.19",

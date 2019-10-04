@@ -85,6 +85,6 @@ export class UsersService {
   addRequest(landlord: User, request: HousingRequest) {
     landlord.requests.unshift(request);
 
-    return this.http.put(`http://localhost:3000/users/${user.id}`, landlord);
+    return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
   }
 }

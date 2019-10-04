@@ -150,11 +150,11 @@ export class PaymentPageComponent implements OnInit {
       const datesStr = `${this.arrivalDateStr.split('-').join(':')} – ${this.departureDateStr.split('-').join(':')}`;
       const reservation = new Reservation(this.id, resStatus, datesStr);
 
-      console.log('RRR', request);
-      console.log('RRR', reservation);
+      console.log('landlordId', this.landlordId);
 
       this.userService.getUserById(this.landlordId)
         .subscribe((landlord: User) => {
+          console.log('landlord', landlord);
           this.userService.addRequest(landlord, request)
             .subscribe((llAddReq) => {
               console.log('llAddReq', llAddReq);
