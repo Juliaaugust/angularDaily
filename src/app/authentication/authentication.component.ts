@@ -96,17 +96,15 @@ export class AuthenticationComponent implements OnInit {
     const user = new User(email, password, name, role, registrDate);
     user.reservations = [];
 
-    console.log(this.registrForm);
     if (this.registrForm.value.agree === true) {
       if (this.registrForm.value.password === this.registrForm.value.password2) {
         this.message.text = '';
-        // window.localStorage.setItem('user', JSON.stringify(user));
         this.userService.createNewUser(user)
         .subscribe(() => {
-          window.localStorage.setItem('user', JSON.stringify(user));
-
           this.userService.getUserByEmail(user.email)
             .subscribe(usr => {
+              user.id = usr.id;
+              window.localStorage.setItem('user', JSON.stringify(user));
               this.authService.login();
               this.router.navigate(['/client/area', usr.id]);
             });
