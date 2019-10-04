@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PaymentSuccessComponent implements OnInit {
 
   id: number;
+  payDate = new Date();
 
   constructor(private route: ActivatedRoute, private housingService: HousingService) { }
 

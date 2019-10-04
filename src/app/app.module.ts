@@ -46,7 +46,6 @@ import { ReservationCardComponent } from './client/reservations/reservation-card
 import { VacancyCardComponent } from './landlord/vacancies/vacancy-card/vacancy-card.component';
 import { NewRequestComponent } from './landlord/requests/new-request/new-request.component';
 import { ViewedRequestComponent } from './landlord/requests/viewed-request/viewed-request.component';
-import { HousingRequestsService } from './common/services/housing-requests.service';
 
 
 @NgModule({
@@ -93,7 +92,7 @@ import { HousingRequestsService } from './common/services/housing-requests.servi
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UsersService, AuthenticationService, HousingService, HousingRequestsService],
+  providers: [UsersService, AuthenticationService, HousingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

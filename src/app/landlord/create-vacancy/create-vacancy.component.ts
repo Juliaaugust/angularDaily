@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { UsersService } from '../../common/services/users.service';
 import { User } from '../../common/models/user.model';
 import { Message } from '../../common/models/message.model';
 import { Router } from '@angular/router';
+import { HousingService } from '../../common/services/housing.service';
+import { Housing } from '../../common/models/housing.model';
+import { Vacancy } from '../../common/models/vacancy.model';
 
 @Component({
   selector: 'app-create-vacancy',
@@ -13,8 +16,13 @@ import { Router } from '@angular/router';
 export class CreateVacancyComponent implements OnInit {
 
   message: Message;
+
+  // vacancy: Vacancy;
+
   createVacancyForm: FormGroup;
+
   user: User;
+
   userCountry = '';
   userCity = '';
 
@@ -27,7 +35,11 @@ export class CreateVacancyComponent implements OnInit {
     }, 2000);
   }
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private housingService: HousingService,
+    private userService: UsersService
+  ) { }
 
   ngOnInit() {
 
@@ -52,22 +64,61 @@ export class CreateVacancyComponent implements OnInit {
         street: new FormControl('', Validators.required),
         houseNum: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
         building: new FormControl('')
-      })
+      }),
+      description: new FormControl(''),
+      maxGuests: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[0-9]+$'),
+        Validators.min(1),
+        Validators.max(50)
+      ]),
+      pets: new FormControl(false),
+      minDays: new FormControl(1, [Validators.min(1), Validators.pattern('^[0-9]+$')]),
+      price: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
+      // photos: new FormArray([])
     });
   }
 
   createVacancy() {
-    console.log('form', this.createVacancyForm);
     const formData = {...this.createVacancyForm.value};
-    console.log('form', formData);
+    const isVisible = false;
+
+    const housing = new Housing(
+      formData.name,
+      formData.price,
+      formData.address,
+      formData.maxGuests,
+      formData.type,
+      formData.description
+    );
+
     this.isClicked = true;
     if (this.createVacancyForm.invalid) {
       this.showMessage('Для создания вакансии заполните все необходимые поля!', 'error');
     } else {
       this.message.text = '';
-      // добавить новый housing
+      this.housingService.createNewHousing(housing)
+        .subscribe((newHouse: Housing) => {
+
+          const currentLandlord = JSON.parse(window.localStorage.getItem('user'));
+          const vacancy = new Vacancy(newHouse.id, 'на рассмотрении');
+
+          this.userService.addOwnVacancy(currentLandlord, vacancy)
+            .subscribe(val => {
+              console.log('landlord with vacancies', val);
+            });
+
+          // this.userService.addLandlordVacancy()
+
+          this.showMessage('Вакансия была успешно создана!', 'info');
+        });
+
+      this.createVacancyForm.reset();
+      this.isClicked = false;
+
       // добавить жилье в "мои вакансии" арендодателю и в "вакансии продавцов" админу
-      this.router.navigate([]);
+
+      // this.router.navigate(['landlord/vacancies']);
     }
   }
 

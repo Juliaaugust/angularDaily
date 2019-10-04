@@ -11,6 +11,7 @@ export class Housing {
     public maxGuests: string,
     public type?: string,
     public description?: string,
+    // public pets?: boolean,
     public id?: number,
     public rating?: number,
     public isVisible?: boolean

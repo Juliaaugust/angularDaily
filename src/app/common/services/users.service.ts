@@ -5,6 +5,7 @@ import { Observable, Subject } from 'rxjs';
 import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
 import { Response } from 'selenium-webdriver/http';
+import { Vacancy } from '../models/vacancy.model';
 
 @Injectable()
 export class UsersService {
@@ -60,4 +61,16 @@ export class UsersService {
   // changeUserParams(user: User) {
   //   return this.http.put(`http://localhost:3000/users/${user.id}`, user);
   // }
+
+  addOwnVacancy(landlord: User, vacancy: Vacancy) {
+    landlord.vacancies.push(vacancy);
+
+    return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
+  }
+
+  addLandlordVacancy(admin: User, vacancy: Vacancy) {
+    admin.vacancies.push(vacancy);
+
+    return this.http.put(`http://localhost:3000/users/${admin.id}`, admin);
+  }
 }

@@ -93,7 +93,6 @@ export class AuthenticationComponent implements OnInit {
     const {email, password, name} = this.registrForm.value;
     const registrDate = new Date().toDateString();
     const role = 'клиент';
-    // const id = ;
     const user = new User(email, password, name, role, registrDate);
 
     console.log(this.registrForm);
@@ -104,8 +103,12 @@ export class AuthenticationComponent implements OnInit {
         this.userService.createNewUser(user)
         .subscribe(() => {
           window.localStorage.setItem('user', JSON.stringify(user));
-          this.authService.login();
-          this.router.navigate(['/client/area', 77]);
+
+          this.userService.getUserByEmail(user.email)
+            .subscribe(usr => {
+              this.authService.login();
+              this.router.navigate(['/client/area', usr.id]);
+            });
         });
       } else {
         this.showMessage('Пароли не совпадают!', 'error');

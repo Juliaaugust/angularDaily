@@ -1,5 +1,8 @@
-export interface Vacancy {
-  housingId: number;
-  status: string;
-  landlordId?: number;
+export class Vacancy {
+  constructor(
+    public housingId: number,
+    public status: string,
+    public landlordId?: number,
+  ){}
+
 }

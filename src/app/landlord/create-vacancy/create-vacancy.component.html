@@ -28,7 +28,7 @@
       <h2 role="heading" class="section-name">Тип жилья</h2>
       <ul class="housing-type-list">
         <li class="housing-type-list__item">
-          <input value="hotel" type="radio" id="hotels" formControlName="type">
+          <input value="hotel/hostel" type="radio" id="hotels" formControlName="type">
           <label for="hotels">Номера, спальные места (в отеле или хостеле)</label>
         </li>
         <li class="housing-type-list__item">
@@ -132,12 +132,30 @@
     <fieldset class="add_vacancy-section housing-description">
       <h2 role="heading" class="section-name">Описание</h2>
       <textarea class="description-area vacancy-input" cols="40" rows="10"
-      placeholder="Максимально подробно постарайтесь описать сдаваемое помещение: жилая площадь, оснащение, инфраструктура поблизости и т.д."></textarea>
+      placeholder="Максимально подробно постарайтесь описать сдаваемое помещение: жилая площадь, оснащение, инфраструктура поблизости и т.д."
+      formControlName="description"
+      ></textarea>
       <p>
         <label for="guests-max">Максимальное число гостей:</label>
-        <input type="number" min="1" max="50" id="guests-max" class="description-input vacancy-input" value="1">
+        <input
+          type="number"
+          id="guests-max"
+          class="description-input vacancy-input"
+          formControlName="maxGuests"
+          [ngClass]="{'has-err': createVacancyForm.get('maxGuests').invalid && (createVacancyForm.get('maxGuests').touched || isClicked)}"
+        >
+
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('maxGuests').invalid && (createVacancyForm.get('maxGuests').touched || isClicked)"
+        >
+          <span *ngIf="createVacancyForm.get('maxGuests')['errors']['required']">Заполните количество гостей</span>
+          <span *ngIf="createVacancyForm.get('maxGuests')['errors']['pattern']">Количество гостей должно быть числом</span>
+          <span *ngIf="createVacancyForm.get('maxGuests')['errors']['min']">Гостей не может быть меньше 1</span>
+          <span *ngIf="createVacancyForm.get('maxGuests')['errors']['max']">Гостей не может быть больше 50</span>
+        </span>
       </p>
-      <label for="pets"><input type="checkbox" id="pets"> Можно с питомцами</label>
+      <label for="pets"><input type="checkbox" id="pets" formControlName="pets"> Можно с питомцами</label>
     </fieldset>
 
     <fieldset class="add_vacancy-section housing-prices">
@@ -145,13 +163,39 @@
 
       <p>
         <label for="min-term">Минимальный срок заселения:</label>
-        <input type="number" min="1" id="min-term" class="vacancy-input"> суток
+        <input
+          type="number"
+          id="min-term"
+          class="vacancy-input"
+          formControlName="minDays"
+          [ngClass]="{'has-err': createVacancyForm.get('minDays').invalid && (createVacancyForm.get('minDays').touched || isClicked)}"
+        >
+          суток
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('minDays').invalid && (createVacancyForm.get('minDays').touched || isClicked)"
+        >
+          Минимальный срок должен быть числом больше 0
+        </span>
       </p>
 
       <p>
         <label for="price-input">Цена за сутки, ₽:</label>
-        <input type="number" id="price-input" class="vacancy-input">
+        <input
+          type="number"
+          id="price-input"
+          class="vacancy-input"
+          formControlName="price"
+          [ngClass]="{'has-err': createVacancyForm.get('price').invalid && (createVacancyForm.get('price').touched || isClicked)}"
+        >
       </p>
+      <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('price').invalid && (createVacancyForm.get('price').touched || isClicked)"
+        >
+          <span *ngIf="createVacancyForm.get('price')['errors']['required']">Заполните цену</span>
+          <span *ngIf="createVacancyForm.get('price')['errors']['pattern']">Цена должна быть числом</span>
+      </span>
 
       <span class="date-span">Заезд после</span>
       <select class="vacancy-input date-select">

@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
       this.isAuthenticated = false;
     } else {
       this.user = JSON.parse(window.localStorage.getItem('user'));
-      console.log(this.user);
       this.isAuthenticated = true;
     }
 
@@ -41,13 +40,11 @@ export class HeaderComponent implements OnInit {
       .pipe(takeUntil(this.destroyed$))
       .subscribe((isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
-        console.log('Subscribe!', isAuthenticated);
 
         if (!JSON.parse(window.localStorage.getItem('user'))) {
           this.isAuthenticated = false;
         } else {
           this.user = JSON.parse(window.localStorage.getItem('user'));
-          console.log(this.user);
           this.isAuthenticated = true;
         }
 

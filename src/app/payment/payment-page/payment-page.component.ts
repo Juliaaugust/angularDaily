@@ -5,6 +5,7 @@ import { Message } from '../../common/models/message.model';
 import { HousingService } from '../../common/services/housing.service';
 import { Housing } from '../../common/models/housing.model';
 import { User } from 'src/app/common/models/user.model';
+import { UsersService } from '../../common/services/users.service';
 
 @Component({
   selector: 'app-payment-page',
@@ -108,13 +109,12 @@ export class PaymentPageComponent implements OnInit {
     //   });
     (this.paymentForm.get('guestInfoArr') as FormArray).push(guestInfo);
 
-    console.log(guestInfo);
+    // console.log(guestInfo);
 
-    console.log((this.paymentForm.get('guestInfoArr') as FormArray).controls);
+    // console.log((this.paymentForm.get('guestInfoArr') as FormArray).controls);
   }
 
   removeGuest(idx: number) {
-    console.log(idx);
     const guests = this.paymentForm.get('guestInfoArr') as FormArray;
     guests.removeAt(guests.value.findIndex(guest => guest.id === idx));
   }
@@ -128,12 +128,11 @@ export class PaymentPageComponent implements OnInit {
 
     if (payMethod) {
       // this.id = +this.route.snapshot.params.id;
-      console.log(this.id);
+      // console.log(this.id);
       this.router.navigate(['/payment', this.id, 'success']);
     } else {
       this.showMessage('Необходимо выбрать способ оплаты!', 'error');
     }
-
   }
 
   changeDisabledField() {

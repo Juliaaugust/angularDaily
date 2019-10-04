@@ -28,6 +28,10 @@ export class RentalsAsideComponent implements OnInit {
   maxPrice = '';
   minRatingValue = '3';
 
+  // housingType: '' | 'hotel/hostel' | 'apartments' | 'house' | 'flat' = '';
+
+  housingType = '';
+
   sortingType: 'default' | 'asc' | 'desc' | 'rating' = 'default';
 
   setRatingValue(event: Event) {
@@ -57,9 +61,7 @@ export class RentalsAsideComponent implements OnInit {
 
     this.housingService.getHousingBySearchParams(routeParams)
     .subscribe(housings => {
-      console.log(housings);
       this.router.navigate(['/rentals'], {queryParams: routeParams});
-      console.log(this.city);
     });
 
   }
@@ -70,6 +72,7 @@ export class RentalsAsideComponent implements OnInit {
         guests: this.guests,
         arrivalDate: this.arrivalDate,
         departureDate: this.departureDate,
+        type: this.housingType,
         minPrice: this.minPrice,
         maxPrice: this.maxPrice,
         rating: this.minRatingValue,
