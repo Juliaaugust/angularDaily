@@ -104,6 +104,20 @@
           "housingId": 8,
           "arrivalDate": "2019-10-05",
           "arrivalTime": "14:00",
+          "departureDate": "2019-10-12",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "sber",
+          "cost": 56000,
+          "user": "Кошкина Кристина Игоревнa",
+          "status": "new"
+        },
+        {
+          "housingId": 8,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
           "departureDate": "2019-10-13",
           "departureTime": "12:00",
           "guestsCount": "2",
@@ -313,18 +327,13 @@
     {
       "email": "masha@mail.ru",
       "password": "12345",
-      "name": "Кошкина Кристина Игоревнa",
+      "name": "Кошкина Мария Игоревнa",
       "role": "клиент",
       "registrDate": "Mon Sep 30 2019",
       "id": 5,
       "country": "Бельгия",
       "tel": "89998989",
       "reservations": [
-        {
-          "housingId": 8,
-          "status": "текущее",
-          "dates": "2019:10:05 – 2019:10:13"
-        },
         {
           "housingId": 8,
           "status": "текущее",

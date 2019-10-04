@@ -20,7 +20,12 @@
             </div>
         </a>
         <div class="review">
-            <a [routerLink]="['/client/review', reservation.housingId]" class="review-btn" [ngClass]="{'no-review': false}">
+            <a
+              *ngIf="reservation.status === 'прошедшее'"
+              [routerLink]="['/client/review', reservation.housingId]"
+              class="review-btn"
+              [ngClass]="{'no-review': false}"
+            >
               Оставить отзыв
             </a>
             <!-- <button class="review-btn" [ngClass]="{'no-review': true}" (click)="openReviewPage()">Оставить отзыв</button> -->

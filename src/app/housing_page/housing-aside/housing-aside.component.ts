@@ -51,7 +51,11 @@ export class HousingAsideComponent implements OnInit {
     const {arrivalDate, departureDate} = this;
     console.log(this.id);
     if (this.isAuthenticated) {
-      this.router.navigate(['/payment', this.id], {queryParams: {arrivalDate, departureDate}});
+      if (arrivalDate && departureDate) {
+        this.router.navigate(['/payment', this.id], {queryParams: {arrivalDate, departureDate}});
+      } else {
+        this.showMessage('Заполните даты заезда и отъезда!', 'error');
+      }
     } else {
       this.showMessage('Для бронирования жилья необходимо авторизоваться', 'error');
     }
