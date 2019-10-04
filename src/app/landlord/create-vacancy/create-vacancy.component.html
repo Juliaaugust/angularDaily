@@ -1,153 +1,213 @@
 <div class="page-wrapper">
   <form
-    [formGroup]="createForm"
+    [formGroup]="createVacancyForm"
     (ngSubmit)="createVacancy()">
     <fieldset class="add_vacancy-section housing-type">
-        <h2 role="heading" class="section-name">Название жилья</h2>
+      <h2 role="heading" class="section-name">Название жилья</h2>
       <p>
         <label for="name-input">Наименование, котрое будет отражаться в заголовке:</label>
         <br>
-        <input type="text" id="name-input" class="vacancy-input" value="">
+        <input
+          type="text"
+          id="name-input"
+          class="vacancy-input"
+          formControlName="name"
+          [ngClass]="{'has-err': createVacancyForm.get('name').invalid && (createVacancyForm.get('name').touched || isClicked)}"
+        >
+
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('name').invalid && (createVacancyForm.get('name').touched || isClicked)"
+        >
+          <span *ngIf="createVacancyForm.get('name')['errors']['required']">Название жилья не может быть пустым</span>
+          <span *ngIf="createVacancyForm.get('name')['errors']['minlength']">Минимальная длина символов – 3</span>
+        </span>
       </p>
     </fieldset>
     <fieldset class="add_vacancy-section housing-type">
-        <h2 role="heading" class="section-name">Тип жилья</h2>
-        <ul class="housing-type-list">
-            <li class="housing-type-list__item">
-                <input name="housing-type" type="radio" id="hotels">
-                <label for="hotels">Номера, спальные места (в отеле или хостеле)</label>
-            </li>
-            <li class="housing-type-list__item">
-                <input name="housing-type" type="radio" id="apartments">
-                <label for="apartments">Апартаменты</label>
-            </li>
-            <li class="housing-type-list__item">
-                <input name="housing-type" type="radio" id="houses">
-                <label for="houses">Дома, коттеджи</label>
-            </li>
-            <li class="housing-type-list__item">
-                <input name="housing-type" type="radio" id="rooms">
-                <label for="rooms">Квартиры</label>
-            </li>
-        </ul>
-
+      <h2 role="heading" class="section-name">Тип жилья</h2>
+      <ul class="housing-type-list">
+        <li class="housing-type-list__item">
+          <input value="hotel" type="radio" id="hotels" formControlName="type">
+          <label for="hotels">Номера, спальные места (в отеле или хостеле)</label>
+        </li>
+        <li class="housing-type-list__item">
+          <input value="apartments" type="radio" id="apartments" formControlName="type">
+          <label for="apartments">Апартаменты</label>
+        </li>
+        <li class="housing-type-list__item">
+          <input value="house" type="radio" id="houses" formControlName="type">
+          <label for="houses">Дома, коттеджи</label>
+        </li>
+        <li class="housing-type-list__item">
+          <input value="flat" type="radio" id="flat" formControlName="type">
+          <label for="flat">Квартиры</label>
+        </li>
+      </ul>
+      <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('type').invalid && isClicked"
+        >
+          Выберете тип жилья
+        </span>
     </fieldset>
 
-    <fieldset class="add_vacancy-section housing-type">
-        <h2 role="heading" class="section-name">Адрес</h2>
+    <fieldset class="add_vacancy-section housing-type" formGroupName="address">
+      <h2 role="heading" class="section-name">Адрес</h2>
 
-        <p>
-            <label for="country-input">Страна:</label>
-            <input type="text" id="country-input" class="address-input vacancy-input" value="Россия">
-        </p>
+      <p>
+        <label for="country-input">Страна:</label>
+        <input
+          type="text"
+          id="country-input"
+          class="address-input vacancy-input"
+          formControlName="country"
+          [ngClass]="{'has-err': createVacancyForm.get('address.country').invalid && (createVacancyForm.get('address.country').touched || isClicked)}"
+        >
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('address.country').invalid && (createVacancyForm.get('address.country').touched || isClicked)"
+        >
+          Заполните страну
+        </span>
+      </p>
 
-        <p>
-            <label for="city-input">Город:</label>
-            <input type="text" id="city-input" class="address-input vacancy-input" value="Санкт-Петербург">
-        </p>
+      <p>
+        <label for="city-input">Город:</label>
+        <input
+          type="text"
+          id="city-input"
+          class="address-input vacancy-input"
+          formControlName="city"
+          [ngClass]="{'has-err': createVacancyForm.get('address.city').invalid && (createVacancyForm.get('address.city').touched || isClicked)}"
+        >
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('address.city').invalid && (createVacancyForm.get('address.city').touched || isClicked)"
+        >
+          Заполните город
+        </span>
+      </p>
 
-        <p>
-            <label for="street-input">Улица:</label>
-            <input type="text" id="street-input" class="address-input vacancy-input">
-        </p>
-        <p>
-            <label for="house-input">Номер дома:</label>
-            <input type="text" id="house-input" class="address-input vacancy-input">
-        </p>
+      <p>
+        <label for="street-input">Улица:</label>
+        <input
+          type="text"
+          id="street-input"
+          class="address-input vacancy-input"
+          formControlName="street"
+          [ngClass]="{'has-err': createVacancyForm.get('address.street').invalid && (createVacancyForm.get('address.street').touched || isClicked)}"
+        >
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('address.street').invalid && (createVacancyForm.get('address.street').touched || isClicked)"
+        >
+          Заполните улицу
+        </span>
+      </p>
+      <p>
+        <label for="house-input">Номер дома:</label>
+        <input
+          type="text"
+          id="house-input"
+          class="address-input vacancy-input"
+          formControlName="houseNum"
+          [ngClass]="{'has-err': createVacancyForm.get('address.houseNum').invalid && (createVacancyForm.get('address.houseNum').touched || isClicked)}"
+        >
+        <span
+          class="form-help-text"
+          *ngIf="createVacancyForm.get('address.houseNum').invalid && (createVacancyForm.get('address.houseNum').touched || isClicked)"
+        >
+          <span *ngIf="createVacancyForm.get('address.houseNum')['errors']['required']">Заполните номер дома</span>
+          <span *ngIf="createVacancyForm.get('address.houseNum')['errors']['pattern']">Номер дома должен быть числом</span>
+        </span>
+      </p>
 
-        <p>
-            <label for="building-input">Строение/корпус:</label>
-            <input type="text" id="building-input" class="address-input vacancy-input">
-        </p>
+      <p>
+        <label for="building-input">Строение/корпус:</label>
+        <input type="text" id="building-input" class="address-input vacancy-input" formControlName="building">
+      </p>
     </fieldset>
 
     <fieldset class="add_vacancy-section housing-description">
-        <h2 role="heading" class="section-name">Описание</h2>
-        <textarea class="description-area vacancy-input" cols="40" rows="10"
-        placeholder="Максимально подробно постарайтесь описать сдаваемое помещение: жилая площадь, оснащение, инфраструктура поблизости и т.д."></textarea>
-        <p>
-            <label for="guests-max">Максимальное число гостей:</label>
-            <input type="number" min="1" max="50" id="guests-max" class="description-input vacancy-input" value="1">
-        </p>
-        <label for="pets"><input type="checkbox" id="pets"> Можно с питомцами</label>
+      <h2 role="heading" class="section-name">Описание</h2>
+      <textarea class="description-area vacancy-input" cols="40" rows="10"
+      placeholder="Максимально подробно постарайтесь описать сдаваемое помещение: жилая площадь, оснащение, инфраструктура поблизости и т.д."></textarea>
+      <p>
+        <label for="guests-max">Максимальное число гостей:</label>
+        <input type="number" min="1" max="50" id="guests-max" class="description-input vacancy-input" value="1">
+      </p>
+      <label for="pets"><input type="checkbox" id="pets"> Можно с питомцами</label>
     </fieldset>
 
     <fieldset class="add_vacancy-section housing-prices">
-            <h2 role="heading" class="section-name">Цены</h2>
-            <p>
-              <label>Валюта:</label>
-              <select class="curr-select vacancy-input">
-                <option class="curr-select__option" selected>RUB – Российский рубль</option>
-                <option class="curr-select__option">USD – Доллар США</option>
-                <option class="curr-select__option">EUR – Евро</option>
-              </select>
-            </p>
+      <h2 role="heading" class="section-name">Цены</h2>
 
-            <p>
-              <label for="min-term">Минимальный срок заселения:</label>
-              <input type="number" min="1" id="min-term" class="vacancy-input"> суток
-            </p>
+      <p>
+        <label for="min-term">Минимальный срок заселения:</label>
+        <input type="number" min="1" id="min-term" class="vacancy-input"> суток
+      </p>
 
-            <p>
-              <label for="price-input">Цена за сутки, ₽:</label>
-              <input type="number" id="price-input" class="vacancy-input">
-            </p>
+      <p>
+        <label for="price-input">Цена за сутки, ₽:</label>
+        <input type="number" id="price-input" class="vacancy-input">
+      </p>
 
-            <span class="date-span">Заезд после</span>
-            <select class="vacancy-input date-select">
-              <option class="date-select__option">0:00</option>
-              <option class="date-select__option">1:00</option>
-              <option class="date-select__option">2:00</option>
-              <option class="date-select__option">3:00</option>
-              <option class="date-select__option">4:00</option>
-              <option class="date-select__option">5:00</option>
-              <option class="date-select__option">6:00</option>
-              <option class="date-select__option">7:00</option>
-              <option class="date-select__option">8:00</option>
-              <option class="date-select__option">9:00</option>
-              <option class="date-select__option">10:00</option>
-              <option class="date-select__option">11:00</option>
-              <option class="date-select__option">12:00</option>
-              <option class="date-select__option">13:00</option>
-              <option class="date-select__option" selected>14:00</option>
-              <option class="date-select__option">15:00</option>
-              <option class="date-select__option">16:00</option>
-              <option class="date-select__option">17:00</option>
-              <option class="date-select__option">18:00</option>
-              <option class="date-select__option">19:00</option>
-              <option class="date-select__option">20:00</option>
-              <option class="date-select__option">21:00</option>
-              <option class="date-select__option">22:00</option>
-              <option class="date-select__option">23:00</option>
-            </select>
+      <span class="date-span">Заезд после</span>
+      <select class="vacancy-input date-select">
+        <option class="date-select__option">0:00</option>
+        <option class="date-select__option">1:00</option>
+        <option class="date-select__option">2:00</option>
+        <option class="date-select__option">3:00</option>
+        <option class="date-select__option">4:00</option>
+        <option class="date-select__option">5:00</option>
+        <option class="date-select__option">6:00</option>
+        <option class="date-select__option">7:00</option>
+        <option class="date-select__option">8:00</option>
+        <option class="date-select__option">9:00</option>
+        <option class="date-select__option">10:00</option>
+        <option class="date-select__option">11:00</option>
+        <option class="date-select__option">12:00</option>
+        <option class="date-select__option">13:00</option>
+        <option class="date-select__option" selected>14:00</option>
+        <option class="date-select__option">15:00</option>
+        <option class="date-select__option">16:00</option>
+        <option class="date-select__option">17:00</option>
+        <option class="date-select__option">18:00</option>
+        <option class="date-select__option">19:00</option>
+        <option class="date-select__option">20:00</option>
+        <option class="date-select__option">21:00</option>
+        <option class="date-select__option">22:00</option>
+        <option class="date-select__option">23:00</option>
+      </select>
 
-            <span class="date-span">Отъезд до</span>
-            <select class="vacancy-input date-select">
-              <option class="date-select__option">0:00</option>
-              <option class="date-select__option">1:00</option>
-              <option class="date-select__option">2:00</option>
-              <option class="date-select__option">3:00</option>
-              <option class="date-select__option">4:00</option>
-              <option class="date-select__option">5:00</option>
-              <option class="date-select__option">6:00</option>
-              <option class="date-select__option">7:00</option>
-              <option class="date-select__option">8:00</option>
-              <option class="date-select__option">9:00</option>
-              <option class="date-select__option">10:00</option>
-              <option class="date-select__option">11:00</option>
-              <option class="date-select__option" selected>12:00</option>
-              <option class="date-select__option">13:00</option>
-              <option class="date-select__option">14:00</option>
-              <option class="date-select__option">15:00</option>
-              <option class="date-select__option">16:00</option>
-              <option class="date-select__option">17:00</option>
-              <option class="date-select__option">18:00</option>
-              <option class="date-select__option">19:00</option>
-              <option class="date-select__option">20:00</option>
-              <option class="date-select__option">21:00</option>
-              <option class="date-select__option">22:00</option>
-              <option class="date-select__option">23:00</option>
-            </select>
+      <span class="date-span">Отъезд до</span>
+      <select class="vacancy-input date-select">
+        <option class="date-select__option">0:00</option>
+        <option class="date-select__option">1:00</option>
+        <option class="date-select__option">2:00</option>
+        <option class="date-select__option">3:00</option>
+        <option class="date-select__option">4:00</option>
+        <option class="date-select__option">5:00</option>
+        <option class="date-select__option">6:00</option>
+        <option class="date-select__option">7:00</option>
+        <option class="date-select__option">8:00</option>
+        <option class="date-select__option">9:00</option>
+        <option class="date-select__option">10:00</option>
+        <option class="date-select__option">11:00</option>
+        <option class="date-select__option" selected>12:00</option>
+        <option class="date-select__option">13:00</option>
+        <option class="date-select__option">14:00</option>
+        <option class="date-select__option">15:00</option>
+        <option class="date-select__option">16:00</option>
+        <option class="date-select__option">17:00</option>
+        <option class="date-select__option">18:00</option>
+        <option class="date-select__option">19:00</option>
+        <option class="date-select__option">20:00</option>
+        <option class="date-select__option">21:00</option>
+        <option class="date-select__option">22:00</option>
+        <option class="date-select__option">23:00</option>
+      </select>
     </fieldset>
 
     <fieldset class="add_vacancy-section housing-photos">
@@ -157,6 +217,17 @@
       <input type="file" name="uploadingFile" id="housing-photos">
     </fieldset>
 
-    <button class="add_vacancy-btn">Опубликовать</button>
+    <div class="message {{message.type}}-message" *ngIf="message.text">
+      {{ message.text }}
+    </div>
+    <button
+      class="add_vacancy-btn"
+      type="submit"
+
+    >
+      Опубликовать
+      <!-- [disabled]="createVacancyForm.invalid"
+      [ngClass]="{'button-disabled': createVacancyForm.invalid}" -->
+    </button>
   </form>
 </div>

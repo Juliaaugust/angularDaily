@@ -14,7 +14,7 @@ export class HousingService {
   }
 
   getHousingById(id: number) {
-    return this.http.get(`http://localhost:3000/housing/${id}`);
+    return this.http.get<Housing>(`http://localhost:3000/housing/${id}`);
   }
 
   getHousingBySearchParams( params: HousingParams) {

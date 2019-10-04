@@ -29,7 +29,7 @@ export class UsersService {
   }
 
   getUserById(id: number) {
-    return this.http.get(`http://localhost:3000/users/${id}`);
+    return this.http.get<User>(`http://localhost:3000/users/${id}`);
   }
 
   createNewUser(user: User) {
