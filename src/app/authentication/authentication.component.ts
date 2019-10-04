@@ -94,6 +94,7 @@ export class AuthenticationComponent implements OnInit {
     const registrDate = new Date().toDateString();
     const role = 'клиент';
     const user = new User(email, password, name, role, registrDate);
+    user.reservations = [];
 
     console.log(this.registrForm);
     if (this.registrForm.value.agree === true) {

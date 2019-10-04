@@ -159,21 +159,21 @@ export class PaymentPageComponent implements OnInit {
           console.log('landlord', landlord);
           this.userService.addRequest(landlord, request)
             .subscribe((llAddReq) => {
-              console.log('llAddReq', llAddReq);
+              // console.log('llAddReq', llAddReq);
             });
         });
 
       this.userService.addOwnReservation(currentUser, reservation)
-      .subscribe(() => {
-        this.router.navigate(['/payment', this.id, 'success'],
-        { queryParams:
-          {
-            date: this.date,
-            days: this.diffDays,
-            cost: this.cost,
-            email: currentUser.email
-        }});
-      });
+        .subscribe(() => {
+          this.router.navigate(['/payment', this.id, 'success'],
+          { queryParams:
+            {
+              date: this.date,
+              days: this.diffDays,
+              cost: this.cost,
+              email: currentUser.email
+          }});
+        });
 
     } else {
       this.showMessage('Необходимо выбрать способ оплаты!', 'error');

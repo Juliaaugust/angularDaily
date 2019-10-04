@@ -31,16 +31,6 @@
           "housingId": 8,
           "status": "одобрено",
           "landlordId": 2
-        },
-        {
-          "housingId": 23,
-          "status": "на рассмотрении",
-          "landlordId": 2
-        },
-        {
-          "housingId": 24,
-          "status": "на рассмотрении",
-          "landlordId": 2
         }
       ],
       "reservations": [
@@ -87,19 +77,107 @@
         {
           "housingId": 19,
           "status": "на рассмотрении"
-        },
-        {
-          "housingId": 23,
-          "status": "на рассмотрении",
-          "landlordId": 2
-        },
-        {
-          "housingId": 24,
-          "status": "на рассмотрении",
-          "landlordId": 2
         }
       ],
       "requests": [
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 1800,
+          "user": "Гномова Марина",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-13",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 14400,
+          "user": "Гномова Марина",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-13",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 14400,
+          "user": "Гномова Марина",
+          "status": "new"
+        },
+        {
+          "housingId": 8,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "sber",
+          "cost": 8000,
+          "user": "Гномова Мария",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 1800,
+          "user": "Гномова Мария",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "17:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "Поздний отъезд",
+          "guestsCount": "2",
+          "target": "Отдых",
+          "comment": "ZZZz",
+          "payMethod": "webmoney",
+          "cost": 1800,
+          "user": "Гномова Мария",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "17:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "Поздний отъезд",
+          "guestsCount": "2",
+          "target": "Отдых",
+          "comment": "ZZZz",
+          "payMethod": "webmoney",
+          "cost": 1800,
+          "user": "Гномова Мария",
+          "status": "new"
+        },
         {
           "housingId": 8,
           "arrivalDate": "2019-10-05",
@@ -355,6 +433,30 @@
           "dates": "11.08.16 – 22.08.16"
         }
       ]
+    },
+    {
+      "email": "masha22@mail.ru",
+      "password": "121212",
+      "name": "Гномова Мария",
+      "role": "клиент",
+      "registrDate": "Fri Oct 04 2019",
+      "id": 6,
+      "reservations": [
+        {
+          "housingId": 8,
+          "status": "текущее",
+          "dates": "2019:10:04 – 2019:10:05"
+        }
+      ]
+    },
+    {
+      "email": "masha33@mail.ru",
+      "password": "121233",
+      "name": "Гномова Марина",
+      "role": "клиент",
+      "registrDate": "Fri Oct 04 2019",
+      "reservations": [],
+      "id": 7
     }
   ],
   "housing": [
@@ -1095,42 +1197,6 @@
       "rating": 0,
       "isVisible": false,
       "id": 22,
-      "landlordId": 2
-    },
-    {
-      "name": "Дом",
-      "price": 555,
-      "address": {
-        "country": "Германия",
-        "city": "Дрезден",
-        "street": "Растанная",
-        "houseNum": "333",
-        "building": ""
-      },
-      "maxGuests": 5,
-      "type": "house",
-      "description": "qwqw",
-      "rating": 0,
-      "isVisible": false,
-      "id": 23,
-      "landlordId": 2
-    },
-    {
-      "name": "Коттедж \"Звезда\"",
-      "price": 8999,
-      "address": {
-        "country": "Германия",
-        "city": "Дрезден",
-        "street": "Растанная",
-        "houseNum": "55",
-        "building": ""
-      },
-      "maxGuests": 15,
-      "type": "house",
-      "description": "ццц",
-      "rating": 0,
-      "isVisible": false,
-      "id": 24,
       "landlordId": 2
     }
   ]

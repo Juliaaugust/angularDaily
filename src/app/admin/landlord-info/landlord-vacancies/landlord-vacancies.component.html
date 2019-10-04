@@ -4,20 +4,20 @@
     </div>
     <div class="housing-description">
         <a href="./housing.html" target="_blank">
-            <h2 class="housing-name">Апартамент</h2>
+            <h2 class="housing-name">{{ housingName }}</h2>
             <div class="housing-address">
                 <img src="../../../assets/images/icons/location.svg" alt="">
-                Москва, ул. Гагарина, 18
+                {{ housingAddress }}
             </div>
             <div class="housing-price">
                 <img src="../../../assets/images/icons/price.svg" alt="">
-                <span class="price-card-value">5 500</span> ₽ за сутки
+                <span class="price-card-value">{{ housingPrice }}</span> ₽ за сутки
             </div>
         </a>
 
         <div class="housing-params">
             <div class="status">
-                Статус: <span class="status-name">отклонено</span>
+                Статус: <span class="status-name">{{ llVacancy.status }}</span>
             </div>
         </div>
     </div>
