@@ -1,3 +1,4 @@
+import { Review } from './review.model';
 export class Housing {
   constructor(
     public name: string,
@@ -13,7 +14,8 @@ export class Housing {
     public description?: string,
     // public pets?: boolean,
     public id?: number,
-    public rating?: number,
+    public rating?: {name: string, value: number}[],
+    public reviews?: Review[],
     public isVisible?: boolean,
     public landlordId?: number
   ) {}

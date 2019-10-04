@@ -1,6 +1,6 @@
 <main class="housing-main">
   <section class="carousel-section-wrapper">
-    <h1 role="heading" class="section-name">{{ houseInfo.name }}</h1>
+    <h1 role="heading" class="section-name">{{ housingName }}</h1>
     <ul class="carousel-wrapper">
       <!-- <app-carousel></app-carousel> -->
         <!-- <input type="radio" name="radio-buttons" id="img-1" checked />
@@ -32,7 +32,7 @@
   <section class="short-description">
     <div class="housing-address">
       <img src="../../../assets/images/icons/location.svg" alt="">
-      {{ houseInfo.address.city }}, {{ houseInfo.address.street }}, д.{{ houseInfo.address.house }}
+      {{ housingAddress }}
     </div>
     <app-star-rating></app-star-rating>
   </section>
@@ -40,7 +40,7 @@
   <section class="housing-section housing-description">
     <h2 role="heading" class="section-name">Описание</h2>
     <div class="housing-description">
-      {{ houseInfo.description }}
+      {{ housingDescription }}
     </div>
   </section>
 
@@ -48,25 +48,25 @@
     <h2 role="heading" class="section-name">Цены</h2>
     <p>Стоимость указана в рублях РФ</p>
     <div class="main-price">
-      <div class="price">{{ houseInfo.price }} ₽ за сутки</div>
-      <div class="price-desc">включает проживание не более <span class="guest-count">{{ houseInfo.maxGuests }}</span> гостей</div>
+      <div class="price">{{ housingPrice }} ₽ за сутки</div>
+      <div class="price-desc">включает проживание не более <span class="guest-count">{{ maxGuests }}</span> гостей</div>
     </div>
   </section>
 
-  <section class="housing-section housing-reviews" *ngIf="houseInfo.rating && houseInfo.reviews">
+  <section class="housing-section housing-reviews" *ngIf="housingRating && housingReviews">
       <h2 role="heading" class="section-name">Оценка и отзывы</h2>
       <div class="rating-container">
         <div class="rating-value-box">
-          {{ ratingValue | number:'1.2-2' }}
+          {{ commonRating | number:'1.2-2' }}
         </div>
         <div>
-          <p>На основании {{ houseInfo.reviews.length }} отзывов</p>
+          <p>На основании {{ housingReviews.length }} отзывов</p>
           <app-star-rating></app-star-rating>
         </div>
       </div> <!--rating-->
 
       <ul class="rating-list">
-        <li class="rating-list__item" *ngFor="let rat of houseInfo.rating">
+        <li class="rating-list__item" *ngFor="let rat of housingRating">
           <div class="rating-name">
               {{ rat.name }}
           </div>
@@ -80,7 +80,7 @@
       <div class="reviews-container">
           <h3 class="section-name">Отзывы гостей</h3>
           <ul class="reviews-list" *ngIf="houseInfo.reviews.length !== 0">
-            <li class="reviews-list__item" *ngFor="let review of houseInfo.reviews">
+            <li class="reviews-list__item" *ngFor="let review of housingReviews">
               <div class="comment-top">
                 <div>
                   <img src="../../../assets/images/default_avatar.png" alt="" class="guest-avatar">
@@ -88,7 +88,7 @@
                 </div>
                 <div>
                   <app-star-rating></app-star-rating>
-                  <p class="comment-date">{{ review.date | date }}</p>
+                  <p class="comment-date">{{ review.date | date:'dd.MM.yyyy' }}</p>
                 </div>
               </div>
 

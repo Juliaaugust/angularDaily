@@ -30,7 +30,7 @@ export class NewVacanciesComponent implements OnInit {
     this.housingService.getHousingById(this.landlordVacancyNew.housingId)
       .subscribe((val: Housing) => {
         this.housingName = val.name;
-        this.housingAddress = `${val.address.city}, ${val.address.street}, ${val.address.house}`;
+        this.housingAddress = `${val.address.city}, ${val.address.street}, д.${val.address.house}`;
         this.housingPrice = val.price;
       });
   }
