@@ -13,25 +13,28 @@
 
 ## Данные для входа
 
-Для того, чтобы зайти в программу под именем администратора, на странице авторизации необходимо ввести следующие данные: `email: olga@gmail.com`, `пароль: admolga`.
+Для того, чтобы зайти в программу под именем администратора, на странице авторизации необходимо ввести следующие данные: 
+email: `olga@gmail.com`,
+пароль: `admolga`.
 
-Для того, чтобы зайти в программу под именем арендодателя, на странице авторизации необходимо ввести следующие данные: `email: viktor@gmail.com`, `пароль: mypass`.
+Для того, чтобы зайти в программу под именем арендодателя, на странице авторизации необходимо ввести следующие данные:
+email: `viktor@gmail.com`,
+пароль: `mypass`.
 
-Для того, чтобы зайти в программу под именем администратора, на странице авторизации необходимо ввести следующие данные: `email: anna@gmail.com`, `пароль: 12345`.
+Для того, чтобы зайти в программу под именем администратора, на странице авторизации необходимо ввести следующие данные:
+email: `anna@gmail.com`,
+пароль: `12345`.
 
 Так же всегда можно зарегистрировать нового пользователя (по умолчанию его роль в системе – клиент).
-## Build
+## Сборка проекта
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Запустите команду `ng build` для сборки проекта. Артефакты сборки будут храниться в каталоге `dist/`. Используйте флаг `--prod` для сборки на продакшн.
 
-## Running unit tests
+## Запуск unit тестов
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Запустите команду `ng test` для выполнения unit тестов с помощью [Karma](https://karma-runner.github.io) (но лучше не надо).
 
-## Running end-to-end tests
+## Запуск end-to-end тестов
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Запустите команду `ng e2e` для выполнения end-to-end тестов с помощью [Protractor](http://www.protractortest.org/) (этого тоже не стоит делать).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
