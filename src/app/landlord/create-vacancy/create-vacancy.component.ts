@@ -106,14 +106,14 @@ export class CreateVacancyComponent implements OnInit {
 
           this.userService.addOwnVacancy(currentLandlord, vacancy)
             .subscribe(val => {
-              console.log('landlord with vacancies', val);
+              // console.log('landlord with vacancies', val);
             });
 
           this.userService.getUserById(1)
             .subscribe(adm => {
               this.userService.addLandlordVacancy(adm, vacancy)
                 .subscribe(val => {
-                  console.log('admin with ll vacancies', val);
+                  // console.log('admin with ll vacancies', val);
                 });
             });
 

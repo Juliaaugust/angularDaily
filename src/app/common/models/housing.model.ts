@@ -14,6 +14,7 @@ export class Housing {
     // public pets?: boolean,
     public id?: number,
     public rating?: number,
-    public isVisible?: boolean
+    public isVisible?: boolean,
+    public landlordId?: number
   ) {}
 }

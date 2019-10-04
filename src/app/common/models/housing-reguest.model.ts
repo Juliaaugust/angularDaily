@@ -10,6 +10,7 @@ export class HousingRequest {
     public comment: string,
     public payMethod: string,
     public cost: number,
-    public user: string
+    public user: string,
+    public status?: string
   ) {}
 }

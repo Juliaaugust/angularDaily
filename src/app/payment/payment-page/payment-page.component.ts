@@ -6,6 +6,8 @@ import { HousingService } from '../../common/services/housing.service';
 import { Housing } from '../../common/models/housing.model';
 import { User } from 'src/app/common/models/user.model';
 import { UsersService } from '../../common/services/users.service';
+import { HousingRequest } from '../../common/models/housing-reguest.model';
+import { Reservation } from '../../common/models/reservation.model';
 
 @Component({
   selector: 'app-payment-page',
@@ -19,6 +21,7 @@ export class PaymentPageComponent implements OnInit {
   paymentForm: FormGroup;
 
   user: User;
+  landlordId: number;
 
   isChangeDisabled = false;
 
@@ -36,7 +39,8 @@ export class PaymentPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private housingService: HousingService
+    private housingService: HousingService,
+    private userService: UsersService
   ) { }
 
 
@@ -69,11 +73,12 @@ export class PaymentPageComponent implements OnInit {
 
     this.housingService.getHousingById(this.id)
       .subscribe((housing) => {
-        console.log(housing);
+        // console.log(housing);
         this.housingName = housing.name;
         this.price = housing.price;
         this.maxGuests = +housing.maxGuests;
         this.cost = this.diffDays * this.price;
+        this.landlordId = housing.landlordId;
       });
 
 
@@ -121,15 +126,46 @@ export class PaymentPageComponent implements OnInit {
 
   payForHousing() {
 
-    const {arrivalTime, comment, departureTime, payMethod, pets, target} = this.paymentForm.value;
-    // const arrivalTime = this.paymentForm.value.arrivalTime;
-    // const payMethod = this.paymentForm.value.payMethod;
-    // const guestsCount = (this.paymentForm.get('guestInfoArr') as FormArray).length;
+    const formData = {...this.paymentForm.value};
 
-    if (payMethod) {
-      // this.id = +this.route.snapshot.params.id;
-      // console.log(this.id);
-      this.router.navigate(['/payment', this.id, 'success']);
+    if (formData.payMethod) {
+      const currentUser = JSON.parse(window.localStorage.getItem('user'));
+      const reqStatus = 'new';
+      const request = new HousingRequest(
+        this.id,
+        this.arrivalDateStr,
+        formData.arrivalTime,
+        this.departureDateStr,
+        formData.departureTime,
+        formData.guestsCount,
+        formData.target,
+        formData.comment,
+        formData.payMethod,
+        this.cost,
+        currentUser.name,
+        reqStatus
+      );
+
+      const resStatus = 'текущее';
+      const datesStr = `${this.arrivalDateStr.split('-').join(':')} – ${this.departureDateStr.split('-').join(':')}`;
+      const reservation = new Reservation(this.id, resStatus, datesStr);
+
+      console.log('RRR', request);
+      console.log('RRR', reservation);
+
+      this.userService.getUserById(this.landlordId)
+        .subscribe((landlord: User) => {
+          this.userService.addRequest(landlord, request)
+            .subscribe((llAddReq) => {
+              console.log('llAddReq', llAddReq);
+            });
+        });
+
+      this.userService.addOwnReservation(currentUser, reservation)
+      .subscribe(() => {
+        this.router.navigate(['/payment', this.id, 'success']);
+      });
+
     } else {
       this.showMessage('Необходимо выбрать способ оплаты!', 'error');
     }

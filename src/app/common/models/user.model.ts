@@ -16,6 +16,6 @@ export class User {
     public reservations?: Reservation[],
     public vacancies?: Vacancy[],
     public landlordVacancies?: Vacancy[],
-    public reguests?: HousingRequest[]
+    public requests?: HousingRequest[]
   ) { }
 }
