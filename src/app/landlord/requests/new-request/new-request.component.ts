@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HousingRequest } from '../../../common/models/housing-reguest.model';
 import { HousingService } from '../../../common/services/housing.service';
 import { Housing } from 'src/app/common/models/housing.model';
@@ -12,6 +12,9 @@ export class NewRequestComponent implements OnInit {
 
   @Input() requestNew: HousingRequest;
 
+  @Output() confirmed: EventEmitter<HousingRequest> = new EventEmitter();
+  @Output() refused: EventEmitter<HousingRequest> = new EventEmitter();
+
   housingName = '';
 
   constructor(private housingService: HousingService) { }
@@ -22,6 +25,16 @@ export class NewRequestComponent implements OnInit {
       .subscribe((val: Housing) => {
         this.housingName = val.name;
       });
+  }
+
+  confirmRequest() {
+    const request: HousingRequest = this.requestNew;
+    this.confirmed.emit(request);
+  }
+
+  refuseRequest() {
+    const request: HousingRequest = this.requestNew;
+    this.refused.emit(request);
   }
 
 }

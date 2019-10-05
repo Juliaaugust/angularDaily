@@ -13,6 +13,11 @@
       "tel": "+7-911-345-87-91",
       "landlordVacancies": [
         {
+          "housingId": 23,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
           "housingId": 15,
           "status": "на рассмотрении",
           "landlordId": 2
@@ -59,6 +64,11 @@
       "tel": "+49-17-426-16-55",
       "vacancies": [
         {
+          "housingId": 23,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
           "housingId": 15,
           "status": "на рассмотрении"
         },
@@ -81,6 +91,121 @@
       ],
       "requests": [
         {
+          "housingId": 9,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "15:00",
+          "departureDate": "2019-10-08",
+          "departureTime": "12:00",
+          "guestsCount": 3,
+          "target": "Отдых",
+          "comment": "цйцй",
+          "payMethod": "sber",
+          "cost": 12000,
+          "user": "Комаров Виктор ",
+          "status": "new"
+        },
+        {
+          "housingId": 9,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "15:00",
+          "departureDate": "2019-10-08",
+          "departureTime": "12:00",
+          "guestsCount": 3,
+          "target": "Отдых",
+          "comment": "цйцй",
+          "payMethod": "sber",
+          "cost": 12000,
+          "user": "Комаров Виктор ",
+          "status": "new"
+        },
+        {
+          "housingId": 9,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "15:00",
+          "departureDate": "2019-10-08",
+          "departureTime": "12:00",
+          "guestsCount": 3,
+          "target": "Отдых",
+          "comment": "цйцй",
+          "payMethod": "sber",
+          "cost": 12000,
+          "user": "Комаров Виктор ",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-17",
+          "departureTime": "12:00",
+          "guestsCount": 7,
+          "target": "Другое",
+          "comment": "Заселяю людей",
+          "payMethod": "sber",
+          "cost": 21600,
+          "user": "Любимова Маша Игоревна",
+          "status": "new"
+        },
+        {
+          "housingId": 8,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-09",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Отдых",
+          "comment": "ккк",
+          "payMethod": "card",
+          "cost": 32000,
+          "user": "Любимова Маша Игоревна",
+          "status": "new",
+          "id": 1
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "webmoney",
+          "cost": 1800,
+          "user": "Гномова Мария",
+          "status": "new",
+          "id": 2
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-11",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "sber",
+          "cost": 12600,
+          "user": "Гномова Мария",
+          "status": "new"
+        },
+        {
+          "housingId": 10,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-05",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "ya-money",
+          "cost": 12500,
+          "user": "Комаров Виктор ",
+          "status": "new",
+          "id": 3
+        },
+        {
           "housingId": 12,
           "arrivalDate": "2019-10-04",
           "arrivalTime": "14:00",
@@ -92,7 +217,8 @@
           "payMethod": "ya-money",
           "cost": 1800,
           "user": "Гномова Марина",
-          "status": "new"
+          "status": "new",
+          "id": 4
         },
         {
           "housingId": 8,
@@ -106,7 +232,8 @@
           "payMethod": "sber",
           "cost": 88000,
           "user": "Иванова Анна Игоревна",
-          "status": "Принято"
+          "status": "Принято",
+          "id": 5
         },
         {
           "housingId": 8,
@@ -120,7 +247,8 @@
           "payMethod": "webmoney",
           "cost": 40000,
           "user": "Иванова Анна Игоревна",
-          "status": "Отклонено"
+          "status": "Отклонено",
+          "id": 6
         },
         {
           "housingId": 10,
@@ -134,9 +262,11 @@
           "payMethod": "card",
           "cost": 12500,
           "user": "Ольга",
-          "status": "new"
+          "status": "new",
+          "id": 7
         }
-      ]
+      ],
+      "reservations": []
     },
     {
       "name": "Иванова Анна Игоревна",
@@ -237,6 +367,42 @@
           "dates": "11.08.16 – 22.08.16"
         }
       ]
+    },
+    {
+      "email": "masha1@mail.ru",
+      "password": "12345",
+      "name": "Гномова Мария",
+      "role": "клиент",
+      "registrDate": "Sat Oct 05 2019",
+      "id": 6,
+      "reservations": [
+        {
+          "housingId": 12,
+          "status": "текущее",
+          "dates": "2019:10:04 – 2019:10:05"
+        }
+      ]
+    },
+    {
+      "email": "masha44@mail.ru",
+      "password": "22211",
+      "name": "Любимова Маша Игоревна",
+      "role": "клиент",
+      "registrDate": "Sat Oct 05 2019",
+      "id": 7,
+      "reservations": [
+        {
+          "housingId": 12,
+          "status": "текущее",
+          "dates": "2019:10:05 – 2019:10:17"
+        },
+        {
+          "housingId": 8,
+          "status": "текущее",
+          "dates": "2019:10:05 – 2019:10:09"
+        }
+      ],
+      "tel": "89992122122"
     }
   ],
   "housing": [
@@ -253,20 +419,20 @@
       "isVisible": false,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_0_2.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_0_2.jpg"
         }
       ],
       "description": "Отличный мини-отель, возможна почасовая оплата",
@@ -286,20 +452,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         }
       ],
       "description": "Жилая площадь – 70м2; 6 этаж из 7, есть лифт; 1 км от метро Курская; Безлимитный Wi-Fi",
@@ -364,20 +530,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_0_2.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         }
       ],
       "description": "Собственный пляж; Wi-Fi на всей территории; имеется ресторан, завтраки включены в стоимость",
@@ -434,20 +600,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_0_2.jpg"
         }
       ],
       "description": "Жилая площадь – 120м2; 18 этаж из 27, есть лифт; Безлимитный Wi-Fi, кухня, джакузи",
@@ -520,20 +686,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_0_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_1.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_3.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_4.jpg"
         }
       ],
       "description": "Первая линия пляжа. Бесплатная парковка, ресторан,  Wi-Fi доступен на всей территории. Номера строго для некурящих.",
@@ -614,20 +780,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_1_1.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_4.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         }
       ],
       "description": "Жилая площадь – 120м2; 18 этаж из 27, есть лифт; Безлимитный Wi-Fi, кухня, джакузи",
@@ -692,20 +858,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_0_2.jpg"
         }
       ],
       "description": "Первая линия, частный пляж",
@@ -770,20 +936,20 @@
       "isVisible": true,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_4.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_0_3.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         }
       ],
       "description": "Первая линия, частный пляж",
@@ -840,20 +1006,20 @@
       "isVisible": false,
       "photos": [
         {
-          "id": "img-1",
-          "src": "../../../assets/images/housing_variants/var_1_1.jpg"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_1_1.jpg"
         },
         {
-          "id": "img-2",
-          "src": "../../../assets/images/housing_variants/var_1_2.jpg"
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
         },
         {
-          "id": "img-3",
-          "src": "../../../assets/images/housing_variants/var_2_1.jpg"
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         },
         {
-          "id": "img-4",
-          "src": "../../../assets/images/housing_variants/var_2_2.jpg"
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         }
       ],
       "description": "13 этаж. Хорошая шумоизоляция. Множество магазинов поблизости, парк, площадка",
@@ -978,6 +1144,23 @@
       "isVisible": false,
       "id": 22,
       "landlordId": 2
+    },
+    {
+      "name": "Апартрамент \"Звезда\"",
+      "price": 2600,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Нагатинская ул.",
+        "house": "7",
+        "building": ""
+      },
+      "maxGuests": 5,
+      "type": "apartments",
+      "description": "Отличное жилье в красивом месте",
+      "rating": 0,
+      "isVisible": false,
+      "id": 23
     }
   ]
 }

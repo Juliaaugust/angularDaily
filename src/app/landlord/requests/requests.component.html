@@ -8,6 +8,8 @@
           <app-new-request
             *ngFor="let reqNew of requestsNew"
             [requestNew] = "reqNew"
+            (confirmed)="confirmRequest($event)"
+            (refused)="refuseRequest($event)"
           >
           </app-new-request>
         </li>

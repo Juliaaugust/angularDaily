@@ -91,7 +91,8 @@ export class CreateVacancyComponent implements OnInit {
     );
 
     housing.isVisible = false;
-    housing.rating = 0;
+    housing.rating = [];
+    housing.reviews = [];
 
     this.isClicked = true;
     if (this.createVacancyForm.invalid) {
@@ -105,16 +106,14 @@ export class CreateVacancyComponent implements OnInit {
           const vacancy = new Vacancy(newHouse.id, 'на рассмотрении', currentLandlord.id);
 
           this.userService.addOwnVacancy(currentLandlord, vacancy)
-            .subscribe(val => {
-              // console.log('landlord with vacancies', val);
+            .subscribe(user => {
+              window.localStorage.setItem('user', JSON.stringify(user));
             });
 
           this.userService.getUserById(1)
             .subscribe(adm => {
               this.userService.addLandlordVacancy(adm, vacancy)
-                .subscribe(val => {
-                  // console.log('admin with ll vacancies', val);
-                });
+                .subscribe();
             });
 
           this.showMessage('Вакансия была успешно создана!', 'info');

@@ -17,6 +17,7 @@ export class Housing {
     public rating?: {name: string, value: number}[],
     public reviews?: Review[],
     public isVisible?: boolean,
-    public landlordId?: number
+    public landlordId?: number,
+    public photos?: {id: number, src: string}[]
   ) {}
 }

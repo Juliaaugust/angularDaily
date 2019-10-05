@@ -164,7 +164,8 @@ export class PaymentPageComponent implements OnInit {
         });
 
       this.userService.addOwnReservation(currentUser, reservation)
-        .subscribe(() => {
+        .subscribe(user => {
+          window.localStorage.setItem('user', JSON.stringify(user));
           this.router.navigate(['/payment', this.id, 'success'],
           { queryParams:
             {

@@ -87,4 +87,10 @@ export class UsersService {
 
     return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
   }
+
+  // changeRequestStatus(landlord: User, requestId: number, status: string) {
+  //   landlord.requests[requestId].status = status;
+
+  //   return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
+  // }
 }

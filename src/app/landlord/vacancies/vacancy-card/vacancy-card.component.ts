@@ -25,7 +25,7 @@ export class VacancyCardComponent implements OnInit {
     this.housing.getHousingById(this.vacancy.housingId)
       .subscribe((val: Housing) => {
         this.housingName = val.name;
-        this.housingAddress = `${val.address.city}, ${val.address.house}, ${val.address.street}`;
+        this.housingAddress = `${val.address.city}, ${val.address.street}, д.${val.address.house}`;
         this.housingPrice = val.price;
       });
   }

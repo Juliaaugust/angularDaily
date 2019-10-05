@@ -40,5 +40,5 @@
         <input type="text" [value]="requestNew.user" class="request-input user-input" disabled>
     </div>
 </div>
-<button class="confirm">Принять</button>
-<button class="refuse">Отказать</button>
+<button class="confirm" (click)="confirmRequest()">Принять</button>
+<button class="refuse" (click)="refuseRequest()">Отклонить</button>

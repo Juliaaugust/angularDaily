@@ -11,6 +11,7 @@ export class HousingRequest {
     public payMethod: string,
     public cost: number,
     public user: string,
-    public status?: string
+    public status?: string,
+    public id?: number
   ) {}
 }

@@ -12,7 +12,7 @@ import { Review } from '../../common/models/review.model';
 export class HousingMainComponent implements OnInit {
 
   id: number;
-  houseInfo: any;
+  houseInfo: Housing;
 
   housingName: string;
   housingAddress: string;
