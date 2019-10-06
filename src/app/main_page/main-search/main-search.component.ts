@@ -27,7 +27,7 @@ export class MainSearchComponent implements OnInit {
   city: string;
 
   cityControl = new FormControl();
-  // cities: string[] = ['Москва', 'Сочи', 'София', 'Симферополь', 'Гагра'];
+
   allCities: string[] = [];
   cities: string[] = [];
 
