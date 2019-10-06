@@ -32,12 +32,12 @@
     </div>
     <div class="type-option option-block">
       <p class="option-name">Тип жилья:</p>
-      <select class="option-input" type="date" name="type-select">
-        <option value="">Любой</option>
-        <option value="hotel/hostel">Отель / хостел</option>
-        <option value="apartments">Апартаменты</option>
-        <option value="house">Коттедж / дом</option>
-        <option value="flat">Квартира</option>
+      <select class="option-input" type="date" name="type-select" [(ngModel)]="type">
+        <option class="type__option" value="">Любой</option>
+        <option class="type__option" value="hotel/hostel">Отель / хостел</option>
+        <option class="type__option" value="apartments">Апартаменты</option>
+        <option class="type__option" value="house">Коттедж / дом</option>
+        <option class="type__option" value="flat">Квартира</option>
       </select>
     </div>
     <div class="price-option option-block">

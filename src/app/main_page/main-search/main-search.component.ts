@@ -18,10 +18,10 @@ export class MainSearchComponent implements OnInit {
   today = new Date();
 
   minArrivalDate = this.today.toISOString().slice(0, 10);
-  minDeparturelDate = new Date(this.today.setDate(this.today.getDate() + 1)).toISOString().slice(0, 10);
+  minDepartureDate = new Date(this.today.setDate(this.today.getDate() + 1)).toISOString().slice(0, 10);
 
   arrivalDate = this.minArrivalDate;
-  departureDate = this.minDeparturelDate;
+  departureDate = this.minDepartureDate;
 
   guests: string;
   city: string;
@@ -82,8 +82,8 @@ export class MainSearchComponent implements OnInit {
 
   changeArrivalDate() {
     const newArrival = new Date(this.arrivalDate);
-    this.minDeparturelDate = new Date(newArrival.setDate(newArrival.getDate() + 1)).toISOString().slice(0, 10);
-    this.departureDate = this.minDeparturelDate;
+    this.minDepartureDate = new Date(newArrival.setDate(newArrival.getDate() + 1)).toISOString().slice(0, 10);
+    this.departureDate = this.minDepartureDate;
   }
 
 }

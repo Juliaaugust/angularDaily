@@ -28,9 +28,9 @@ export class RentalsAsideComponent implements OnInit {
   maxPrice = '';
   minRatingValue = '3';
 
-  // housingType: '' | 'hotel/hostel' | 'apartments' | 'house' | 'flat' = '';
+  type: '' | 'hotel/hostel' | 'apartments' | 'house' | 'flat' = '';
 
-  housingType = '';
+  // housingType = '';
 
   sortingType: 'default' | 'asc' | 'desc' | 'rating' = 'default';
 
@@ -44,6 +44,9 @@ export class RentalsAsideComponent implements OnInit {
       this.guests = (Math.max(+val.guests, 1 ) || 1).toString();
       this.arrivalDate = val.arrivalDate;
       this.departureDate = val.departureDate;
+      if (['default', 'hotel/hostel', 'apartments', 'house', 'flat'].includes(val.type)) {
+        this.type = val.type as any;
+      }
       this.minPrice = val.minPrice;
       this.maxPrice = val.maxPrice;
       if (['default', 'asc', 'desc', 'rating'].includes(val.sorting)) {
@@ -72,7 +75,7 @@ export class RentalsAsideComponent implements OnInit {
         guests: this.guests,
         arrivalDate: this.arrivalDate,
         departureDate: this.departureDate,
-        type: this.housingType,
+        type: this.type,
         minPrice: this.minPrice,
         maxPrice: this.maxPrice,
         rating: this.minRatingValue,

@@ -20,7 +20,6 @@ export class HousingService {
   getHousingBySearchParams( params: HousingParams) {
 
     if ((typeof(params.city) !== 'string')) {
-      // console.log(params);
       throw new Error('City is not a string');
     }
     const guests = Math.max(+params.guests, 1);
