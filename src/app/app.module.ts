@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -91,7 +90,7 @@ import { ViewedRequestComponent } from './landlord/requests/viewed-request/viewe
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule,
+    AngularMaterialModule
   ],
   providers: [UsersService, AuthenticationService, HousingService],
   bootstrap: [AppComponent],

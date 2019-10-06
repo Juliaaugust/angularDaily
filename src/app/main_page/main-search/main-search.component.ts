@@ -61,7 +61,6 @@ export class MainSearchComponent implements OnInit {
       this.message.text = '';
       this.housingService.getHousingBySearchParams({city, guests, arrivalDate, departureDate})
         .subscribe(housings => {
-          // console.log(housings);
           if (housings[0]) {
             this.message.text = '';
             this.router.navigate(['/rentals'],
