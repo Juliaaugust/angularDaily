@@ -5,6 +5,7 @@ export class Review {
     public disadvantages?: string,
     public comment?: string,
     public date?: string,
-    public stars?: number
+    public stars?: number,
+    public id?: number
   ){}
 }

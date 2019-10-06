@@ -14,6 +14,8 @@ export class ViewedRequestComponent implements OnInit {
 
   housingName = '';
 
+  fullCardView = false;
+
   constructor(private housingService: HousingService) { }
 
   ngOnInit() {
@@ -22,6 +24,14 @@ export class ViewedRequestComponent implements OnInit {
       .subscribe((val: Housing) => {
         this.housingName = val.name;
       });
+  }
+
+  rollUpCard() {
+    this.fullCardView = false;
+  }
+
+  expandCard() {
+    this.fullCardView = true;
   }
 
 }

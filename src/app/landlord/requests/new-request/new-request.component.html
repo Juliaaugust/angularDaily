@@ -1,4 +1,21 @@
 <div class="request-card">
+  <div class="change-card-view">
+    <img src="../../../../assets/images/icons/rollup.svg"
+      alt="свернуть" class="roll-up" (click)="rollUpCard()" *ngIf="fullCardView">
+    <img src="../../../../assets/images/icons/expand.svg"
+      alt="развернуть" class="expand" (click)="expandCard()" *ngIf="!fullCardView">
+  </div>
+
+  <div class="request-block small-card" *ngIf="!fullCardView">
+    <p class="request-value"><a [routerLink]="['/housing', requestNew.housingId]" target="_blank">
+      {{ housingName }}
+    </a></p>
+    <p>
+      {{ requestNew.arrivalDate }} – {{ requestNew.departureDate }}
+    </p>
+  </div>
+
+  <div class="full-card" *ngIf="fullCardView">
     <div class="request-block">
         <p class="request-title">Жилье:</p>
         <p class="request-value"><a [routerLink]="['/housing', requestNew.housingId]" target="_blank">
@@ -39,6 +56,8 @@
         <p class="request-title">Оплативший пользователь:</p>
         <input type="text" [value]="requestNew.user" class="request-input user-input" disabled>
     </div>
+  </div>
+  <button class="confirm" (click)="confirmRequest()">Принять</button>
+  <button class="refuse" (click)="refuseRequest()">Отклонить</button>
 </div>
-<button class="confirm" (click)="confirmRequest()">Принять</button>
-<button class="refuse" (click)="refuseRequest()">Отклонить</button>
+

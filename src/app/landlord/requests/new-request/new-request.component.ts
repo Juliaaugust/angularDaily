@@ -17,6 +17,8 @@ export class NewRequestComponent implements OnInit {
 
   housingName = '';
 
+  fullCardView = false;
+
   constructor(private housingService: HousingService) { }
 
   ngOnInit() {
@@ -35,6 +37,14 @@ export class NewRequestComponent implements OnInit {
   refuseRequest() {
     const request: HousingRequest = this.requestNew;
     this.refused.emit(request);
+  }
+
+  rollUpCard() {
+    this.fullCardView = false;
+  }
+
+  expandCard() {
+    this.fullCardView = true;
   }
 
 }
