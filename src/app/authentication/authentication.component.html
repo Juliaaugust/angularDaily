@@ -44,7 +44,7 @@
       <span
         class="form-help-text"
         *ngIf="authorizForm.get('password').invalid && authorizForm.get('password').touched"
-      >Пароль должен содержать больше 5 символов</span>
+      >Пароль должен содержать не меньше 5 символов</span>
       <!-- <a [routerLink]="['/area', 2]" class="button">Войти</a> -->
       <button
         type="submit"
@@ -107,7 +107,7 @@
       <span
         class="form-help-text"
         *ngIf="registrForm.get('password').invalid && registrForm.get('password').touched"
-      >Пароль должен содержать больше 5 символов</span>
+      >Пароль должен содержать не меньше 5 символов</span>
 
       <label for="password-reg-2" class="form-label">Пароль (еще раз)</label>
       <input
@@ -120,7 +120,7 @@
       <span
         class="form-help-text"
         *ngIf="registrForm.get('password2').invalid && registrForm.get('password2').touched"
-      >Пароль должен содержать больше 5 символов</span>
+      >Пароль должен содержать не меньше 5 символов</span>
 
       <div class="agree-block">
         <label for="agree">

@@ -68,8 +68,10 @@
     </div>
   </ng-template>
 
-  <!-- <div class="header__user-info">
-    <img src="../../assets/images/default_avatar.png" alt="" class="header__user-photo">
-    <p class="header__user-name">Julia</p>
-  </div> -->
+  <div class="confirm-dialog" *ngIf="showConfirm">
+    <p class="confirm-title">Вы действительно хотите выйти?</p>
+    <button type="button" class="confirm-yes" (click)="signOutFromConfirm()">Выход</button>
+    <button type="button" class="confirm-no" (click)="cancelConfirm()">Отмена</button>
+  </div>
+
 </header>

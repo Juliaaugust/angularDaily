@@ -93,6 +93,10 @@ export class CreateVacancyComponent implements OnInit {
     housing.isVisible = false;
     housing.rating = [];
     housing.reviews = [];
+    housing.photos = [{
+      id: 1,
+      src: '../../../../assets/images/housing_variants/var_0_1.jpg'
+    }];
 
     this.isClicked = true;
     if (this.createVacancyForm.invalid) {

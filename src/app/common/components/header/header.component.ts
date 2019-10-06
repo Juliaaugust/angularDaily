@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit {
   user: User;
   isAuthenticated: boolean;
 
+  showConfirm = false;
+
   private destroyed$: Subject<void> = new Subject<void>();
 
   constructor(
@@ -57,11 +59,21 @@ export class HeaderComponent implements OnInit {
   }
 
   signOut() {
+    this.showConfirm = true;
+  }
+
+  signOutFromConfirm() {
     this.authService.logout();
     this.router.navigate(['/authentication']);
+    this.showConfirm = false;
+  }
+
+  cancelConfirm() {
+    this.showConfirm = false;
   }
 
   openAuthPage() {
     this.router.navigate(['/authentication']);
   }
+
 }

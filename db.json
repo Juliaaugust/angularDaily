@@ -13,31 +13,26 @@
       "tel": "+7-911-345-87-91",
       "landlordVacancies": [
         {
-          "id": 1,
           "housingId": 23,
           "status": "на рассмотрении",
           "landlordId": 2
         },
         {
-          "id": 2,
           "housingId": 15,
           "status": "на рассмотрении",
           "landlordId": 2
         },
         {
-          "id": 3,
           "housingId": 10,
           "status": "одобрено",
           "landlordId": 2
         },
         {
-          "id": 4,
           "housingId": 7,
           "status": "отклонено",
           "landlordId": 2
         },
         {
-          "id": 5,
           "housingId": 8,
           "status": "одобрено",
           "landlordId": 2
@@ -45,13 +40,11 @@
       ],
       "reservations": [
         {
-          "id": 1,
           "housingId": 10,
           "status": "текущее",
           "dates": "2019:10:05 – 2019:10:06"
         },
         {
-          "id": 2,
           "housingId": 10,
           "status": "текущее",
           "dates": "04.10.19 – 05.10.19"
@@ -71,35 +64,61 @@
       "tel": "+49-17-426-16-55",
       "vacancies": [
         {
-          "id": 1,
           "housingId": 23,
           "status": "на рассмотрении",
           "landlordId": 2
         },
         {
-          "id": 2,
           "housingId": 15,
           "status": "на рассмотрении"
         },
         {
-          "id": 3,
           "housingId": 10,
           "status": "одобрено"
         },
         {
-          "id": 4,
           "housingId": 7,
           "status": "отклонено"
         },
         {
-          "id": 5,
           "housingId": 8,
           "status": "одобрено"
+        },
+        {
+          "housingId": 19,
+          "status": "на рассмотрении"
         }
       ],
       "requests": [
         {
-          "id": 1,
+          "housingId": 19,
+          "arrivalDate": "2019-10-06",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-07",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "коммент",
+          "payMethod": "ya-money",
+          "cost": 3700,
+          "user": "Путин Владимир ",
+          "status": "new"
+        },
+        {
+          "housingId": 12,
+          "arrivalDate": "2019-10-05",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-17",
+          "departureTime": "12:00",
+          "guestsCount": 7,
+          "target": "Другое",
+          "comment": "Заселяю людей",
+          "payMethod": "sber",
+          "cost": 21600,
+          "user": "Любимова Маша Игоревна",
+          "status": "new"
+        },
+        {
           "housingId": 8,
           "arrivalDate": "2019-10-05",
           "arrivalTime": "14:00",
@@ -111,10 +130,10 @@
           "payMethod": "card",
           "cost": 32000,
           "user": "Любимова Маша Игоревна",
-          "status": "new"
+          "status": "new",
+          "id": 1
         },
         {
-          "id": 2,
           "housingId": 12,
           "arrivalDate": "2019-10-04",
           "arrivalTime": "14:00",
@@ -126,10 +145,24 @@
           "payMethod": "webmoney",
           "cost": 1800,
           "user": "Гномова Мария",
-          "status": "new"
-        }
+          "status": "new",
+          "id": 2
+        },
         {
-          "id": 3,
+          "housingId": 12,
+          "arrivalDate": "2019-10-04",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-11",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "sber",
+          "cost": 12600,
+          "user": "Гномова Мария",
+          "status": "new"
+        },
+        {
           "housingId": 10,
           "arrivalDate": "2019-10-04",
           "arrivalTime": "14:00",
@@ -141,10 +174,10 @@
           "payMethod": "ya-money",
           "cost": 12500,
           "user": "Комаров Виктор ",
-          "status": "new"
+          "status": "new",
+          "id": 3
         },
         {
-          "id": 4,
           "housingId": 12,
           "arrivalDate": "2019-10-04",
           "arrivalTime": "14:00",
@@ -156,14 +189,14 @@
           "payMethod": "ya-money",
           "cost": 1800,
           "user": "Гномова Марина",
-          "status": "new"
+          "status": "new",
+          "id": 4
         },
         {
-          "id": 5,
           "housingId": 8,
-          "arrivalDate": "2019-08-05",
+          "arrivalDate": "30-08-19",
           "arrivalTime": "11:00",
-          "departureDate": "2019-08-09",
+          "departureDate": "11-09-19",
           "departureTime": "14:00",
           "guestsCount": 5,
           "target": "Отдых",
@@ -171,14 +204,14 @@
           "payMethod": "sber",
           "cost": 88000,
           "user": "Иванова Анна Игоревна",
-          "status": "Принято"
+          "status": "Принято",
+          "id": 5
         },
         {
-          "id": 6,
           "housingId": 8,
-          "arrivalDate": "2019-08-22",
+          "arrivalDate": "22-08-19",
           "arrivalTime": "09:00",
-          "departureDate": "2019-08-27",
+          "departureDate": "27-09-19",
           "departureTime": "18:00",
           "guestsCount": 5,
           "target": "Вечеринка",
@@ -186,14 +219,14 @@
           "payMethod": "webmoney",
           "cost": 40000,
           "user": "Иванова Анна Игоревна",
-          "status": "Отклонено"
+          "status": "Отклонено",
+          "id": 6
         },
         {
-          "id": 7,
           "housingId": 10,
-          "arrivalDate": "2019-10-04",
+          "arrivalDate": "04-10-19",
           "arrivalTime": "09:00",
-          "departureDate": "2019-10-05",
+          "departureDate": "05-10-19",
           "departureTime": "18:00",
           "guestsCount": 1,
           "target": "Работа",
@@ -201,7 +234,8 @@
           "payMethod": "card",
           "cost": 12500,
           "user": "Ольга",
-          "status": "new"
+          "status": "new",
+          "id": 7
         }
       ],
       "reservations": []
@@ -219,25 +253,21 @@
       "tel": "+49-17-426-16-55",
       "reservations": [
         {
-          "id": 3,
           "housingId": 8,
           "status": "текущее",
           "dates": "30.09.19 – 11.10.19"
         },
         {
-          "id": 4,
           "housingId": 9,
           "status": "прошедшее",
           "dates": "02.02.19 – 16.02.19"
         },
         {
-          "id": 5,
           "housingId": 12,
           "status": "отклоненное",
           "dates": "02.02.19 – 16.02.19"
         },
         {
-          "id": 6,
           "housingId": 8,
           "status": "прошедшее",
           "dates": "11.08.16 – 22.08.16"
@@ -257,16 +287,24 @@
       "tel": "+49-17-426-16-55",
       "reservations": [
         {
-          "id": 7,
           "housingId": 8,
           "status": "текущее",
           "dates": "30.09.19 – 11.10.19"
         },
         {
-          "id": 8,
           "housingId": 9,
           "status": "прошедшее",
           "dates": "02.02.19 – 16.02.19"
+        },
+        {
+          "housingId": 12,
+          "status": "отклоненное",
+          "dates": "02.02.19 – 16.02.19"
+        },
+        {
+          "housingId": 8,
+          "status": "прошедшее",
+          "dates": "11.08.16 – 22.08.16"
         }
       ]
     },
@@ -281,22 +319,24 @@
       "tel": "89998989",
       "reservations": [
         {
-          "id": 9,
           "housingId": 8,
           "status": "текущее",
           "dates": "30.09.19 – 11.10.19"
         },
         {
-          "id": 10,
           "housingId": 9,
           "status": "прошедшее",
           "dates": "02.02.19 – 16.02.19"
         },
         {
-          "id": 11,
           "housingId": 12,
           "status": "отклоненное",
           "dates": "02.02.19 – 16.02.19"
+        },
+        {
+          "housingId": 8,
+          "status": "прошедшее",
+          "dates": "11.08.16 – 22.08.16"
         }
       ]
     },
@@ -309,7 +349,6 @@
       "id": 6,
       "reservations": [
         {
-          "id": 12,
           "housingId": 12,
           "status": "текущее",
           "dates": "2019:10:04 – 2019:10:05"
@@ -325,19 +364,43 @@
       "id": 7,
       "reservations": [
         {
-          "id": 13,
           "housingId": 12,
           "status": "текущее",
           "dates": "2019:10:05 – 2019:10:17"
         },
         {
-          "id": 14,
           "housingId": 8,
           "status": "текущее",
           "dates": "2019:10:05 – 2019:10:09"
         }
       ],
       "tel": "89992122122"
+    },
+    {
+      "email": "aaa@mail.ru",
+      "password": "12345",
+      "name": " Анна ",
+      "role": "клиент",
+      "registrDate": "Sun Oct 06 2019",
+      "id": 8,
+      "reservations": []
+    },
+    {
+      "email": "vvv@mail.ru",
+      "password": "12345",
+      "name": "Путин Владимир ",
+      "role": "клиент",
+      "registrDate": "Sun Oct 06 2019",
+      "id": 9,
+      "reservations": [
+        {
+          "housingId": 19,
+          "status": "текущее",
+          "dates": "2019:10:06 – 2019:10:07"
+        }
+      ],
+      "country": "Россия",
+      "tel": "89991234567"
     }
   ],
   "housing": [
@@ -434,7 +497,6 @@
       ],
       "reviews": [
         {
-          "id": 1,
           "guestName": "Анна",
           "date": "2018-08-10T22:15:12.511Z",
           "advantages": "Идеально расположен для любителей ходьбы и кардионагрузок. Кухонных принадлежностей достаточно, хороший холодильник, сантехника, планировка удобная.",
@@ -443,7 +505,6 @@
           "stars": 4
         },
         {
-          "id": 2,
           "guestName": "Олег",
           "date": "2014-03-23T18:25:43.511Z",
           "advantages": "Мягкая кровать, удобная планировка.",
@@ -514,7 +575,6 @@
       ],
       "reviews": [
         {
-          "id": 3,
           "guestName": "Мария",
           "date": "2014-06-10T22:15:12.511Z",
           "advantages": "Отличная гостиница с идеальным расположением",
@@ -585,7 +645,6 @@
       ],
       "reviews": [
         {
-          "id": 4,
           "guestName": "Валентин",
           "date": "2018-08-10T22:15:12.511Z",
           "advantages": "Огромное пространство, красивый интерьер",
@@ -594,7 +653,6 @@
           "stars": 4
         },
         {
-          "id": 5,
           "guestName": "Кристина",
           "date": "2015-11-12T15:10:22.511Z",
           "advantages": "Мягкая кровать, удобная планировка.",
@@ -603,7 +661,6 @@
           "stars": 3
         },
         {
-          "id": 6,
           "guestName": "Петр",
           "date": "2014-03-23T18:25:43.511Z",
           "advantages": "Хорошая мебель и техника, красивый вид",
@@ -674,7 +731,6 @@
       ],
       "reviews": [
         {
-          "id": 7,
           "guestName": "Игнат",
           "date": "2018-08-10T22:15:12.511Z",
           "advantages": "Потрясающий отель с превосходным персоналом",
@@ -683,7 +739,6 @@
           "stars": 5
         },
         {
-          "id": 8,
           "guestName": "Кристина",
           "date": "2016-10-11T15:12:22.511Z",
           "advantages": "Хорошие номера, ресторан, присутствуют зоны отдыха для пар с детьми",
@@ -692,7 +747,6 @@
           "stars": 4
         },
         {
-          "id": 9,
           "guestName": "Алина",
           "date": "2014-03-23T18:25:43.511Z",
           "advantages": "Красивый вид из окна и хороший персонал, очень чисто, в ресторане вкусно готовят",
@@ -701,7 +755,6 @@
           "stars": 5
         },
         {
-          "id": 10,
           "guestName": "Антон",
           "date": "2013-05-23T18:25:43.511Z",
           "advantages": "Отличный пляж и шумоизоляция номеров",
@@ -772,7 +825,6 @@
       ],
       "reviews": [
         {
-          "id": 11,
           "guestName": "Ульяна",
           "date": "2018-12-11T22:15:12.511Z",
           "advantages": "Хорошие соседи, чисто",
@@ -781,7 +833,6 @@
           "stars": 4
         },
         {
-          "id": 12,
           "guestName": "Марат",
           "date": "2017-01-12T15:10:22.511Z",
           "advantages": "Цена",
@@ -852,7 +903,6 @@
       ],
       "reviews": [
         {
-          "id": 13,
           "guestName": "Кристина",
           "date": "2018-12-11T22:15:12.511Z",
           "advantages": "Хороший персонал, чисто",
@@ -861,7 +911,6 @@
           "stars": 4
         },
         {
-          "id": 14,
           "guestName": "Жанна",
           "date": "2017-01-12T15:10:22.511Z",
           "advantages": "Расположение, качество обслуживания",
@@ -932,7 +981,6 @@
       ],
       "reviews": [
         {
-          "id": 15,
           "guestName": "Кристина",
           "date": "2018-12-11T22:15:12.511Z",
           "advantages": "Хороший персонал, чисто",
@@ -978,68 +1026,320 @@
       "landlordId": 2
     },
     {
-      "name": "Отель",
-      "price": 2,
+      "name": "Квартира-студия",
+      "price": 2000,
       "address": {
-        "country": "Германия",
-        "city": "Дрезден",
-        "street": "Растанная",
-        "houseNum": "12",
+        "country": "Россия",
+        "city": "Сочи",
+        "street": "Гагарина",
+        "house": 51,
         "building": ""
       },
       "maxGuests": 2,
-      "type": "hotel/hostel",
-      "description": "2",
+      "type": "flat",
+      "description": "Квартира в центре Сочи. Кухня, душевая кабинка, ковры на стенах",
       "id": 16,
-      "landlordId": 2
+      "landlordId": 2,
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.8
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Кристина",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хороший персонал, чисто",
+          "disadvantages": "Маленькая комната",
+          "comment": "Отличный отель",
+          "stars": 4
+        },
+        {
+          "guestName": "Жанна",
+          "date": "2017-01-12T15:10:22.511Z",
+          "advantages": "Расположение, качество обслуживания",
+          "disadvantages": "-",
+          "comment": "Красивый отель для пляжого отдыха",
+          "stars": 5
+        }
+      ],
+      "isVisible": true,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ]
     },
     {
-      "name": "Отель",
-      "price": 2222,
+      "id": 17,
+      "name": "Отель на Макаренко",
+      "price": 2400,
       "address": {
-        "country": "Германия",
-        "city": "Дрезден",
-        "street": "Растанная",
-        "houseNum": "12",
+        "country": "Россия",
+        "city": "Сочи",
+        "street": "ул. Макаренко",
+        "house": 16,
         "building": ""
       },
+      "isVisible": true,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
+        },
+        {
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_1_1.jpg"
+        }
+      ],
+      "description": "Лучший сочинский отель (почти)",
       "maxGuests": 2,
       "type": "hotel/hostel",
-      "description": "qq",
-      "id": 17,
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.8
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Кристина",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хороший персонал, чисто",
+          "disadvantages": "Маленькая комната",
+          "comment": "Отличный отель",
+          "stars": 4
+        },
+        {
+          "guestName": "Жанна",
+          "date": "2017-01-12T15:10:22.511Z",
+          "advantages": "Расположение, качество обслуживания",
+          "disadvantages": "-",
+          "comment": "Красивый отель для пляжого отдыха",
+          "stars": 5
+        }
+      ],
       "landlordId": 2
     },
     {
-      "name": "Отель",
-      "price": 22222,
+      "name": "Отель \"Волна\"",
+      "price": 2100,
       "address": {
-        "country": "Германия",
-        "city": "Дрезден",
-        "street": "Растанная",
-        "houseNum": "12",
+        "country": "Россия",
+        "city": "Сочи",
+        "street": "ул. Пластунская",
+        "house": 56,
+        "building": ""
+      },
+      "maxGuests": 10,
+      "type": "hotel/hostel",
+      "description": "Большие номера до 10 человек! Волны вайфая на всей территориии! Еще можо купаться.",
+      "id": 18,
+      "landlordId": 2,
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.8
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Кристина",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хороший персонал, чисто",
+          "disadvantages": "Маленькая комната",
+          "comment": "Отличный отель",
+          "stars": 4
+        },
+        {
+          "guestName": "Жанна",
+          "date": "2017-01-12T15:10:22.511Z",
+          "advantages": "Расположение, качество обслуживания",
+          "disadvantages": "-",
+          "comment": "Красивый отель для пляжого отдыха",
+          "stars": 5
+        }
+      ],
+      "isVisible": true,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_1_1.jpg"
+        },
+        {
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Отель \"Котопес\"",
+      "price": 3700,
+      "address": {
+        "country": "Россия",
+        "city": "Сочи",
+        "street": "ул. Чайковского",
+        "house": 33,
         "building": ""
       },
       "maxGuests": 3,
       "type": "hotel/hostel",
-      "description": "212qwqw",
-      "id": 18,
-      "landlordId": 2
-    },
-    {
-      "name": "Дом",
-      "price": 555,
-      "address": {
-        "country": "Германия",
-        "city": "Дрезден",
-        "street": "Растанная",
-        "houseNum": "12",
-        "building": ""
-      },
-      "maxGuests": 33,
-      "type": "hotel/hostel",
-      "description": "1212ddd",
+      "description": "Первая линия, частный пляж. Wi-fi на всей территории отеля. Курение в номерах запрещено.",
       "id": 19,
-      "landlordId": 2
+      "landlordId": 2,
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.7
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Кристина",
+          "date": "2018-12-11T22:15:12.511Z",
+          "advantages": "Хороший персонал, чисто",
+          "disadvantages": "Комната не как на фото, вид другой.",
+          "comment": "Отличный отель",
+          "stars": 4
+        },
+        {
+          "guestName": "Жанна",
+          "date": "2017-01-12T15:10:22.511Z",
+          "advantages": "Расположение, качество обслуживания",
+          "disadvantages": "Не обнаружено",
+          "comment": "Красивый отель для пляжого отдыха",
+          "stars": 5
+        }
+      ],
+      "isVisible": true,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
+        },
+        {
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ]
     },
     {
       "name": "Отель \"Чайка\"",
@@ -1048,16 +1348,60 @@
         "country": "Россия",
         "city": "Москва",
         "street": "Тверская",
-        "houseNum": "12",
+        "house": 12,
         "building": ""
       },
       "maxGuests": 4,
       "type": "hotel/hostel",
       "description": "Отель",
-      "rating": 0,
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 4.6
+        },
+        {
+          "name": "Обслуживание",
+          "value": 4.6
+        },
+        {
+          "name": "Расположение",
+          "value": 4.8
+        },
+        {
+          "name": "Удобства",
+          "value": 4.4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4.4
+        },
+        {
+          "name": "Комфорт",
+          "value": 4.8
+        }
+      ],
       "isVisible": false,
       "id": 20,
-      "landlordId": 2
+      "landlordId": 2,
+      "reviews": [],
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
+        },
+        {
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_1_2.jpg"
+        },
+        {
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
+        }
+      ]
     },
     {
       "name": "Гостевой дом \"Успех\"",
@@ -1066,16 +1410,17 @@
         "country": "Россия",
         "city": "Москва",
         "street": "Марата",
-        "houseNum": "32",
+        "house": 32,
         "building": ""
       },
       "maxGuests": 10,
       "type": "house",
-      "description": "ййй",
+      "description": "Здесь вас ждет успех!",
       "rating": 0,
       "isVisible": false,
       "id": 21,
-      "landlordId": 2
+      "landlordId": 2,
+      "photos": []
     },
     {
       "name": "Дом",
@@ -1084,7 +1429,7 @@
         "country": "Германия",
         "city": "Дрезден",
         "street": "Тверская",
-        "houseNum": "12",
+        "house": 12,
         "building": ""
       },
       "maxGuests": 3,
@@ -1093,7 +1438,8 @@
       "rating": 0,
       "isVisible": false,
       "id": 22,
-      "landlordId": 2
+      "landlordId": 2,
+      "photos": []
     },
     {
       "name": "Апартрамент \"Звезда\"",
@@ -1110,7 +1456,8 @@
       "description": "Отличное жилье в красивом месте",
       "rating": 0,
       "isVisible": false,
-      "id": 23
+      "id": 23,
+      "photos": []
     }
   ]
 }
