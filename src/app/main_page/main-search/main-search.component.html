@@ -29,11 +29,11 @@
         <div class="main__search-block">
           <div class="main__search-arrival">
             <div class="search-form-info">Дата заезда</div>
-            <input type="date" class="main__input arrival-input" [(ngModel)]="arrivalDate" [ngModelOptions]="{standalone: true}" [min]="minArrivalDate">
+            <input type="date" class="main__input arrival-input" (change)="changeArrivalDate()"  [(ngModel)]="arrivalDate" [ngModelOptions]="{standalone: true}" [min]="minArrivalDate">
           </div>
           <div class="main__search-departure">
             <div class="search-form-info">Дата отъезда</div>
-            <input type="date" class="main__input departure-input" [(ngModel)]="departureDate" [ngModelOptions]="{standalone: true}" [min]="minDepartureDate">
+            <input type="date" class="main__input departure-input"[(ngModel)]="departureDate" [ngModelOptions]="{standalone: true}" [min]="minDepartureDate">
           </div>
         </div>
       </div>

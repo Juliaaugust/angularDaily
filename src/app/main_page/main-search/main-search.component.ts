@@ -80,4 +80,10 @@ export class MainSearchComponent implements OnInit {
     return self.indexOf(value) === index;
   }
 
+  changeArrivalDate() {
+    const newArrival = new Date(this.arrivalDate);
+    this.minDeparturelDate = new Date(newArrival.setDate(newArrival.getDate() + 1)).toISOString().slice(0, 10);
+    this.departureDate = this.minDeparturelDate;
+  }
+
 }
