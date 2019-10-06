@@ -91,48 +91,6 @@
       ],
       "requests": [
         {
-          "housingId": 9,
-          "arrivalDate": "2019-10-05",
-          "arrivalTime": "15:00",
-          "departureDate": "2019-10-08",
-          "departureTime": "12:00",
-          "guestsCount": 3,
-          "target": "Отдых",
-          "comment": "цйцй",
-          "payMethod": "sber",
-          "cost": 12000,
-          "user": "Комаров Виктор ",
-          "status": "new"
-        },
-        {
-          "housingId": 9,
-          "arrivalDate": "2019-10-05",
-          "arrivalTime": "15:00",
-          "departureDate": "2019-10-08",
-          "departureTime": "12:00",
-          "guestsCount": 3,
-          "target": "Отдых",
-          "comment": "цйцй",
-          "payMethod": "sber",
-          "cost": 12000,
-          "user": "Комаров Виктор ",
-          "status": "new"
-        },
-        {
-          "housingId": 9,
-          "arrivalDate": "2019-10-05",
-          "arrivalTime": "15:00",
-          "departureDate": "2019-10-08",
-          "departureTime": "12:00",
-          "guestsCount": 3,
-          "target": "Отдых",
-          "comment": "цйцй",
-          "payMethod": "sber",
-          "cost": 12000,
-          "user": "Комаров Виктор ",
-          "status": "new"
-        },
-        {
           "housingId": 12,
           "arrivalDate": "2019-10-05",
           "arrivalTime": "14:00",

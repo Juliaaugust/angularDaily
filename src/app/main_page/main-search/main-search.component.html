@@ -10,7 +10,16 @@
         <div class="main__search-block">
           <div class="main__search-city">
             <div class="search-form-info">Выбор города</div>
-            <input type="text" class="main__input city-input" placeholder="например, Москва" [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
+            <mat-form-field class="main__input city-input">
+              <input class="inner-city-inp" type="text" placeholder="например, Москва" matInput [formControl]="cityControl"
+                   [matAutocomplete]="auto">
+                 <mat-autocomplete class="autocomplete-class" #auto="matAutocomplete">
+                   <mat-option class="option-class" *ngFor="let c of cities" [value]="c">
+                     {{c}}
+                  </mat-option>
+              </mat-autocomplete>
+           </mat-form-field>
+            <!-- <input type="text" class="main__input city-input" placeholder="например, Москва" [(ngModel)]="city" [ngModelOptions]="{standalone: true}"> -->
           </div>
           <div class="main__search-guests">
             <div class="search-form-info">Число гостей</div>

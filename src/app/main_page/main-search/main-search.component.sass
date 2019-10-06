@@ -58,6 +58,22 @@ $input-color: #015f70
 .search-form-content-inputs
   display: flex
 
+// FOR CITY INPUT
+
+mat-option.option-class
+  background-color: #dde3e4
+  color: $input-color
+
+.mat-form-field-appearance-legacy .mat-form-field-underline
+  background-color: transparent!important
+  height: 0px!important
+
+.mat-form-field-wrapper
+  max-height: 40px!important
+  position: static
+
+///
+
 .search-form-info
   color: #d9e4e9
   text-shadow: $text-shadow
@@ -103,6 +119,8 @@ $input-color: #015f70
   background-repeat: no-repeat
   background-size: 25px
   background-position: 95%
+  padding-bottom: 10px
+  height: 55px
 
 .main__search-block
   display: flex
@@ -158,6 +176,9 @@ $input-color: #015f70
 
   .main__input
     height: 40px
+
+  .city-input
+    height: 35px
 
 
 @media screen and (max-width: 530px)

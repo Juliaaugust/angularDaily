@@ -3,6 +3,8 @@ import { HousingService } from '../../common/services/housing.service';
 import { Message } from '../../common/models/message.model';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Housing } from '../../common/models/housing.model';
 
 @Component({
   selector: 'app-main-search',
@@ -22,12 +24,27 @@ export class MainSearchComponent implements OnInit {
   departureDate = this.minDeparturelDate;
 
   guests: string;
-  city = '';
+  city: string;
+
+  cityControl = new FormControl();
+  // cities: string[] = ['Москва', 'Сочи', 'София', 'Симферополь', 'Гагра'];
+  cities: string[];
 
   constructor(private router: Router, private housingService: HousingService) { }
 
   ngOnInit() {
     this.message = new Message('error', '');
+
+    this.housingService.getHousings()
+      .subscribe((vals: Housing[]) => {
+        for (let val of vals) {
+          this.cities.push(val.address.city);
+          console.log(val.address.city);
+        }
+      });
+
+    const a = ['a', 1, 'a', 2, '1'];
+    const unique = a.filter( this.onlyUnique );
   }
 
   private showMessage(text: string, type: string = 'error') {
@@ -59,6 +76,10 @@ export class MainSearchComponent implements OnInit {
       this.showMessage('Заполните город!', 'error');
     }
 
+  }
+
+  onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
   }
 
 }
