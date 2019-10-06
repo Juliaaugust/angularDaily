@@ -28,7 +28,8 @@ export class MainSearchComponent implements OnInit {
 
   cityControl = new FormControl();
   // cities: string[] = ['Москва', 'Сочи', 'София', 'Симферополь', 'Гагра'];
-  cities: string[];
+  allCities: string[] = [];
+  cities: string[] = [];
 
   constructor(private router: Router, private housingService: HousingService) { }
 
@@ -38,13 +39,10 @@ export class MainSearchComponent implements OnInit {
     this.housingService.getHousings()
       .subscribe((vals: Housing[]) => {
         for (let val of vals) {
-          this.cities.push(val.address.city);
-          console.log(val.address.city);
+          this.allCities.push(val.address.city);
+          this.cities = this.allCities.filter( this.onlyUnique );
         }
       });
-
-    const a = ['a', 1, 'a', 2, '1'];
-    const unique = a.filter( this.onlyUnique );
   }
 
   private showMessage(text: string, type: string = 'error') {
