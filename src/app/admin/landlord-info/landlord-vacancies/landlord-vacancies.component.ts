@@ -27,7 +27,7 @@ export class LandlordVacanciesComponent implements OnInit {
         this.housingName = val.name;
         this.housingAddress = `${val.address.city}, ${val.address.street}, ${val.address.house}`;
         this.housingPrice = val.price;
-        if (val.photos) {
+        if (val.photos[0]) {
           this.firstPhotoSrc = val.photos[0].src;
         }
       });

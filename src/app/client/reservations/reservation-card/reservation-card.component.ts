@@ -24,7 +24,7 @@ export class ReservationCardComponent implements OnInit {
       .subscribe((val: Housing) => {
         this.housingName = val.name;
         this.housingAddress = `${val.address.city}, ${val.address.house}, ${val.address.street}`;
-        if (val.photos) {
+        if (val.photos[0]) {
           this.firstPhotoSrc = val.photos[0].src;
         }
       });
