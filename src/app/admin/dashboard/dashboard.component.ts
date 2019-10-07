@@ -46,6 +46,8 @@ export class DashboardComponent implements OnInit {
   }
 
   approveVacancy(vacancy: Vacancy) {
+    vacancy.status = 'одобрено';
+
     this.housingService.getHousingById(vacancy.housingId)
       .subscribe(housing => {
         housing.isVisible = true;
@@ -65,17 +67,13 @@ export class DashboardComponent implements OnInit {
       });
 
     this.landlordVacanciesNew = this.landlordVacanciesNew.filter(vac => vac.housingId !== vacancy.housingId);
-    vacancy.status = 'одобрено';
     this.landlordVacanciesViewed.unshift(vacancy);
 
     this.showMessage(`Вакансия одобрена!`, 'info');
   }
 
   rejectVacancy(vacancy: Vacancy) {
-    this.userService.changeLandlordVacancyStatus(this.admin, vacancy.housingId, 'отклонено')
-      .subscribe(admin => {
-        localStorage.setItem('user', JSON.stringify(admin));
-      });
+    vacancy.status = 'отклонено';
 
     this.userService.getUserById(vacancy.landlordId)
       .subscribe(landlord => {
@@ -83,7 +81,11 @@ export class DashboardComponent implements OnInit {
           .subscribe();
       });
 
-    vacancy.status = 'отклонено';
+    this.userService.changeLandlordVacancyStatus(this.admin, vacancy.housingId, 'отклонено')
+      .subscribe(admin => {
+        localStorage.setItem('user', JSON.stringify(admin));
+      });
+
     this.landlordVacanciesNew = this.landlordVacanciesNew.filter(vac => vac.housingId !== vacancy.housingId);
     this.landlordVacanciesViewed.unshift(vacancy);
 

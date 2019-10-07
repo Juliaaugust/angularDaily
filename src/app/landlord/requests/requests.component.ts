@@ -37,24 +37,34 @@ export class RequestsComponent implements OnInit {
     request.status = 'Принято';
     console.log(request);
 
-    // this.updateRequestList();
+    this.userService.getUserById(this.landlord.id)
+      .subscribe(user => {
+        this.userService.changeRequestStatus(user, request, 'Принято')
+          .subscribe(ll => {
+            localStorage.setItem('user', JSON.stringify(ll));
+          });
+      });
+
+    this.requestsNew = this.requestsNew.filter(req => req.id !== request.id);
+    this.requestsViewed.unshift(request);
+
   }
 
   refuseRequest(request: HousingRequest) {
     request.status = 'Отклонено';
     console.log(request);
 
-    // this.updateRequestList();
+    this.userService.getUserById(this.landlord.id)
+      .subscribe(user => {
+        this.userService.changeRequestStatus(user, request, 'Отклонено')
+          .subscribe(ll => {
+            localStorage.setItem('user', JSON.stringify(ll));
+          });
+      });
+
+    this.requestsNew = this.requestsNew.filter(req => req.id !== request.id);
+    this.requestsViewed.unshift(request);
   }
 
-  // updateRequestList() {
-
-  //   this.userService.getUserById(this.landlordId)
-  //     .subscribe(landlord => {
-  //       window.localStorage.setItem('user', JSON.stringify(landlord));
-  //       this.requests = landlord.requests;
-
-  //     });
-  // }
 
 }

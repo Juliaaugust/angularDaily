@@ -113,7 +113,8 @@
           "payMethod": "ya-money",
           "cost": 3700,
           "user": "Путин Владимир ",
-          "status": "new"
+          "status": "new",
+          "id": 1
         },
         {
           "housingId": 12,
@@ -127,7 +128,8 @@
           "payMethod": "sber",
           "cost": 21600,
           "user": "Любимова Маша Игоревна",
-          "status": "new"
+          "status": "new",
+          "id": 2
         },
         {
           "housingId": 8,
@@ -142,7 +144,7 @@
           "cost": 32000,
           "user": "Любимова Маша Игоревна",
           "status": "new",
-          "id": 1
+          "id": 3
         },
         {
           "housingId": 12,
@@ -157,7 +159,7 @@
           "cost": 1800,
           "user": "Гномова Мария",
           "status": "new",
-          "id": 2
+          "id": 4
         },
         {
           "housingId": 12,
@@ -171,7 +173,8 @@
           "payMethod": "sber",
           "cost": 12600,
           "user": "Гномова Мария",
-          "status": "new"
+          "status": "new",
+          "id": 5
         },
         {
           "housingId": 10,
@@ -186,7 +189,7 @@
           "cost": 12500,
           "user": "Комаров Виктор ",
           "status": "new",
-          "id": 3
+          "id": 6
         },
         {
           "housingId": 12,
@@ -201,7 +204,7 @@
           "cost": 1800,
           "user": "Гномова Марина",
           "status": "new",
-          "id": 4
+          "id": 7
         },
         {
           "housingId": 8,
@@ -216,7 +219,7 @@
           "cost": 88000,
           "user": "Иванова Анна Игоревна",
           "status": "Принято",
-          "id": 5
+          "id": 8
         },
         {
           "housingId": 8,
@@ -231,7 +234,7 @@
           "cost": 40000,
           "user": "Иванова Анна Игоревна",
           "status": "Отклонено",
-          "id": 6
+          "id": 9
         },
         {
           "housingId": 10,
@@ -246,7 +249,7 @@
           "cost": 12500,
           "user": "Ольга",
           "status": "new",
-          "id": 7
+          "id": 10
         }
       ],
       "reservations": []

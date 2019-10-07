@@ -12,6 +12,7 @@ export class HousingRequest {
     public cost: number,
     public user: string,
     public status?: string,
-    public id?: number
+    public id?: number,
+    public userId?: number
   ) {}
 }
