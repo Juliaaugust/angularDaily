@@ -3,6 +3,9 @@
 
   <section class="vacancies-section">
     <div class="title-vacancies">Новых вакансий: {{ landlordVacanciesNew.length }}</div>
+    <div class="message {{message.type}}-message landlord-vacancy-message" *ngIf="message.text">
+        {{ message.text }}
+      </div>
     <app-new-vacancies
       *ngFor="let llVacNew of landlordVacanciesNew"
       [landlordVacancyNew] = "llVacNew"

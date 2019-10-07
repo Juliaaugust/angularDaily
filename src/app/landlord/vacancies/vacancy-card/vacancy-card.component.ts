@@ -3,6 +3,8 @@ import { Vacancy } from '../../../common/models/vacancy.model';
 import { HousingService } from 'src/app/common/services/housing.service';
 import { Housing } from 'src/app/common/models/housing.model';
 import { Router } from '@angular/router';
+import { UsersService } from '../../../common/services/users.service';
+import { User } from '../../../common/models/user.model';
 
 @Component({
   selector: 'app-vacancy-card',
@@ -20,12 +22,18 @@ export class VacancyCardComponent implements OnInit {
   housingPrice: number;
   status = '';
 
+  user: User;
+
   // query params for edit
   name = ''; type = '';
   country = ''; city = ''; street = ''; house: number;
   description = ''; guests = ''; price: number;
 
-  constructor(private housing: HousingService, private router: Router) { }
+  constructor(
+    private housing: HousingService,
+    private router: Router,
+    private userService: UsersService
+  ) { }
 
   ngOnInit() {
     this.status = this.vacancy.status;
@@ -56,10 +64,24 @@ export class VacancyCardComponent implements OnInit {
 
   deleteVacancyBtn() {
     this.showConfirm = true;
+    console.log(this.vacancy);
   }
 
-  deleteVacancyFronConfirm() {
+  deleteVacancyFromConfirm() {
     console.log('Вакансия удалена!');
+
+    this.user = JSON.parse(window.localStorage.getItem('user'));
+
+    console.log(this.vacancy);
+
+    this.userService.getUserById(this.user.id)
+      .subscribe(landlord => {
+        this.userService.deleteOwnVacancy(landlord, this.vacancy.housingId)
+          .subscribe(ll => {
+            localStorage.setItem('user', JSON.stringify(ll));
+          });
+      });
+
     this.showConfirm = false;
   }
 

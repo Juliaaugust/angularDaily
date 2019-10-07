@@ -25,19 +25,9 @@ export class NewVacanciesComponent implements OnInit {
 
   firstPhotoSrc = '../../../assets/images/housing_variants/var_0_1.jpg';
 
-  message: Message;
-
-  private showMessage(text: string, type: string = 'info') {
-    this.message = new Message(type, text);
-    window.setTimeout(() => {
-      this.message.text = '';
-    }, 2000);
-  }
-
   constructor(private housingService: HousingService, private userService: UsersService) { }
 
   ngOnInit() {
-    this.message = new Message('info', '');
 
     this.userService.getUserById(this.landlordVacancyNew.landlordId)
       .subscribe((val: User) => {
@@ -62,7 +52,6 @@ export class NewVacanciesComponent implements OnInit {
       this.landlordVacancyNew.landlordId
     );
     this.approve.emit(vacancy);
-    this.showMessage(`Вакансия «${this.housingName}» одобрена!`, 'info');
   }
 
   onReject() {
@@ -72,7 +61,6 @@ export class NewVacanciesComponent implements OnInit {
       this.landlordVacancyNew.landlordId
     );
     this.reject.emit(vacancy);
-    this.showMessage(`Вакансия «${this.housingName}» отклонена!`, 'info');
   }
 
 }

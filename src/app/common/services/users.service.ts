@@ -65,7 +65,7 @@ export class UsersService {
   // }
 
 
-  // ДОБАВЛЕНИЕ ВАКАНСИЙ
+  // ВАКАНСИИ НА ЖИЛЬЕ
   addOwnVacancy(landlord: User, vacancy: Vacancy) {
     landlord.vacancies.unshift(vacancy);
 
@@ -89,6 +89,14 @@ export class UsersService {
 
     return this.http.put(`http://localhost:3000/users/${admin.id}`, admin);
   }
+
+  deleteOwnVacancy(landlord: User, vacancyHousingId: number) {
+    landlord.vacancies = landlord.vacancies.filter(vac => vac.housingId !== vacancyHousingId);
+
+    return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
+  }
+
+
 
   // ДОБАВЛЕНИЕ ЗАЯВОК НА ЖИЛЬЕ
   addOwnReservation(user: User, reservation: Reservation) {

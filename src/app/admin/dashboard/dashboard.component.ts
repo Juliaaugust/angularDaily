@@ -4,6 +4,7 @@ import { Housing } from 'src/app/common/models/housing.model';
 import { User } from '../../common/models/user.model';
 import { Vacancy } from 'src/app/common/models/vacancy.model';
 import { UsersService } from '../../common/services/users.service';
+import { Message } from 'src/app/common/models/message.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,18 @@ export class DashboardComponent implements OnInit {
   landlordVacanciesViewed: Vacancy[] = [];
   admin: User;
 
+  message: Message;
+
+  private showMessage(text: string, type: string = 'info') {
+    this.message = new Message(type, text);
+    window.setTimeout(() => {
+      this.message.text = '';
+    }, 2000);
+  }
+
   ngOnInit() {
+    this.message = new Message('info', '');
+
     this.admin = JSON.parse(window.localStorage.getItem('user'));
     this.landlordVacancies = this.admin.landlordVacancies;
 
@@ -55,6 +67,8 @@ export class DashboardComponent implements OnInit {
     this.landlordVacanciesNew = this.landlordVacanciesNew.filter(vac => vac.housingId !== vacancy.housingId);
     vacancy.status = 'одобрено';
     this.landlordVacanciesViewed.unshift(vacancy);
+
+    this.showMessage(`Вакансия одобрена!`, 'info');
   }
 
   rejectVacancy(vacancy: Vacancy) {
@@ -72,6 +86,8 @@ export class DashboardComponent implements OnInit {
     vacancy.status = 'отклонено';
     this.landlordVacanciesNew = this.landlordVacanciesNew.filter(vac => vac.housingId !== vacancy.housingId);
     this.landlordVacanciesViewed.unshift(vacancy);
+
+    this.showMessage(`Вакансия отклонена!`, 'info');
   }
 
 }
