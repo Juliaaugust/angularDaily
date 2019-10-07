@@ -17,8 +17,12 @@
         <img src="../../../assets/images/icons/price.svg" alt="">
         {{ housing.price }} ₽ за сутки
       </div>
-      <app-star-rating></app-star-rating>
-      <span class="review-count">{{ housing.reviews.length }}</span>
+      <!-- <app-star-rating></app-star-rating> -->
+      Отзывов:
+      <span class="review-count" *ngIf="housing.reviews && housing.reviews[0]; else zeroReviews">
+        {{ housing.reviews.length }}
+      </span>
+      <ng-template #zeroReviews>0</ng-template>
     </a>
   </div>
 </div>

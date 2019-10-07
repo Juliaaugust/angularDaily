@@ -64,6 +64,8 @@ export class UsersService {
   //   return this.http.put(`http://localhost:3000/users/${user.id}`, user);
   // }
 
+
+  // ДОБАВЛЕНИЕ ВАКАНСИЙ
   addOwnVacancy(landlord: User, vacancy: Vacancy) {
     landlord.vacancies.unshift(vacancy);
 
@@ -76,6 +78,19 @@ export class UsersService {
     return this.http.put(`http://localhost:3000/users/${admin.id}`, admin);
   }
 
+  changeOwnVacancyStatus(landlord: User, vacancyHousingId: number, status: string) {
+    landlord.vacancies.filter(vac => vac.housingId === vacancyHousingId)[0].status = status;
+
+    return this.http.put(`http://localhost:3000/users/${landlord.id}`, landlord);
+  }
+
+  changeLandlordVacancyStatus(admin: User, vacancyHousingId: number, status: string) {
+    admin.landlordVacancies.filter(vac => vac.housingId === vacancyHousingId)[0].status = status;
+
+    return this.http.put(`http://localhost:3000/users/${admin.id}`, admin);
+  }
+
+  // ДОБАВЛЕНИЕ ЗАЯВОК НА ЖИЛЬЕ
   addOwnReservation(user: User, reservation: Reservation) {
     user.reservations.unshift(reservation);
 

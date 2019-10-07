@@ -24,6 +24,10 @@ export class HousingService {
     return this.http.put(`http://localhost:3000/housing/${housing.id}`, housing);
   }
 
+  changeVisible(housing: Housing) {
+    return this.http.put(`http://localhost:3000/housing/${housing.id}`, housing);
+  }
+
   getHousingBySearchParams(params: HousingParams) {
 
     if ((typeof(params.city) !== 'string')) {
@@ -40,7 +44,7 @@ export class HousingService {
               case 'desc':
                 return item1.price > item2.price ? -1 : 1;
               case 'rating':
-                return this.rating(item1) > this.rating(item2) ? -1 : 1;
+                return this.rating(item1, 'sort') > this.rating(item2, 'sort') ? -1 : 1;
               default:
                 case 'asc':
                   return item1.price > item2.price ? 1 : -1;
@@ -56,7 +60,7 @@ export class HousingService {
           && (!params.type || item.type === params.type)
           && (!params.minPrice || item.price >= +params.minPrice)
           && (!params.maxPrice || item.price <= +params.maxPrice)
-          && (!params.rating || Math.round(this.rating(item)) >= +params.rating);
+          && (!params.rating || Math.round(this.rating(item, 'filt')) >= +params.rating);
         });
      })
       );
@@ -66,11 +70,16 @@ export class HousingService {
     return this.http.post('http://localhost:3000/housing', housing);
   }
 
-  rating(item) {
-    const ratingValues = [];
-    for (let i of item.rating) {
-      ratingValues.push(i.value);
+  rating(item, where?: string) {
+    if (item.reviews && item.reviews[0]) {
+      const ratingValues = [];
+      for (let i of item.rating) {
+        ratingValues.push(i.value);
+      }
+      return ratingValues.length > 0 ? ratingValues.reduce((a, b) => a + b) / ratingValues.length : 0;
+    } else {
+      if (where === 'sort') { return 0; }
+      if (where === 'filt') { return 5; }
     }
-    return ratingValues.length > 0 ? ratingValues.reduce((a, b) => a + b) / ratingValues.length : 0;
   }
 }

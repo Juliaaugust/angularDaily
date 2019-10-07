@@ -6,6 +6,8 @@
     <app-new-vacancies
       *ngFor="let llVacNew of landlordVacanciesNew"
       [landlordVacancyNew] = "llVacNew"
+      (approve)="approveVacancy($event)"
+      (reject)="rejectVacancy($event)"
     ></app-new-vacancies>
   </section>
 

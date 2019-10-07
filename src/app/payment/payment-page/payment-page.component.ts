@@ -149,7 +149,7 @@ export class PaymentPageComponent implements OnInit {
       );
 
       const resStatus = 'текущее';
-      const datesStr = `${this.arrivalDateStr.split('-').join(':')} – ${this.departureDateStr.split('-').join(':')}`;
+      const datesStr = `${this.arrivalDateStr.split('-').join('.')} – ${this.departureDateStr.split('-').join('.')}`;
       const reservation = new Reservation(this.id, resStatus, datesStr);
 
       console.log('landlordId', this.landlordId);

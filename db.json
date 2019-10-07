@@ -622,7 +622,7 @@
       "rating": [
         {
           "name": "Чистота",
-          "value": 4
+          "value": 3.5
         },
         {
           "name": "Обслуживание",
@@ -630,22 +630,30 @@
         },
         {
           "name": "Расположение",
-          "value": 5
+          "value": 4
         },
         {
           "name": "Удобства",
-          "value": 4.5
+          "value": 4.25
         },
         {
           "name": "Цена-качество",
-          "value": 4.5
+          "value": 4.25
         },
         {
           "name": "Комфорт",
-          "value": 4.5
+          "value": 4.75
         }
       ],
       "reviews": [
+        {
+          "guestName": "Ольга",
+          "advantages": "супер",
+          "disadvantages": "все плохо",
+          "comment": "привет",
+          "date": "Mon Oct 07 2019 16:46:34 GMT+0300 (Москва, стандартное время)",
+          "stars": 4
+        },
         {
           "guestName": "Мария",
           "date": "2014-06-10T22:15:12.511Z",
@@ -1492,7 +1500,12 @@
       "isVisible": false,
       "id": 21,
       "landlordId": 2,
-      "photos": []
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        }
+      ]
     },
     {
       "name": "Дом",
@@ -1511,7 +1524,12 @@
       "isVisible": false,
       "id": 22,
       "landlordId": 2,
-      "photos": []
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        }
+      ]
     },
     {
       "name": "Апартрамент \"Звезда\"",
@@ -1529,7 +1547,12 @@
       "rating": 0,
       "isVisible": false,
       "id": 23,
-      "photos": []
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        }
+      ]
     }
   ]
 }

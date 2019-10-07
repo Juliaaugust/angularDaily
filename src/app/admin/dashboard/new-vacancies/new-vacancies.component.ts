@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Vacancy } from '../../../common/models/vacancy.model';
 import { HousingService } from 'src/app/common/services/housing.service';
 import { UsersService } from 'src/app/common/services/users.service';
@@ -14,6 +14,9 @@ import { Message } from '../../../common/models/message.model';
 export class NewVacanciesComponent implements OnInit {
 
   @Input() landlordVacancyNew: Vacancy;
+
+  @Output() approve: EventEmitter<Vacancy> = new EventEmitter();
+  @Output() reject: EventEmitter<Vacancy> = new EventEmitter();
 
   housingName = '';
   housingAddress = '';
@@ -52,11 +55,23 @@ export class NewVacanciesComponent implements OnInit {
       });
   }
 
-  onApprove(housingId: number) {
+  onApprove() {
+    const vacancy = new Vacancy(
+      this.landlordVacancyNew.housingId,
+      this.landlordVacancyNew.status,
+      this.landlordVacancyNew.landlordId
+    );
+    this.approve.emit(vacancy);
     this.showMessage(`Вакансия «${this.housingName}» одобрена!`, 'info');
   }
 
-  onReject(housingId: number) {
+  onReject() {
+    const vacancy = new Vacancy(
+      this.landlordVacancyNew.housingId,
+      this.landlordVacancyNew.status,
+      this.landlordVacancyNew.landlordId
+    );
+    this.reject.emit(vacancy);
     this.showMessage(`Вакансия «${this.housingName}» отклонена!`, 'info');
   }
 
