@@ -3,6 +3,7 @@ import { map, filter } from 'rxjs/operators';
 import { Housing } from '../models/housing.model';
 import { Injectable, EventEmitter } from '@angular/core';
 import { HousingParams } from '../models/housing-params.model';
+import { Review } from '../models/review.model';
 
 @Injectable()
 export class HousingService {
@@ -17,7 +18,13 @@ export class HousingService {
     return this.http.get<Housing>(`http://localhost:3000/housing/${id}`);
   }
 
-  getHousingBySearchParams( params: HousingParams) {
+  addReview(housing: Housing, review: Review) {
+    housing.reviews.unshift(review);
+
+    return this.http.put(`http://localhost:3000/housing/${housing.id}`, housing);
+  }
+
+  getHousingBySearchParams(params: HousingParams) {
 
     if ((typeof(params.city) !== 'string')) {
       throw new Error('City is not a string');

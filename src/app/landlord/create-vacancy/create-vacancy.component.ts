@@ -90,7 +90,7 @@ export class CreateVacancyComponent implements OnInit {
       formData.description
     );
 
-    housing.isVisible = false;
+    housing.isVisible = isVisible;
     housing.rating = [];
     housing.reviews = [];
     housing.photos = [{

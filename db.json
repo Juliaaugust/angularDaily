@@ -397,21 +397,82 @@
       "reservations": []
     },
     {
-      "email": "vvv@mail.ru",
-      "password": "12345",
-      "name": "Путин Владимир ",
-      "role": "клиент",
-      "registrDate": "Sun Oct 06 2019",
       "id": 9,
-      "reservations": [
+      "name": "Гостиница \"Крым\"",
+      "price": 4000,
+      "address": {
+        "country": "Россия",
+        "city": "Симферополь",
+        "street": "Киевская ул.",
+        "house": 2
+      },
+      "isVisible": true,
+      "photos": [
         {
-          "housingId": 19,
-          "status": "текущее",
-          "dates": "2019:10:06 – 2019:10:07"
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
+        },
+        {
+          "id": 2,
+          "src": "../../../../assets/images/housing_variants/var_0_2.jpg"
+        },
+        {
+          "id": 3,
+          "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
+        },
+        {
+          "id": 4,
+          "src": "../../../../assets/images/housing_variants/var_2_2.jpg"
         }
       ],
-      "country": "Россия",
-      "tel": "89991234567"
+      "description": "Собственный пляж; Wi-Fi на всей территории; имеется ресторан, завтраки включены в стоимость",
+      "maxGuests": 6,
+      "type": "hotel/hostel",
+      "rating": [
+        {
+          "name": "Чистота",
+          "value": 5
+        },
+        {
+          "name": "Обслуживание",
+          "value": 5
+        },
+        {
+          "name": "Расположение",
+          "value": 5
+        },
+        {
+          "name": "Удобства",
+          "value": 4
+        },
+        {
+          "name": "Цена-качество",
+          "value": 4
+        },
+        {
+          "name": "Комфорт",
+          "value": 5
+        }
+      ],
+      "reviews": [
+        {
+          "guestName": "Ольга",
+          "advantages": "1",
+          "disadvantages": "2",
+          "comment": "3",
+          "date": "Mon Oct 07 2019 15:07:09 GMT+0300 (Москва, стандартное время)",
+          "stars": 4.333333333333333
+        },
+        {
+          "guestName": "Мария",
+          "date": "2014-06-10T22:15:12.511Z",
+          "advantages": "Отличная гостиница с идеальным расположением",
+          "disadvantages": "Мало магазинов рядом, не очень чистый пляж",
+          "comment": "Мне понравилось",
+          "stars": 4.67
+        }
+      ],
+      "landlordId": 2
     }
   ],
   "housing": [
@@ -513,7 +574,7 @@
           "advantages": "Идеально расположен для любителей ходьбы и кардионагрузок. Кухонных принадлежностей достаточно, хороший холодильник, сантехника, планировка удобная.",
           "disadvantages": "Отсутсвие магазинов поблизости.",
           "comment": "Хорошее жилье, рекомендую.",
-          "stars": 4
+          "stars": 4.12
         },
         {
           "guestName": "Олег",
@@ -521,7 +582,7 @@
           "advantages": "Мягкая кровать, удобная планировка.",
           "disadvantages": "Мало техники, нерабочий телевизор.",
           "comment": "Нормально, жить можно.",
-          "stars": 3
+          "stars": 3.82
         }
       ],
       "landlordId": 2
@@ -561,7 +622,7 @@
       "rating": [
         {
           "name": "Чистота",
-          "value": 5
+          "value": 4
         },
         {
           "name": "Обслуживание",
@@ -573,15 +634,15 @@
         },
         {
           "name": "Удобства",
-          "value": 4
+          "value": 4.5
         },
         {
           "name": "Цена-качество",
-          "value": 4
+          "value": 4.5
         },
         {
           "name": "Комфорт",
-          "value": 5
+          "value": 4.5
         }
       ],
       "reviews": [
@@ -591,7 +652,7 @@
           "advantages": "Отличная гостиница с идеальным расположением",
           "disadvantages": "Мало магазинов рядом, не очень чистый пляж",
           "comment": "Мне понравилось",
-          "stars": 5
+          "stars": 4.67
         }
       ],
       "landlordId": 2
@@ -661,7 +722,7 @@
           "advantages": "Огромное пространство, красивый интерьер",
           "disadvantages": "Отсутсвие магазинов поблизости.",
           "comment": "Хорошее жилье, рекомендую.",
-          "stars": 4
+          "stars": 4.71
         },
         {
           "guestName": "Кристина",
@@ -669,7 +730,7 @@
           "advantages": "Мягкая кровать, удобная планировка.",
           "disadvantages": "Мало техники, нерабочий телевизор.",
           "comment": "",
-          "stars": 3
+          "stars": 3.62
         },
         {
           "guestName": "Петр",
@@ -747,7 +808,7 @@
           "advantages": "Потрясающий отель с превосходным персоналом",
           "disadvantages": "Не обнаружено",
           "comment": "Спасибо!",
-          "stars": 5
+          "stars": 4.83
         },
         {
           "guestName": "Кристина",
@@ -755,7 +816,7 @@
           "advantages": "Хорошие номера, ресторан, присутствуют зоны отдыха для пар с детьми",
           "disadvantages": "Цена.",
           "comment": "В целом рекомендую семьям с детьми",
-          "stars": 4
+          "stars": 4.67
         },
         {
           "guestName": "Алина",
@@ -849,7 +910,7 @@
           "advantages": "Цена",
           "disadvantages": "Неудобные кровати, нерегулярная уборка",
           "comment": "",
-          "stars": 3
+          "stars": 3.67
         }
       ],
       "landlordId": 2
@@ -919,7 +980,7 @@
           "advantages": "Хороший персонал, чисто",
           "disadvantages": "Маленькая комната",
           "comment": "Отличный отель",
-          "stars": 4
+          "stars": 4.5
         },
         {
           "guestName": "Жанна",
@@ -927,7 +988,7 @@
           "advantages": "Расположение, качество обслуживания",
           "disadvantages": "-",
           "comment": "Красивый отель для пляжого отдыха",
-          "stars": 5
+          "stars": 4.33
         }
       ],
       "landlordId": 2
@@ -967,27 +1028,27 @@
       "rating": [
         {
           "name": "Чистота",
-          "value": 4.6
+          "value": 5
         },
         {
           "name": "Обслуживание",
-          "value": 4.6
+          "value": 5
         },
         {
           "name": "Расположение",
-          "value": 4.8
+          "value": 5
         },
         {
           "name": "Удобства",
-          "value": 4.4
+          "value": 4
         },
         {
           "name": "Цена-качество",
-          "value": 4.4
+          "value": 5
         },
         {
           "name": "Комфорт",
-          "value": 4.8
+          "value": 5
         }
       ],
       "reviews": [
@@ -997,7 +1058,7 @@
           "advantages": "Хороший персонал, чисто",
           "disadvantages": "Маленькая комната",
           "comment": "Уютный домик",
-          "stars": 5
+          "stars": 4.83
         }
       ],
       "landlordId": 2
@@ -1084,7 +1145,7 @@
           "advantages": "Хороший персонал, чисто",
           "disadvantages": "Маленькая комната",
           "comment": "Отличный отель",
-          "stars": 4
+          "stars": 4.33
         },
         {
           "guestName": "Жанна",
@@ -1181,7 +1242,7 @@
           "advantages": "Хороший персонал, чисто",
           "disadvantages": "Маленькая комната",
           "comment": "Отличный отель",
-          "stars": 4
+          "stars": 4.33
         },
         {
           "guestName": "Жанна",
@@ -1189,7 +1250,7 @@
           "advantages": "Расположение, качество обслуживания",
           "disadvantages": "-",
           "comment": "Красивый отель для пляжого отдыха",
-          "stars": 5
+          "stars": 4.83
         }
       ],
       "landlordId": 2
@@ -1242,7 +1303,7 @@
           "advantages": "Хороший персонал, чисто",
           "disadvantages": "Маленькая комната",
           "comment": "Отличный отель",
-          "stars": 4
+          "stars": 4.33
         },
         {
           "guestName": "Жанна",
@@ -1250,7 +1311,7 @@
           "advantages": "Расположение, качество обслуживания",
           "disadvantages": "-",
           "comment": "Красивый отель для пляжого отдыха",
-          "stars": 5
+          "stars": 4.83
         }
       ],
       "isVisible": true,
@@ -1321,7 +1382,7 @@
           "advantages": "Хороший персонал, чисто",
           "disadvantages": "Комната не как на фото, вид другой.",
           "comment": "Отличный отель",
-          "stars": 4
+          "stars": 4.33
         },
         {
           "guestName": "Жанна",
@@ -1329,7 +1390,7 @@
           "advantages": "Расположение, качество обслуживания",
           "disadvantages": "Не обнаружено",
           "comment": "Красивый отель для пляжого отдыха",
-          "stars": 5
+          "stars": 4.83
         }
       ],
       "isVisible": true,

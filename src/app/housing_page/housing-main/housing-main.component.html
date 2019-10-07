@@ -86,7 +86,10 @@
                   <p class="guest-name">{{ review.guestName }}</p>
                 </div>
                 <div>
-                  <app-star-rating></app-star-rating>
+                  <div class="stars">
+                    Рейтинг: <span class="stars-rat-val">{{ review.stars | number:'1.2-2' }}</span>
+                    <!-- <app-star-rating></app-star-rating> -->
+                  </div>
                   <p class="comment-date">{{ review.date | date:'dd.MM.yyyy' }}</p>
                 </div>
               </div>
