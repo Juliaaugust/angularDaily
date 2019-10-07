@@ -20,4 +20,20 @@ export class ReservationsComponent implements OnInit {
     this.reservations = this.user.reservations;
   }
 
+  allReservations() {
+    this.reservations = this.user.reservations;
+  }
+
+  currentReservations() {
+    this.reservations = this.user.reservations.filter(res => res.status === 'текущее');
+  }
+
+  pastReservations() {
+    this.reservations = this.user.reservations.filter(res => res.status === 'прошедшее');
+  }
+
+  canceledReservations() {
+    this.reservations = this.user.reservations.filter(res => res.status === 'отклоненное');
+  }
+
 }

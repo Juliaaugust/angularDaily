@@ -4,6 +4,7 @@ import { HousingService } from 'src/app/common/services/housing.service';
 import { UsersService } from 'src/app/common/services/users.service';
 import { User } from 'src/app/common/models/user.model';
 import { Housing } from 'src/app/common/models/housing.model';
+import { Message } from '../../../common/models/message.model';
 
 @Component({
   selector: 'app-new-vacancies',
@@ -19,9 +20,22 @@ export class NewVacanciesComponent implements OnInit {
   housingPrice: number;
   landlordName: string;
 
+  firstPhotoSrc = '../../../assets/images/housing_variants/var_0_1.jpg';
+
+  message: Message;
+
+  private showMessage(text: string, type: string = 'info') {
+    this.message = new Message(type, text);
+    window.setTimeout(() => {
+      this.message.text = '';
+    }, 2000);
+  }
+
   constructor(private housingService: HousingService, private userService: UsersService) { }
 
   ngOnInit() {
+    this.message = new Message('info', '');
+
     this.userService.getUserById(this.landlordVacancyNew.landlordId)
       .subscribe((val: User) => {
         this.landlordName = val.name;
@@ -32,15 +46,18 @@ export class NewVacanciesComponent implements OnInit {
         this.housingName = val.name;
         this.housingAddress = `${val.address.city}, ${val.address.street}, д.${val.address.house}`;
         this.housingPrice = val.price;
+        if (val.photos) {
+          this.firstPhotoSrc = val.photos[0].src;
+        }
       });
   }
 
   onApprove(housingId: number) {
-    console.log(`${housingId} одобрено!`);
+    this.showMessage(`Вакансия «${this.housingName}» одобрена!`, 'info');
   }
 
   onReject(housingId: number) {
-    console.log(`${housingId} отклонено!`);
+    this.showMessage(`Вакансия «${this.housingName}» отклонена!`, 'info');
   }
 
 }

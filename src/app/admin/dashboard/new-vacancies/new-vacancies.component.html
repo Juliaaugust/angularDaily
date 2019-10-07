@@ -1,6 +1,9 @@
 <div class="vacancy-card">
+    <div class="message {{message.type}}-message landlord-vacancy-message" *ngIf="message.text">
+      {{ message.text }}
+    </div>
     <div class="carousel-wrapper">
-        <img src="../../../assets/images/housing_variants/var_1_2.jpg" alt="" class="vacancy-image">
+        <img [src]="firstPhotoSrc" alt="" class="vacancy-image">
     </div>
     <div class="housing-description">
         <a [routerLink]="['/housing', landlordVacancyNew.housingId]" target="_blank">

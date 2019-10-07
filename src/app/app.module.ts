@@ -4,8 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
+
+import { UsersService } from './common/services/users.service';
+import { AuthenticationService } from './common/services/authentication.service';
+import { HousingService } from './common/services/housing.service';
 
 import { AppComponent } from './app.component';
 
@@ -25,9 +28,6 @@ import { PaymentSuccessComponent } from './payment/payment-page/payment-success/
 import { StarRatingComponent } from './common/components/star-rating/star-rating.component';
 import { PersonalAreaComponent } from './personal_area/personal-area/personal-area.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
-import { UsersService } from './common/services/users.service';
-import { AuthenticationService } from './common/services/authentication.service';
-import { HousingService } from './common/services/housing.service';
 import { CarouselComponent } from './common/components/carousel/carousel.component';
 import { InfoPageComponent } from './info-page/info-page.component';
 import { ReservationsComponent } from './client/reservations/reservations.component';
@@ -44,7 +44,6 @@ import { ReservationCardComponent } from './client/reservations/reservation-card
 import { VacancyCardComponent } from './landlord/vacancies/vacancy-card/vacancy-card.component';
 import { NewRequestComponent } from './landlord/requests/new-request/new-request.component';
 import { ViewedRequestComponent } from './landlord/requests/viewed-request/viewed-request.component';
-
 
 
 @NgModule({

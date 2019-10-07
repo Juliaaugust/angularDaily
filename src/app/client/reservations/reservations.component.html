@@ -2,10 +2,10 @@
   <h1 role="heading">Мои бронирования</h1>
 
   <div class="toggles">
-      <button id="all">Все бронирования</button>
-      <button id="current">Текущие</button>
-      <button id="past">Прошедшие</button>
-      <button id="canceled">Отмененные</button>
+      <button id="all" (click)=allReservations()>Все бронирования</button>
+      <button id="current" (click)=currentReservations()>Текущие</button>
+      <button id="past" (click)=pastReservations()>Прошедшие</button>
+      <button id="canceled" (click)=canceledReservations()>Отклоненные</button>
   </div>
 
   <div class="no-reservations" *ngIf="!reservations || reservations.length === 0">

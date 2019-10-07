@@ -1,6 +1,6 @@
 <div class="vacancy-card">
     <div class="carousel-wrapper">
-        <img src="../../../assets/images/housing_variants/var_0_1.jpg" alt="" class="vacancy-image">
+        <img [src]="firstPhotoSrc" alt="" class="vacancy-image">
     </div>
     <div class="housing-description">
         <a [routerLink]="['/housing', landlordVacancyViewed.housingId]" target="_blank">

@@ -46,6 +46,8 @@ const routes: Routes = [
   { path: 'landlord/reservaions', component: ReservationsComponent},
   { path: 'landlord/review/:id', component: ReviewComponent},
 
+  // { path: '**', component: MainWrapperComponent}
+
   // { path: 'client', component: PersonalAreaComponent, children: [
   //   { path: '', redirectTo: 'area/:id', pathMatch: 'full'},
   //   // { path: '**', redirectTo: 'area/8', pathMatch: 'full'},

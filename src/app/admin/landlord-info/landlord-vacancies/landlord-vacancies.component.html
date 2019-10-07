@@ -1,9 +1,9 @@
 <div class="vacancy-card">
     <div class="carousel-wrapper">
-        <img src="../../../assets/images/housing_variants/var_2_1.jpg" alt="" class="vacancy-image">
+        <img [src]="firstPhotoSrc" alt="" class="vacancy-image">
     </div>
     <div class="housing-description">
-        <a href="./housing.html" target="_blank">
+        <a [routerLink]="['/housing', housingId]" target="_blank">
             <h2 class="housing-name">{{ housingName }}</h2>
             <div class="housing-address">
                 <img src="../../../assets/images/icons/location.svg" alt="">

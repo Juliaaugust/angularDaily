@@ -2,10 +2,10 @@
   <h1 role="heading">Мои вакансии</h1>
 
   <div class="toggles">
-    <button id="all">Все вакансии</button>
-    <button id="approved">Одобренные</button>
-    <button id="rejected">Отклоненные</button>
-    <button id="consideration">На рассмотрении</button>
+    <button id="all" (click)="allVacancies()">Все вакансии</button>
+    <button id="approved" (click)="approvedVacancies()">Одобренные</button>
+    <button id="rejected" (click)="rejectedVacancies()">Отклоненные</button>
+    <button id="consideration" (click)="considerationsVacancies()">На рассмотрении</button>
   </div>
 
   <ul class="vacancies-list">

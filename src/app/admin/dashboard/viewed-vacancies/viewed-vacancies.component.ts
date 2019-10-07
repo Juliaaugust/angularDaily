@@ -20,6 +20,8 @@ export class ViewedVacanciesComponent implements OnInit {
   landlordName: string;
   status = '';
 
+  firstPhotoSrc = '../../../assets/images/housing_variants/var_0_1.jpg';
+
   constructor(private housingService: HousingService, private userService: UsersService) { }
 
   ngOnInit() {
@@ -35,6 +37,9 @@ export class ViewedVacanciesComponent implements OnInit {
         this.housingName = val.name;
         this.housingAddress = `${val.address.city}, ${val.address.street}, д.${val.address.house}`;
         this.housingPrice = val.price;
+        if (val.photos) {
+          this.firstPhotoSrc = val.photos[0].src;
+        }
       });
   }
 

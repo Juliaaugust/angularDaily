@@ -19,4 +19,20 @@ export class VacanciesComponent implements OnInit {
     this.vacancies = this.user.vacancies;
   }
 
+  allVacancies() {
+    this.vacancies = this.user.vacancies;
+  }
+
+  approvedVacancies() {
+    this.vacancies = this.user.vacancies.filter(vac => vac.status === 'одобрено');
+  }
+
+  rejectedVacancies() {
+    this.vacancies = this.user.vacancies.filter(vac => vac.status === 'отклонено');
+  }
+
+  considerationsVacancies() {
+    this.vacancies = this.user.vacancies.filter(vac => vac.status === 'на рассмотрении');
+  }
+
 }

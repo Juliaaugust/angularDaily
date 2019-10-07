@@ -15,6 +15,7 @@ export class ReservationCardComponent implements OnInit {
 
   housingName = '';
   housingAddress = '';
+  firstPhotoSrc = '../../../assets/images/housing_variants/var_0_1.jpg';
 
   constructor(private housing: HousingService) { }
 
@@ -23,6 +24,9 @@ export class ReservationCardComponent implements OnInit {
       .subscribe((val: Housing) => {
         this.housingName = val.name;
         this.housingAddress = `${val.address.city}, ${val.address.house}, ${val.address.street}`;
+        if (val.photos) {
+          this.firstPhotoSrc = val.photos[0].src;
+        }
       });
   }
 
