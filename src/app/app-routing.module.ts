@@ -15,10 +15,12 @@ import { LandlordInfoComponent } from './admin/landlord-info/landlord-info.compo
 import { CreateVacancyComponent } from './landlord/create-vacancy/create-vacancy.component';
 import { RequestsComponent } from './landlord/requests/requests.component';
 import { VacanciesComponent } from './landlord/vacancies/vacancies.component';
+import { InfoPageComponent } from './info-page/info-page.component';
 
 const routes: Routes = [
   { path: '', component: MainWrapperComponent},
   // { path: '**', redirectTo: '/', pathMatch: 'full'},
+  { path: 'info', component: InfoPageComponent},
   { path: 'rentals', component: RentalsWrapperComponent},
   { path: 'housing/:id', component: HousingWrapperComponent},
   { path: 'payment/:id', component: PaymentPageComponent},

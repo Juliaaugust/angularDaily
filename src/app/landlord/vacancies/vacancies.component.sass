@@ -3,6 +3,8 @@ $btn-hover-bg: linear-gradient(0deg, #6b3d59 0%, #c9759b 100%)
 $btn-color: #f3d9e8
 $btn-hover-color: #e9c5da
 
+$button-disable-bg: linear-gradient(0deg, #838385 0%, #a6a6a7 100%)
+
 .page-wrapper
   margin: 0 auto
   padding: 10px 30px
@@ -76,11 +78,27 @@ h1
 .status-name
   font-style: italic
 
+// .edit-btn, .delete-btn
+//   padding: 5px 10px
+//   color: $btn-color
+//   font-size: 20px
+//   background: $btn-bg
+//   border: #ad807b
+//   border-radius: 8px
+//   cursor: pointer
+//   margin-bottom: 5px
+//   margin-right: 10px
+
+// .edit-btn:hover, .delete-btn:hover
+//   cursor: pointer
+//   color: $btn-hover-color
+//   background: $btn-hover-bg
+
 .edit-btn, .delete-btn
   padding: 5px 10px
-  color: $btn-color
+  color: #fff
   font-size: 20px
-  background: $btn-bg
+  background: $button-disable-bg
   border: #ad807b
   border-radius: 8px
   cursor: pointer
@@ -88,9 +106,7 @@ h1
   margin-right: 10px
 
 .edit-btn:hover, .delete-btn:hover
-  cursor: pointer
-  color: $btn-hover-color
-  background: $btn-hover-bg
+  cursor: not-allowed
 
 .buttons
   display: flex

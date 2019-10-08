@@ -10,6 +10,7 @@ export class MainWrapperComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.clear();
   }
 
 }

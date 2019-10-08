@@ -35,7 +35,6 @@ export class RequestsComponent implements OnInit {
 
   confirmRequest(request: HousingRequest) {
     request.status = 'Принято';
-    console.log(request);
 
     this.userService.getUserById(this.landlord.id)
       .subscribe(user => {
@@ -52,7 +51,6 @@ export class RequestsComponent implements OnInit {
 
   refuseRequest(request: HousingRequest) {
     request.status = 'Отклонено';
-    console.log(request);
 
     this.userService.getUserById(this.landlord.id)
       .subscribe(user => {

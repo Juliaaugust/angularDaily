@@ -145,7 +145,8 @@ export class PaymentPageComponent implements OnInit {
         formData.payMethod,
         this.cost,
         currentUser.name,
-        reqStatus
+        reqStatus,
+        currentUser.id
       );
 
       const resStatus = 'текущее';
