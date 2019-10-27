@@ -265,12 +265,21 @@
       {{ message.text }}
     </div>
     <button
+      *ngIf="!isEdit"
       class="add_vacancy-btn"
       type="submit"
     >
       Опубликовать
-      <!-- [disabled]="createVacancyForm.invalid"
-      [ngClass]="{'button-disabled': createVacancyForm.invalid}" -->
+
     </button>
+    <button
+      *ngIf="isEdit"
+      class="edit_vacancy-btn"
+      type="submit"
+    >
+      Редактировать
+    </button>
+    <!-- [disabled]="createVacancyForm.invalid"
+      [ngClass]="{'button-disabled': createVacancyForm.invalid}" -->
   </form>
 </div>

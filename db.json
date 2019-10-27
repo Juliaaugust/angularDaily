@@ -13,6 +13,16 @@
       "tel": "+7-911-345-87-91",
       "landlordVacancies": [
         {
+          "housingId": 26,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
+          "housingId": 25,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
           "housingId": 24,
           "status": "на рассмотрении",
           "landlordId": 2
@@ -84,6 +94,11 @@
       "tel": "+49-17-426-16-55",
       "vacancies": [
         {
+          "housingId": 26,
+          "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
           "housingId": 24,
           "status": "на рассмотрении",
           "landlordId": 2
@@ -111,6 +126,21 @@
         }
       ],
       "requests": [
+        {
+          "housingId": 10,
+          "arrivalDate": "2019-10-27",
+          "arrivalTime": "14:00",
+          "departureDate": "2019-10-28",
+          "departureTime": "12:00",
+          "guestsCount": "2",
+          "target": "Выбор цели",
+          "comment": "",
+          "payMethod": "sber",
+          "cost": 12500,
+          "user": "Комаров Виктор ",
+          "status": "new",
+          "id": 2
+        },
         {
           "housingId": 19,
           "arrivalDate": "2019-10-09",
@@ -1614,6 +1644,52 @@
         }
       ],
       "id": 24
+    },
+    {
+      "name": "Отель",
+      "price": 3500,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Растанная",
+        "house": "12"
+      },
+      "maxGuests": "2",
+      "type": "hotel/hostel",
+      "description": "раоар",
+      "rating": [],
+      "reviews": [],
+      "isVisible": false,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
+        }
+      ],
+      "id": 25
+    },
+    {
+      "name": "Отель \"Мечта гуся\"",
+      "price": "4800",
+      "address": {
+        "country": "Россия",
+        "city": "Санкт-Петербург",
+        "street": "Невский пр.",
+        "house": "190"
+      },
+      "maxGuests": "4",
+      "type": "hotel/hostel",
+      "description": "Есть кондиционер и полотенца",
+      "id": 26,
+      "rating": [],
+      "reviews": [],
+      "isVisible": false,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
+        }
+      ]
     }
   ]
 }

@@ -70,6 +70,10 @@ export class HousingService {
     return this.http.post('http://localhost:3000/housing', housing);
   }
 
+  editHousing(housing: Housing) {
+    return this.http.put(`http://localhost:3000/housing/${housing.id}`, housing);
+  }
+
   rating(item, where?: string) {
     if (item.reviews && item.reviews[0]) {
       const ratingValues = [];

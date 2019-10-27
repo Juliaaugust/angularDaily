@@ -28,6 +28,8 @@ export class CreateVacancyComponent implements OnInit {
 
   houseParamsFromEdit: Housing;
 
+  isEdit = false;
+
   private showMessage(text: string, type: string = 'error') {
     this.message = new Message(type, text);
     window.setTimeout(() => {
@@ -46,6 +48,9 @@ export class CreateVacancyComponent implements OnInit {
 
     this.route.queryParams
       .subscribe(res => {
+        if (!(Object.keys(res).length === 0)) {
+          this.isEdit = true;
+        }
         this.houseParamsFromEdit = {
           name: res.name,
           price: res.price,
@@ -57,10 +62,9 @@ export class CreateVacancyComponent implements OnInit {
           },
           maxGuests: res.guests,
           description: res.description,
-          type: res.type
+          type: res.type,
+          id: res.id
         };
-        console.log(this.houseParamsFromEdit);
-        console.log(res);
       });
 
     this.message = new Message('error', '');
@@ -126,33 +130,40 @@ export class CreateVacancyComponent implements OnInit {
 
     this.isClicked = true;
     if (this.createVacancyForm.invalid) {
-      this.showMessage('Для создания вакансии заполните все необходимые поля!', 'error');
+      this.showMessage('Заполните все необходимые поля!', 'error');
     } else {
       this.message.text = '';
-      this.housingService.createNewHousing(housing)
-        .subscribe((newHouse: Housing) => {
 
-          const currentLandlord = JSON.parse(window.localStorage.getItem('user'));
-          const vacancy = new Vacancy(newHouse.id, 'на рассмотрении', currentLandlord.id);
+      if (this.isEdit === false) {
+        this.housingService.createNewHousing(housing)
+          .subscribe((newHouse: Housing) => {
 
-          this.userService.addOwnVacancy(currentLandlord, vacancy)
-            .subscribe(user => {
-              window.localStorage.setItem('user', JSON.stringify(user));
-            });
+            const currentLandlord = JSON.parse(window.localStorage.getItem('user'));
+            const vacancy = new Vacancy(newHouse.id, 'на рассмотрении', currentLandlord.id);
 
-          this.userService.getUserById(1)
-            .subscribe(adm => {
-              this.userService.addLandlordVacancy(adm, vacancy)
-                .subscribe();
-            });
+            this.userService.addOwnVacancy(currentLandlord, vacancy)
+              .subscribe(user => {
+                window.localStorage.setItem('user', JSON.stringify(user));
+              });
 
-          this.showMessage('Вакансия была успешно создана!', 'info');
-        });
+            this.userService.getUserById(1)
+              .subscribe(adm => {
+                this.userService.addLandlordVacancy(adm, vacancy)
+                  .subscribe();
+              });
 
-      this.createVacancyForm.reset();
-      this.isClicked = false;
+            this.showMessage('Вакансия была успешно создана!', 'info');
+          });
 
-      // this.router.navigate(['landlord/vacancies']);
+        this.createVacancyForm.reset();
+        this.isClicked = false;
+      } else {
+        housing.id = this.houseParamsFromEdit.id;
+        this.housingService.editHousing(housing)
+          .subscribe();
+        this.showMessage('Вакансия была успешно отредактирована!', 'info');
+        // this.router.navigate(['landlord/vacancies']);
+      }
     }
   }
 

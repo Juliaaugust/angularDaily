@@ -43,6 +43,7 @@ const routes: Routes = [
   { path: 'landlord', component: PersonalAreaComponent},
   { path: 'landlord/area/:id', component: PersonalAreaComponent},
   { path: 'landlord/create', component: CreateVacancyComponent},
+  { path: 'landlord/edit', component: CreateVacancyComponent},
   { path: 'landlord/requests', component: RequestsComponent},
   { path: 'landlord/vacancies', component: VacanciesComponent},
   { path: 'landlord/reservaions', component: ReservationsComponent},

@@ -52,14 +52,15 @@ export class VacancyCardComponent implements OnInit {
         this.description = val.description;
         this.guests = val.maxGuests;
         this.price = val.price;
+        this.type = val.type;
       });
   }
 
   editVacancy() {
     const {name, type, city, street, house, description, guests, price} = this;
-
-    this.router.navigate(['/landlord/create'],
-      {queryParams: {name, type, city, street, house, description, guests, price}});
+    const id = this.vacancy.housingId;
+    this.router.navigate(['/landlord/edit'],
+      {queryParams: {name, type, city, street, house, description, guests, price, id}});
   }
 
   deleteVacancyBtn() {
