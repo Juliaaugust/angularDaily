@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { UsersService } from '../../common/services/users.service';
 import { User } from '../../common/models/user.model';
 import { Message } from '../../common/models/message.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HousingService } from '../../common/services/housing.service';
 import { Housing } from '../../common/models/housing.model';
 import { Vacancy } from '../../common/models/vacancy.model';
@@ -26,6 +26,8 @@ export class CreateVacancyComponent implements OnInit {
 
   isClicked = false;
 
+  houseParamsFromEdit: Housing;
+
   private showMessage(text: string, type: string = 'error') {
     this.message = new Message(type, text);
     window.setTimeout(() => {
@@ -35,11 +37,31 @@ export class CreateVacancyComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private housingService: HousingService,
     private userService: UsersService
   ) { }
 
   ngOnInit() {
+
+    this.route.queryParams
+      .subscribe(res => {
+        this.houseParamsFromEdit = {
+          name: res.name,
+          price: res.price,
+          address: {
+            country: res.country,
+            city: res.city,
+            street: res.street,
+            house: res.house,
+          },
+          maxGuests: res.guests,
+          description: res.description,
+          type: res.type
+        };
+        console.log(this.houseParamsFromEdit);
+        console.log(res);
+      });
 
     this.message = new Message('error', '');
 
@@ -54,17 +76,21 @@ export class CreateVacancyComponent implements OnInit {
     }
 
     this.createVacancyForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      type: new FormControl(null, [Validators.required]),
+      name: new FormControl(this.houseParamsFromEdit.name, [Validators.required, Validators.minLength(3)]),
+      type: new FormControl(this.houseParamsFromEdit.type, [Validators.required]),
       address: new FormGroup({
-        country: new FormControl(this.userCountry, Validators.required),
-        city: new FormControl(this.userCity, Validators.required),
-        street: new FormControl('', Validators.required),
-        house: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
-        building: new FormControl('')
+        country: new FormControl(
+          this.houseParamsFromEdit.address.country || this.userCountry, Validators.required
+        ),
+        city: new FormControl(
+          this.houseParamsFromEdit.address.city || this.userCity, Validators.required
+        ),
+        street: new FormControl(this.houseParamsFromEdit.address.street || '', Validators.required),
+        house: new FormControl(this.houseParamsFromEdit.address.house || '', [Validators.required, Validators.pattern('^[0-9]+$')]),
+        // building: new FormControl('')
       }),
-      description: new FormControl(''),
-      maxGuests: new FormControl('', [
+      description: new FormControl(this.houseParamsFromEdit.description || ''),
+      maxGuests: new FormControl(this.houseParamsFromEdit.maxGuests || '', [
         Validators.required,
         Validators.pattern('^[0-9]+$'),
         Validators.min(1),
@@ -72,7 +98,7 @@ export class CreateVacancyComponent implements OnInit {
       ]),
       pets: new FormControl(false),
       minDays: new FormControl(1, [Validators.min(1), Validators.pattern('^[0-9]+$')]),
-      price: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
+      price: new FormControl(this.houseParamsFromEdit.price || '', [Validators.required, Validators.pattern('^[0-9]+$')]),
       // photos: new FormArray([])
     });
   }

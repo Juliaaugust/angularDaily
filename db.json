@@ -13,8 +13,13 @@
       "tel": "+7-911-345-87-91",
       "landlordVacancies": [
         {
-          "housingId": 23,
+          "housingId": 24,
           "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
+          "housingId": 23,
+          "status": "одобрено",
           "landlordId": 2
         },
         {
@@ -75,12 +80,17 @@
       "registrDate": "Mon Sep 23 2019",
       "gender": "male",
       "country": "Россия",
-      "city": "Москва",
+      "city": "Санкт-Петербург",
       "tel": "+49-17-426-16-55",
       "vacancies": [
         {
-          "housingId": 23,
+          "housingId": 24,
           "status": "на рассмотрении",
+          "landlordId": 2
+        },
+        {
+          "housingId": 23,
+          "status": "одобрено",
           "landlordId": 2
         },
         {
@@ -103,18 +113,18 @@
       "requests": [
         {
           "housingId": 19,
-          "arrivalDate": "2019-10-06",
-          "arrivalTime": "14:00",
-          "departureDate": "2019-10-07",
+          "arrivalDate": "2019-10-09",
+          "arrivalTime": "15:00",
+          "departureDate": "2019-10-11",
           "departureTime": "12:00",
           "guestsCount": "2",
-          "target": "Выбор цели",
+          "target": "Отдых",
           "comment": "коммент",
-          "payMethod": "ya-money",
-          "cost": 3700,
+          "payMethod": "card",
+          "cost": 7400,
           "user": "Путин Владимир ",
           "status": "new",
-          "id": 1
+          "id": 10
         },
         {
           "housingId": 12,
@@ -476,6 +486,22 @@
         }
       ],
       "landlordId": 2
+    },
+    {
+      "email": "vvv@mail.ru",
+      "password": "12345",
+      "name": "Путин Владимир ",
+      "role": "клиент",
+      "registrDate": "Tue Oct 08 2019",
+      "id": 10,
+      "reservations": [
+        {
+          "housingId": 19,
+          "status": "текущее",
+          "dates": "2019.10.09 – 2019.10.11"
+        }
+      ],
+      "country": "Россия"
     }
   ],
   "housing": [
@@ -625,11 +651,11 @@
       "rating": [
         {
           "name": "Чистота",
-          "value": 3.5
+          "value": 3.75
         },
         {
           "name": "Обслуживание",
-          "value": 5
+          "value": 4
         },
         {
           "name": "Расположение",
@@ -637,18 +663,26 @@
         },
         {
           "name": "Удобства",
-          "value": 4.25
+          "value": 4.125
         },
         {
           "name": "Цена-качество",
-          "value": 4.25
+          "value": 4.625
         },
         {
           "name": "Комфорт",
-          "value": 4.75
+          "value": 4.875
         }
       ],
       "reviews": [
+        {
+          "guestName": "Ольга",
+          "advantages": "+++",
+          "disadvantages": "---",
+          "comment": "fhjks",
+          "date": "Tue Oct 08 2019 14:59:34 GMT+0300 (Москва, стандартное время)",
+          "stars": 4.166666666666667
+        },
         {
           "guestName": "Ольга",
           "advantages": "супер",
@@ -1548,7 +1582,7 @@
       "type": "apartments",
       "description": "Отличное жилье в красивом месте",
       "rating": 0,
-      "isVisible": false,
+      "isVisible": true,
       "id": 23,
       "photos": [
         {
@@ -1556,6 +1590,30 @@
           "src": "../../../../assets/images/housing_variants/var_2_1.jpg"
         }
       ]
+    },
+    {
+      "name": "Отель",
+      "price": 3000,
+      "address": {
+        "country": "Россия",
+        "city": "Москва",
+        "street": "Растанная",
+        "house": "12",
+        "building": ""
+      },
+      "maxGuests": 2,
+      "type": "hotel/hostel",
+      "description": "раоар",
+      "rating": [],
+      "reviews": [],
+      "isVisible": false,
+      "photos": [
+        {
+          "id": 1,
+          "src": "../../../../assets/images/housing_variants/var_0_1.jpg"
+        }
+      ],
+      "id": 24
     }
   ]
 }

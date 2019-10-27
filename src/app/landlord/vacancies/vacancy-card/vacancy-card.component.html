@@ -20,8 +20,8 @@
           Статус: <span class="status-name">{{ status }}</span>
       </div>
       <div class="buttons">
-          <button disabled class="edit-btn" (click)="editVacancy()">Редактировать</button>
-          <button disabled class="delete-btn" (click)="deleteVacancyBtn()">Удалить</button>
+          <button class="edit-btn" (click)="editVacancy()">Редактировать</button>
+          <button class="delete-btn" (click)="deleteVacancyBtn()">Удалить</button>
       </div>
       <div class="confirm-dialog" *ngIf="showConfirm">
         <p class="confirm-title">Вы действительно хотите удалить эту вакансию?</p>
